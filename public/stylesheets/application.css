@@ -5,12 +5,18 @@ background-image: url("../images/content-background.jpg");
 margin-left: auto;
 margin-right: auto;
 }
-#header {}
-span.logo {
-font-size: 24px;
-color: #97BFDE;
+#header {
+width: 90%;
 }
-span.tagline {}
+span.logo {
+font-size: 50px;
+color: #97BFDE;
+font-weight: bold;
+}
+span.tagline {
+font-style: italic;
+color: white;
+}
 #nav{
 float: right;
 }
@@ -19,8 +25,12 @@ ul.nav_links{
 
 ul.nav_links li {
 display: inline;
+float:left;
+margin-right: 10px;
 }
+
 ul.second_level{}
+
 #content{}
 
 #panel {
@@ -38,4 +48,3 @@ color: #FFFFFF;
 text-align: center;
 padding: 10px 0 10px 0;
 }
-

@@ -1,1 +1,41 @@
-p {}
+body {
+background-image: url("../images/content-background.jpg");
+}
+#container{
+margin-left: auto;
+margin-right: auto;
+}
+#header {}
+span.logo {
+font-size: 24px;
+color: #97BFDE;
+}
+span.tagline {}
+#nav{
+float: right;
+}
+ul.nav_links{
+}
+
+ul.nav_links li {
+display: inline;
+}
+ul.second_level{}
+#content{}
+
+#panel {
+width: 22%;
+float: left;
+margin: 0 5px 0 5px;
+height: 500px;
+border: 5px solid white;
+}
+
+#panel-text {
+width: 100%;
+background-color: #97BFDE;
+color: #FFFFFF;
+text-align: center;
+padding: 10px 0 10px 0;
+}
+

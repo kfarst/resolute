@@ -1,0 +1,11 @@
+- semantic_form_for :item, item.type, editable_item_form_options(item) do |form|
+
+  = form.inputs do
+    = form.input :title, :label => :title
+    = form.input :body, :as => :cktext_area, :label => :body
+    
+  - if item.type == 'Page'
+    = form.select_tag
+
+  - form.buttons do
+    = form.submit 'Save'

@@ -6,15 +6,18 @@ background-position: top center;
 
 a {
 text-decoration: none;
-color: white;
+color: #97BFDE;
 }
 
 #container{
 margin-left: auto;
 margin-right: auto;
+width: 80%;
 }
+
 #header {
-width: 90%;
+width: 100%;
+margin-bottom: 30px;
 }
 span.logo {
 font-size: 50px;
@@ -25,21 +28,65 @@ span.tagline {
 font-style: italic;
 color: white;
 }
+
+#title {
+color: white;
+background-color: #97BFDE;
+padding: 5px 0 5px 5px;
+font-weight: bold;
+text-shadow: #000000 2px 2px 5px;
+font-size: 24px;
+margin: 0 0 20px 0;
+-moz-box-shadow: 5px 5px 10px #C0C0C0;
+-webkit-box-shadow: -10px -10px 0px #000;
+}
+
 #nav{
 float: right;
 }
-ul.nav_links{
+
+#nav a {
+font: bold 11px/16px arial, helvetica, sans-serif;
+display: block;
+border-width: 1px;
+border-style: solid;
+border-color: #ccc #888 #555 #bbb;
+margin: 0;
+padding: 2px 3px;
+color: #000;
+background: #efefef;
+text-decoration: none;
 }
 
 ul.nav_links li {
 display: inline;
 float:left;
-margin-right: 10px;
+margin-right: 20px;
+position: relative;
 }
 
-ul.second_level{}
+ul.nav_links li ul.second_level {
+display: none;
+}
 
-#content{}
+ul.nav_links li:hover ul.second_level {
+display: block;
+z-index: 2;
+relative: absolute;
+}
+
+ul.second_level li {
+clear:both;
+float: left;
+}
+
+
+#content{
+background-color: white;
+padding: 30px;
+-moz-border-radius: 40px;
+-webkit-border-radius: 40px;
+}
 
 #panel {
 width: 22%;

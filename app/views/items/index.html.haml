@@ -1,0 +1,23 @@
+#title
+  Listing items
+
+%table
+  %tr
+    %th Type
+    %th Title
+    %th Body
+    %th Category
+    %th
+    %th
+    %th
+  - @items.each do |item|
+    %tr
+      %td= item.type
+      %td= item.title
+      %td= item.body
+      %td= item.category_id
+      %td= link_to 'Show', item
+      %td= link_to 'Edit', edit_item_path(item)
+      %td= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
+%br
+= link_to 'New Item', new_item_path

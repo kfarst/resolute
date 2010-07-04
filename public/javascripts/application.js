@@ -3,8 +3,8 @@
 $(function() { 
   $(document)                                       .ready(hideBackground);
   $('#panel')                                       .live('click', panelAsLink);
-  //$('li.first_level')                               .live('hover', menuSlideDown);
-  //$('li.first_level')                               .live('mouseleave', menuSlideUp);
+  $('li.first_level')                               .live('hover', menuSlideDown);
+  $('li.first_level')                               .live('mouseleave', menuSlideUp);
 
   function hideBackground(e) {
     if ($('div#panel').length > 0) {

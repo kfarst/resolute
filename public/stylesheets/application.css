@@ -2,6 +2,7 @@ body {
 background-image:url("../images/wallpaper.jpg");
 background-repeat:no-repeat;
 background-position: top center;
+font-family: "arial", sans-serif;
 }
 
 a {
@@ -19,11 +20,13 @@ width: 80%;
 width: 100%;
 margin-bottom: 30px;
 }
+
 span.logo {
 font-size: 50px;
 color: #97BFDE;
 font-weight: bold;
 }
+
 span.tagline {
 font-style: italic;
 color: white;
@@ -45,7 +48,7 @@ margin: 0 0 20px 0;
 float: right;
 }
 
-#nav a {
+#nav ul.nav_links ul.second_level a {
 font: bold 11px/16px arial, helvetica, sans-serif;
 display: block;
 border-width: 1px;
@@ -56,30 +59,36 @@ padding: 2px 3px;
 color: #000;
 background: #efefef;
 text-decoration: none;
+width: 10em;
 }
 
-ul.nav_links li {
+ul.nav_links li.first_level {
 display: inline;
 float:left;
 margin-right: 20px;
 position: relative;
+color: white;
 }
 
-ul.nav_links li ul.second_level {
+ul.nav_links:hover {
+background-color: #97BFDE;
+}
+
+ul.nav_links li.first_level ul.second_level {
 display: none;
 }
 
-ul.nav_links li:hover ul.second_level {
+ul.nav_links li.first_level:hover ul.second_level {
 display: block;
 z-index: 2;
 relative: absolute;
+margin-top: 10px;
 }
 
-ul.second_level li {
+ul.second_level li.first_level {
 clear:both;
 float: left;
 }
-
 
 #content{
 background-color: white;
@@ -96,10 +105,18 @@ height: 500px;
 border: 5px solid white;
 }
 
+#panel:hover > #panel-text {
+background-color: #C0C0C0;
+}
+
 #panel-text {
 width: 100%;
 background-color: #97BFDE;
 color: #FFFFFF;
 text-align: center;
 padding: 10px 0 10px 0;
+opacity: 0.9;
+/*font-weight: bold;*/
+font-size: 24px;
+text-shadow: #000000 2px 2px 5px;
 }

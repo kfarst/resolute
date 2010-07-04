@@ -1,15 +1,11 @@
 Resolute::Application.routes.draw do |map|
-  resources :items
-
+  resources :items 
   devise_for :users
-
-  resources :categories
-
-  resources :pages
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
      match '/admin' => 'admin#index', :as => :admin
+      match '/videos' => 'items#videos', :as => :videos
 
   # Sample of regular route:
      match ':id' => 'items#show', :as => :pretty_url

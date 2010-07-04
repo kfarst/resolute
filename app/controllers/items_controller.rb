@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
+    if params[:type] == "page"
+      @items = Page.all
+    elsif params[:type] == "cat"
+      @items = Category.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +84,7 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+end
+
+def videos
 end

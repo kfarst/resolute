@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
+  before_filter :authenticate_user!, :except => [:show, :welcome]
+
   def index
     if params[:type] == "page"
       @items = Page.all

@@ -16,3 +16,9 @@
   page2.category_id = category.id
   page2.save!
 end
+
+["farst.6@osu.edu"].each do |user|
+  unless user.find_by_email(user)
+    User.create!(:email => user, :password => "elgxsy", :password_confirmation => "elgxsy")
+  end
+end

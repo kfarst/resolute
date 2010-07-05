@@ -23,5 +23,6 @@
                   - category.pages.each do |page| 
                     %li
                       = link_to page.title, pretty_url_path(page)
-      #content
+      #content<
+        = link_to "Sign Out", destroy_user_session_path if user_signed_in?
         = yield

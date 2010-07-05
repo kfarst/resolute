@@ -2,9 +2,24 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(function() { 
   $(document)                                       .ready(hideBackground);
+  $(document)                                       .ready(showIntroVideo);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
+  $('#window #tab')                                         .die('click', showIntroVideo);
+
+  function showIntroVideo(e) {
+    $('#overlay').css('display', 'block');
+    debugger;
+    
+    var winHeight = $(window).height() * 0.7,
+        winWidth = $(window).width() * 0.7,
+        halfHeight = ($(window).height() / 2) - (winHeight / 2);
+
+    $('#window').css('height', winHeight + 'px')
+                .css('width', winWidth + 'px') 
+                .css('margin-top', halfHeight + 'px'); 
+  }
 
   function hideBackground(e) {
     if ($('div#panel').length > 0) {

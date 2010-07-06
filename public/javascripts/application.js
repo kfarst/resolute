@@ -6,19 +6,25 @@ $(function() {
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
-  $('#window #tab')                                         .die('click', showIntroVideo);
+  $('#window #tab a')                               .live('click', hideIntroVideo);
+
+  function hideIntroVideo(e) {
+    e.preventDefault();
+    $('#overlay').css('display', 'none');
+  }
 
   function showIntroVideo(e) {
-    $('#overlay').css('display', 'block');
-    debugger;
-    
-    var winHeight = $(window).height() * 0.7,
-        winWidth = $(window).width() * 0.7,
-        halfHeight = ($(window).height() / 2) - (winHeight / 2);
+    if ($('div#panel').length > 0) {
+      $('#overlay').css('display', 'block');
+      
+      var winHeight = $(window).height() * 0.7,
+          winWidth = $(window).width() * 0.7,
+          halfHeight = ($(window).height() / 2) - (winHeight / 2);
 
-    $('#window').css('height', winHeight + 'px')
-                .css('width', winWidth + 'px') 
-                .css('margin-top', halfHeight + 'px'); 
+      $('#window').css('height', winHeight + 'px')
+                  .css('width', winWidth + 'px') 
+                  .css('margin-top', halfHeight + 'px'); 
+    }
   }
 
   function hideBackground(e) {

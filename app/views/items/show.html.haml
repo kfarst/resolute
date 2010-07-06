@@ -1,16 +1,10 @@
 %p#notice= notice
-%p
-  %b Type:
-  = @item.type
-%p
-  #title
-    = @item.title
-%p
-  %b Body:
-  = @item.body
-%p
-  %b Category:
-  = @item.category_id
-= link_to 'Edit', edit_item_path(@item)
+
+#title
+  = @item.title
+
+= @item.body
+
+= link_to 'Edit', edit_item_path(@item) 
 |
-\#{link_to 'Back', items_path}
+= link_to 'Back', :back

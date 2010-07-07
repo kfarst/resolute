@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos]
+  before_filter :find_item, :except => [:index, :new]
 
   def index
     if params[:type] == "page"
@@ -39,13 +40,11 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item = Item.find_by_title(params[:id].titleize)
   end
 
   # POST /items
   # POST /items.xml
   def create
-    @item = Item.find_by_title(params[:id].titleize)
 
     respond_to do |format|
       if @item.save
@@ -61,7 +60,6 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.xml
   def update
-    @item = Item.find_by_title(params[:id].titleize)
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
@@ -77,7 +75,6 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.xml
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
 
     respond_to do |format|

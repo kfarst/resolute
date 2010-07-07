@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos]
-  before_filter :find_item, :except => [:index, :new]
+  before_filter :find_item, :except => [:index, :new, :welcome, :videos]
+  after_filter :no_popup, :only => [:welcome]
 
   def index
     if params[:type] == "page"
@@ -82,15 +83,22 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
 
-def videos
+  def videos
+  end
+
+  def welcome
+  end
 end
 
 private
 
   def find_item
     unless @item = Item.find_by_title(params[:id].titleize)
-      redirect_to(root_path, :no_popup => true)
+      redirect_to(root_path)
     end
+  end
+
+  def no_popup
+    cookies[:popup] ||= false
   end

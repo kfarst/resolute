@@ -19,8 +19,8 @@ $(function() {
 
       $('#overlay').css('display', 'block');
       
-      var winHeight = $("#window video").height(),
-          winWidth = $("#window video").width(),
+      var winHeight = $("#window video").height() + 60,
+          winWidth = $("#window video").width() + 60,
           halfHeight = ($(window).height() / 2) - (winHeight / 2);
 
       $('#window').css('height', winHeight + 'px')

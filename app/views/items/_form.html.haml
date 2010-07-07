@@ -14,7 +14,7 @@
   .field
     = f.label :body
     %br
-    = f.cktext_area :body, :width => "80%"
+    = f.text_area :body, :width => "80%"
 
   - if @item.type == "Page"
     .field

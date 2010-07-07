@@ -3,8 +3,6 @@
 #title
   = @item.title
 
-= @item.body
+= simple_format @item.body
 
-= link_to 'Edit', edit_item_path(@item) 
-|
-= link_to 'Back', :back
+= render :partial => "admin/admin_links"

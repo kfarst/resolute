@@ -87,7 +87,6 @@ position: absolute;
 ul.nav_links li.first_level:hover ul.second_level {
 display: block;
 position: absolute;
-margin-top: 10px;
 }
 
 ul.second_level li.first_level {
@@ -99,6 +98,8 @@ float: left;
 background-color: white;
 padding: 10px;
 height: 100%;
+-moz-box-shadow: 5px 5px 10px #000000;
+-webkit-box-shadow: 5px 5px 10px #000000;
 }
 
 #panel {

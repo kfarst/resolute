@@ -1,13 +1,12 @@
 #title
   Listing items
 
-%table
+%table{:width => "100%"}
   - @items.each do |item|
     %tr
-      %td= item.type
       %td= item.title
       %td= item.body
-      %td= item.category_id
+      %td{:style => "color: gray;"}= item.category.title
       %td= link_to 'Show', item_path(item)
       %td= link_to 'Edit', edit_item_path(item, :type => params[:type])
       %td= link_to 'Destroy', item_path(item), :confirm => 'Are you sure?', :method => :delete

@@ -8,17 +8,13 @@
 ["Home", "About Us", "R.E.D. Training", "Consulting", "Contact Us"].each do |name|
   category = Category.find_or_create_by_title(name)
 
-  page1 = Page.find_or_create_by_title("#{name} Page 1")
-  page1.category_id = category.id
-  page1.save!
-
-  page2 = Page.find_or_create_by_title("#{name} Page 2")
-  page2.category_id = category.id
-  page2.save!
+  page = Page.find_or_create_by_title("#{name} Page")
+  page.category_id = category.id
+  page.save!
 end
 
-["farst.6@osu.edu"].each do |user|
+["farst.6@osu.edu", "resolutelacrosse@gmail.com"].each do |user|
   unless User.find_by_email(user)
-    User.create!(:email => user, :password => "elgxsy", :password_confirmation => "elgxsy")
+    User.create!(:email => user, :password => "buckeyes44", :password_confirmation => "buckeyes44")
   end
 end

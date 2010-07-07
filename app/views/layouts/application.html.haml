@@ -7,11 +7,8 @@
     = javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", :ckeditor
     = csrf_meta_tag
   %body
-    #overlay
-      #window
-        #tab
-          = link_to "X close", "#"
-
+    = render :partial => "items/popup", :locals => {:source => "http://www.youtube.com/v/avaSdC0QOUM&amp;hl=en_US&amp;fs=1" }            
+    
     #container
       #header 
         %span.logo 

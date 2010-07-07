@@ -1,8 +1,10 @@
-- youtube = YouTube::Client.new 'AI39si6LJxy8r8V_APOcGId8iuyBNt9-MhhJ03qRFLP2uWgiQ_JPKVnE5y3z5zXFTrWXU74Gr2pq4333O9SZm261RyQQmbOYUg' 
-- videos = youtube.featured_videos
+#title
+  Videos
 
-- videos.in_groups_of(3) do |group|
-  - group.each do |video|
-    - details = youtube.video_details(video.first.id)
-    = "detailed description: #{details.description}"
-    = "thumbnail url: #{details.thumbnail_url}"
+- videos = $youtube.videos_by(:most_viewed)
+
+- videos.videos.each do |video|
+  #video
+    %img{:id => "thumbnail", :src => video.thumbnails.first.url }
+    %span{:id => "video_title"}= video.title 
+    %span{:id => "video_description"}= video.description 

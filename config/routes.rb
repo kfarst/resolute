@@ -1,5 +1,7 @@
 Resolute::Application.routes.draw do |map|
   resources :items 
+  resources :pages, :controller => :items
+  resources :categories, :controller => :items
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -10,6 +12,7 @@ Resolute::Application.routes.draw do |map|
 
   # Sample of regular route:
      match ':id' => 'items#show', :as => :pretty_url
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

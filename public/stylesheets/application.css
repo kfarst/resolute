@@ -191,3 +191,7 @@ font-size: 12px;
 bottom: 0;
 width: 100%;
 }
+
+.clear {
+clear: both;
+}

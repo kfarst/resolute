@@ -15,6 +15,8 @@ $(function() {
 
   function showIntroVideo(e) {
     if ($('div#panel').length > 0) {
+      if ($('div#panel').first().hasClass('no_popup')) { return false; }
+
       $('#overlay').css('display', 'block');
       
       var winHeight = $("#window video").height(),
@@ -29,7 +31,9 @@ $(function() {
 
   function hideBackground(e) {
     if ($('div#panel').length > 0) {
-      $('div#content').css('background-color', 'transparent');
+      $('div#content').css('background-color', 'transparent')
+                      .css('-moz-box-shadow', 'none')
+                      .css('-webkit-box-shadow', 'none');
     }
   }
 

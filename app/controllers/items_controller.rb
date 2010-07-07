@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.xml
   def show
-    @item = Item.find_by_title(params[:id].titleize)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -90,3 +89,11 @@ end
 
 def videos
 end
+
+private
+
+  def find_item
+    unless @item = Item.find_by_title(params[:id].titleize)
+      redirect_to(root_path, :no_popup => true)
+    end
+  end

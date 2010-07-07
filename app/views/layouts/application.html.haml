@@ -4,7 +4,7 @@
     %title 
       Resolute Lacrosse
     = stylesheet_link_tag :all
-    = javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", :ckeditor, "#{RAILS_ROOT}/public/javascripts/video.js"
+    = javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", "#{RAILS_ROOT}/public/javascripts/video.js"
     = csrf_meta_tag
   %body
     = render :partial => "items/popup", :locals => {:source => "#{RAILS_ROOT}/public/videos/mirror.avi" }            

@@ -39,7 +39,7 @@ var VideoJS = Class.extend({
       num: 0, // Optional tracking of videoJSPLayers position
       controlsBelow: false, // Display control bar below video vs. on top
       controlsHiding: true, // Hide controls when not over the video
-      defaultVolume: 0.85, // Will be overridden by localStorage volume if apublic/javascripts/application.js
+      defaultVolume: 0.85, // Will be overridden by localStorage volume if available
       flashVersion: 9, // Required flash version for fallback
       linksHiding: true // Hide download links when video is supported
     };

@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos]
   before_filter :find_item, :except => [:index, :new, :welcome, :videos]
   after_filter :no_popup, :only => [:welcome]
-  uses_tiny_mce
   
 
   def index
@@ -65,7 +64,7 @@ class ItemsController < ApplicationController
   def update
 
     respond_to do |format|
-      if @item.update_attributes(params[:item])
+      if @item.update_attributes(params[@item.type])
         format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -91,7 +90,6 @@ class ItemsController < ApplicationController
 
   def welcome
   end
-end
 
 private
 
@@ -104,3 +102,4 @@ private
   def no_popup
     cookies[:popup] ||= false
   end
+end 

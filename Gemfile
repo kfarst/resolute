@@ -11,7 +11,7 @@ gem 'clearance'
 gem 'mongrel'
 gem 'devise', '1.1.rc2'
 gem 'youtube-g'
-gem 'tiny_mce'
+gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 

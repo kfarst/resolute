@@ -11,6 +11,10 @@ text-decoration: none;
 color: #97BFDE;
 }
 
+p {
+margin-bottom: 5px;
+}
+
 #container{
 margin-left: auto;
 margin-right: auto;
@@ -95,6 +99,8 @@ float: left;
 }
 
 #content{
+font-size: 14px;
+font-weight: none;
 background-color: white;
 padding: 10px;
 height: 100%;

@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos]
   before_filter :find_item, :except => [:index, :new, :welcome, :videos]
   after_filter :no_popup, :only => [:welcome]
+  uses_tiny_mce
+  
 
   def index
     if params[:type] == "page"

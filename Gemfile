@@ -9,8 +9,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '3.0.13'
 gem 'clearance'
 gem 'mongrel'
-gem 'devise', '1.1.rc0'
+gem 'devise', '1.1.rc2'
 gem 'youtube-g'
+gem 'tiny_mce'
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 

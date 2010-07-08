@@ -1,0 +1,39 @@
+# Here you can specify default options for TinyMCE across all controllers
+#
+ theme: advanced
+ plugins:
+  - advhr
+  - advimage
+  - advlink
+  - advlist
+  - autoresize
+  - autosave
+  - bbcode
+  - contextmenu
+  - directionality
+  - emotions
+  - example
+  - fullpage
+  - fullscreen
+  - iespell
+  - inlinepopups
+  - insertdatetime
+  - layer
+  - legacyoutput
+  - media
+  - nonbreaking
+  - noneditable
+  - pagebreak
+  - paste
+  - preview
+  - print
+  - save
+  - searchreplace
+  - spellchecker
+  - style
+  - tabfocus
+  - table
+  - template
+  - visualchars
+  - wordcount
+  - xhtmlxtras

@@ -1,8 +1,6 @@
-%p#notice= notice
-
 #title
   = @item.title
 
-= simple_format @item.body
+= @item.body
 
 = render :partial => "admin/admin_links"

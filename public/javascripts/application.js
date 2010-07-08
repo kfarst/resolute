@@ -26,6 +26,8 @@ $(function() {
       $('#window').css('height', winHeight + 'px')
                   .css('width', winWidth + 'px') 
                   .css('margin-top', halfHeight + 'px'); 
+
+      $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
     }
   }
 

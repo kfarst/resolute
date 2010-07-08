@@ -22,7 +22,11 @@ $(function() {
 
       var winHeight = "385",
           winWidth = $(".youtube-box object").width(),
-          halfHeight = ($(window).height() / 2) - (winHeight / 2);
+          halfHeight = ($(window).height() / 2) - (winHeight / 2),
+          videoSource = $(this).attr('video_url'); 
+
+      $('.youtube-box object param').first().attr('value',videoSource);
+      $('.youtube-box object embed').attr('src', videoSource);
 
       $('#window').css('height', winHeight + 'px')
                   .css('width', winWidth + 'px') 

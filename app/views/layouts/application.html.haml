@@ -27,6 +27,6 @@
                       = link_to page.title, pretty_url_path(page)
             %li.first_level= link_to "Sign Out", destroy_user_session_path if user_signed_in?
       #content<
-        %p.notice= notice
-        %p.alert= alert
+        %span.notice= notice
+        %span.alert= alert
         = yield

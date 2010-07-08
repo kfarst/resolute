@@ -64,7 +64,8 @@ class ItemsController < ApplicationController
   def update
 
     respond_to do |format|
-      if @item.update_attributes(params[@item.type])
+
+      if @item.update_attributes(params[@item.type.to_s.downcase])
         format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
         format.xml  { head :ok }
       else

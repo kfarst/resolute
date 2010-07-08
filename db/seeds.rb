@@ -15,7 +15,9 @@ end
 
 ["farst.6@osu.edu", "resolutelacrosse@gmail.com"].each do |user|
   unless User.find_by_email(user)
-    User.create!(:email => user, :password => "buckeyes44", :password_confirmation => "buckeyes44", :confirmed_at => DateTime.now)
-    def confirmation_url; return true; end
+    user = User.new
+    user.email = user 
+    user.password = user.password_confirmation = "buckeyes44"
+    user.save!
   end
 end

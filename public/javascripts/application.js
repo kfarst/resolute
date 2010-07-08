@@ -3,14 +3,31 @@
 $(function() { 
   $(document)                                       .ready(hideBackground);
   $(document)                                       .ready(showIntroVideo);
+  $('#video img')                                   .live('click', showYouTubeVideo);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
-  $('#window #tab a')                               .live('click', hideIntroVideo);
+  $('#window #tab a')                               .live('click', hideVideo);
 
-  function hideIntroVideo(e) {
+  function hideVideo(e) {
     e.preventDefault();
     $('#overlay').css('display', 'none');
+  }
+
+  function showYouTubeVideo(e) {
+    if ($('div#title').html() == "Videos") {
+
+      $('#overlay').css('display', 'block');
+      $('.video-js-box').css('display', 'none');
+
+      var winHeight = "385",
+          winWidth = $(".youtube-box object").width(),
+          halfHeight = ($(window).height() / 2) - (winHeight / 2);
+
+      $('#window').css('height', winHeight + 'px')
+                  .css('width', winWidth + 'px') 
+                  .css('margin-top', halfHeight + 'px'); 
+    }
   }
 
   function showIntroVideo(e) {
@@ -18,9 +35,10 @@ $(function() {
       if ($('div#panel').first().hasClass('no_popup')) { return false; }
 
       $('#overlay').css('display', 'block');
+      $('.youtube-box').css('display', 'none');
       
-      var winHeight = $("#window video").height(),
-          winWidth = $("#window video").width(),
+      var winHeight = $(".video-js-box video").height(),
+          winWidth = $(".video-js-box video").width(),
           halfHeight = ($(window).height() / 2) - (winHeight / 2);
 
       $('#window').css('height', winHeight + 'px')

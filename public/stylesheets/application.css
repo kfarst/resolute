@@ -181,21 +181,29 @@ margin-right: auto;
 
 #thumbnail {
 float: left;
+width: 20%;
+cursor: pointer;
+}
+
+#video_info {
+float: right;
+width: 80%;
 }
 
 #video_title {
-float: right;
+float: left;
 font-weight: bold;
-font-size: 12px;
+font-size: 16px;
 top: 0;
-width: 100%;
+margin: 0 10px 10px 10px;
+clear: right;
 }
 
 #video_description {
-float: right;
+float: left;
 font-size: 12px;
 bottom: 0;
-width: 100%;
+margin: 0 10px 0 10px;
 }
 
 .clear {

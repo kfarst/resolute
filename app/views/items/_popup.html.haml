@@ -16,5 +16,11 @@
                   %param{:name => "flashvars", :value => "config={\"clip\":{\"url\":\"http://video-js.zencoder.com/oceans-clip.mp4\",\"autoPlay\":false,\"autoBuffering\":true}}"}/
                   / Image Fallback
                   %img{:alt => "Poster Image", :height => "264", :src => "http://video-js.zencoder.com/oceans-clip.png", :title => "No video playback capabilities.", :width => "640"}/
-    .clear
       / End VideoJS
+      .youtube-box
+        %object{:height => "385", :width => "640"}
+          %param{:name => "movie", :value => "http://www.youtube.com/v/56JJjfUpkn4&hl=en_US&fs=1"}
+          %param{:name => "allowFullScreen", :value => "true"}
+          %param{:name => "allowscriptaccess", :value => "always"}
+          %embed{:allowfullscreen => "true", :allowscriptaccess => "always", :height => "385", :src => "http://www.youtube.com/v/56JJjfUpkn4&hl=en_US&fs=1", :type => "application/x-shockwave-flash", :width => "640"}
+        .clear

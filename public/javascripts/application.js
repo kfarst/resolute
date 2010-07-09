@@ -25,13 +25,14 @@ $(function() {
       $('#overlay').css('display', 'block');
       $('.video-js-box').css('display', 'none');
 
-      var winHeight = "385",
-          winWidth = $(".youtube-box object").width(),
+      var winHeight = "425",
+          winWidth = $(".youtube-box object").width() + 10,
           halfHeight = ($(window).height() / 2) - (winHeight / 2),
           halfWidth = ($(window).width() / 2) - (winWidth / 2),
           videoSource = $(this).attr('video_url'); 
 
       $('.youtube-box object param').first().attr('value',videoSource);
+      $('.youtube-box').css('margin-top', '7px');
       $('.youtube-box object embed').attr('src', videoSource);
 
       $('#window').css('height', winHeight + 'px')
@@ -48,8 +49,8 @@ $(function() {
       $('#overlay').css('display', 'block');
       $('.youtube-box').css('display', 'none');
       
-      var winHeight = $(".video-js-box video").height(),
-          winWidth = $(".video-js-box video").width(),
+      var winHeight = $(".video-js-box video").height() + 40,
+          winWidth = $(".video-js-box video").width() + 10,
           halfWidth = ($(window).width() / 2) - (winWidth / 2),
           halfHeight = ($(window).height() / 2) - (winHeight / 2);
 
@@ -59,6 +60,7 @@ $(function() {
                   .css('margin-left', halfWidth + 'px'); 
 
       $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
+      $('video.video-js').css('margin-top', '7px');
     }
   }
 

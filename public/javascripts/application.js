@@ -8,6 +8,11 @@ $(function() {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $('#window #tab a')                               .live('click', hideVideo);
+  $('#contest a')                                   .live('click', openContestWindow);
+
+  function openContestWindow(e) {
+    //window.open($(this).attr('rel','external'));
+  }
 
   function hideVideo(e) {
     e.preventDefault();
@@ -23,6 +28,7 @@ $(function() {
       var winHeight = "385",
           winWidth = $(".youtube-box object").width(),
           halfHeight = ($(window).height() / 2) - (winHeight / 2),
+          halfWidth = ($(window).width() / 2) - (winWidth / 2),
           videoSource = $(this).attr('video_url'); 
 
       $('.youtube-box object param').first().attr('value',videoSource);
@@ -30,7 +36,8 @@ $(function() {
 
       $('#window').css('height', winHeight + 'px')
                   .css('width', winWidth + 'px') 
-                  .css('margin-top', halfHeight + 'px'); 
+                  .css('margin-top', halfHeight + 'px') 
+                  .css('margin-left', halfWidth + 'px'); 
     }
   }
 
@@ -43,11 +50,13 @@ $(function() {
       
       var winHeight = $(".video-js-box video").height(),
           winWidth = $(".video-js-box video").width(),
+          halfWidth = ($(window).width() / 2) - (winWidth / 2),
           halfHeight = ($(window).height() / 2) - (winHeight / 2);
 
       $('#window').css('height', winHeight + 'px')
                   .css('width', winWidth + 'px') 
-                  .css('margin-top', halfHeight + 'px'); 
+                  .css('margin-top', halfHeight + 'px') 
+                  .css('margin-left', halfWidth + 'px'); 
 
       $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
     }

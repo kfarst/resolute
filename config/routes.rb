@@ -1,7 +1,6 @@
 Resolute::Application.routes.draw do |map|
-  resources :contests
-
   resources :items 
+  resources :contest, :controller => :contest
   resources :pages, :controller => :items
   resources :categories, :controller => :items
   devise_for :users

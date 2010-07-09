@@ -13,10 +13,10 @@
   page.save!
 end
 
-["farst.6@osu.edu", "resolutelacrosse@gmail.com"].each do |user|
-  unless User.find_by_email(user)
+["farst.6@osu.edu", "resolutelacrosse@gmail.com"].each do |email|
+  unless User.find_by_email(email)
     user = User.new
-    user.email = user 
+    user.email = email
     user.password = user.password_confirmation = "buckeyes44"
     user.save!
   end

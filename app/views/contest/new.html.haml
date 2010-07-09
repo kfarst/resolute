@@ -1,0 +1,16 @@
+%head
+  %title Enter to win a free lacrosse stick!
+  = stylesheet_link_tag :all
+
+%body{:style => 'background: none;'}
+  %h1
+    Enter your name and address below for your chance to win a lacrosse stick!
+  %br
+
+  - if flash.any?
+    #flash
+      - flash.each do |key, message|
+        %span{ :class => key }= message
+
+  = render 'form'
+

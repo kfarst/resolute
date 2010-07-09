@@ -27,6 +27,9 @@
                       = link_to page.title, pretty_url_path(page)
             %li.first_level= link_to "Sign Out", destroy_user_session_path if user_signed_in?
       #content<
-        %span.notice= notice
-        %span.alert= alert
+        - if flash.any?
+          #flash
+            - flash.each do |key, message|
+              %span{ :class => key }= message
+
         = yield

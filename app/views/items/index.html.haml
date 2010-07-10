@@ -5,7 +5,6 @@
   - @items.each do |item|
     %tr
       %td= item.title
-      %td= item.body
       %td{:style => "color: gray;"}= item.category.title if params[:type] == "page"
       %td= link_to 'Show', polymorphic_path(item)
       %td= link_to 'Edit', edit_polymorphic_path(item, :type => params[:type])

@@ -8,10 +8,10 @@ $(function() {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $('#window #tab a')                               .live('click', hideVideo);
-  $('#contest a')                                   .live('click', openContestWindow);
+  $('#contest-text a')                              .live('click', openContestWindow);
 
   function openContestWindow(e) {
-    //window.open($(this).attr('rel','external'));
+    //debugger;
   }
 
   function hideVideo(e) {

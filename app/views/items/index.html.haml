@@ -8,9 +8,9 @@
       %td= item.body
       %td{:style => "color: gray;"}= item.category.title if params[:type] == "page"
       %td= link_to 'Show', polymorphic_path(item)
-      %td= link_to 'Edit', edit_polymorphic_path(item)
+      %td= link_to 'Edit', edit_polymorphic_path(item, :type => params[:type])
       %td= link_to 'Destroy', polymorphic_path(item), :confirm => 'Are you sure?', :method => :delete
 %br
-= link_to 'New Item', new_item_path
+= link_to 'New Item', new_item_path(:type => params[:type])
 |
 = link_to 'Admin Home', admin_path

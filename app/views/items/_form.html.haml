@@ -16,7 +16,7 @@
     %br
     = f.cktext_area :body, :width => "80%", :height => "600px"
 
-  - if @item.type == "Page"
+  - if params[:type] == "page"
     .field
       = f.label "Category"
       %br

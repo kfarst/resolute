@@ -73,7 +73,7 @@ $(function() {
   }
 
   function panelAsLink(e) {
-    var url = $(this).children()[0].innerHTML.toLowerCase().replace(" ", "-");
+    var url = $(this).children()[0].innerHTML.toLowerCase().replace("/", "-").replace(" ", "-");
     window.location.replace(e.view.location.href + url);
   }
 

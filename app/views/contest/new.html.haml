@@ -1,16 +1,18 @@
 %head
-  %title Enter to win a free lacrosse stick!
+  %title Enter to win a Proton Power with Katana handle!
   = stylesheet_link_tag :all
 
-%body{:style => 'background: none;'}
-  %h1
-    Enter your name and address below for your chance to win a lacrosse stick!
-  %br
+%body
+  #container
+    #content
+      #title
+        Enter to win a Proton Power with Katana handle!
+      %br
+        (Only one entry per person)
+      %br
+      - if flash.any?
+        #flash
+          - flash.each do |key, message|
+            %span{ :class => key }= message
 
-  - if flash.any?
-    #flash
-      - flash.each do |key, message|
-        %span{ :class => key }= message
-
-  = render 'form'
-
+      = render 'form'

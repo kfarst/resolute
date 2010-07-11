@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.xml
   def create
+    raise params.inspect.to_s
 
     respond_to do |format|
       if @item.save
@@ -95,7 +96,7 @@ class ItemsController < ApplicationController
 private
 
   def find_item
-    unless @item = Item.find_by_title(params[:id].titleize)
+    unless @item = Item.find_by_title((params[:id]).to_s.titleize)
       redirect_to(root_path)
     end
   end

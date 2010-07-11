@@ -1,0 +1,23 @@
+%head
+  %title Listing contest entries
+  = stylesheet_link_tag :all
+
+%body
+  #container
+    #content
+      #title
+        Listing contest entries
+      %table
+        %tr
+          %th Name
+          %th Email
+          %th
+          %th
+          %th
+        - Contest.all.each do |contest|
+          %tr
+            %td{:style => 'background-color: #C0C0C0;'}= contest.name
+            %td= contest.email
+            %td= link_to 'Destroy', contest, :confirm => 'Are you sure?', :method => :delete
+      %br
+      = link_to 'Admin Home', admin_path

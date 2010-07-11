@@ -7,17 +7,21 @@
     #content
       #title
         Listing contest entries
-      %table
+      %table{:width => "100%", :border => "1", :style => "text-align: center;"}
         %tr
           %th Name
           %th Email
-          %th
-          %th
+          %th Age
+          %th Position
+          %th School
           %th
         - Contest.all.each do |contest|
           %tr
-            %td{:style => 'background-color: #C0C0C0;'}= contest.name
+            %td= contest.name
             %td= contest.email
+            %td= contest.age
+            %td= contest.position
+            %td= contest.school
             %td= link_to 'Destroy', contest, :confirm => 'Are you sure?', :method => :delete
       %br
       = link_to 'Admin Home', admin_path

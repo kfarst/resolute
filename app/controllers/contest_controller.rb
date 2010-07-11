@@ -2,7 +2,7 @@ class ContestController < ApplicationController
   # GET /contests/new
   # GET /contests/new.xml
   layout nil
-  before_filter :authenticate_user!, :expect => [:new]
+  before_filter :authenticate_user!, :except => [:new]
 
   def new
     @contest = Contest.new

@@ -12,17 +12,17 @@
 ActiveRecord::Schema.define(:version => 20100710194802) do
 
   create_table "ckeditor_assets", :force => true do |t|
-    t.string   "data_file_name",                                 :null => false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    :limit => 30
-    t.string   "type",              :limit => 25
-    t.string   "guid",              :limit => 10
-    t.integer  "locale",            :limit => 1,  :default => 0
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "data_file_name",                                 :null => false
+    t.string    "data_content_type"
+    t.integer   "data_file_size"
+    t.integer   "assetable_id"
+    t.string    "assetable_type",    :limit => 30
+    t.string    "type",              :limit => 25
+    t.string    "guid",              :limit => 10
+    t.integer   "locale",                          :default => 0
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
@@ -30,33 +30,33 @@ ActiveRecord::Schema.define(:version => 20100710194802) do
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
 
   create_table "contests", :force => true do |t|
-    t.string   "name"
-    t.string   "email",      :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "age"
-    t.string   "school"
-    t.string   "position"
+    t.string    "name"
+    t.string    "email",      :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "age"
+    t.string    "school"
+    t.string    "position"
   end
 
   create_table "items", :force => true do |t|
-    t.string   "type"
-    t.string   "title"
-    t.text     "body"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "type"
+    t.string    "title"
+    t.text      "body"
+    t.integer   "category_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email",                               :default => "", :null => false
+    t.string    "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string    "password_salt",                       :default => "", :null => false
+    t.string    "reset_password_token"
+    t.string    "remember_token"
+    t.timestamp "remember_created_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

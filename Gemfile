@@ -13,7 +13,11 @@ gem 'devise', '1.1.rc2'
 gem 'youtube-g'
 gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
+<<<<<<< HEAD
 gem 'mysql'
+=======
+gem 'factory_girl'
+>>>>>>> WIP: adding contact form to the site
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 
@@ -27,12 +31,12 @@ gem 'mysql'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for certain environments:
- gem 'rspec', :group => :development
+gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
  group :development do
    gem 'webrat'
  end
 
- gem 'rspec', :group => :test
+gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test
  group :test do
    gem 'webrat'
  end

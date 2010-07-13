@@ -10,6 +10,7 @@ Resolute::Application.routes.draw do |map|
   match '/admin' => 'admin#index', :as => :admin
   match '/home' => 'items#welcome', :as => :welcome
   match '/videos' => 'items#videos', :as => :videos
+  match '/contact-us' => 'items#contact', :as => :contact_us
 
   # Sample of regular route:
   match ':id' => 'items#show', :as => :pretty_url

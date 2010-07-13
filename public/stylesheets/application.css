@@ -263,6 +263,7 @@ left: 0;
 position: fixed;
 width: 90px;
 margin: 0 0 10px 10px;
+position: fixed;
 }
 
 #contest-text a {

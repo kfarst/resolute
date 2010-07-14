@@ -7,10 +7,17 @@ Resolute::Application.routes.draw do |map|
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+<<<<<<< HEAD
   match '/admin' => 'admin#index', :as => :admin
   match '/home' => 'items#welcome', :as => :welcome
   match '/videos' => 'items#videos', :as => :videos
   match '/contact-us' => 'items#contact', :as => :contact_us
+=======
+     match '/admin' => 'admin#index', :as => :admin
+     match '/home' => 'items#welcome', :as => :welcome
+     match '/videos' => 'items#videos', :as => :videos
+     match '/contact-us' => 'items#contact', :as => :contact_us
+>>>>>>> 6445f4bcc7674234a17172c93e7afe2774045cc7
 
   # Sample of regular route:
   match ':id' => 'items#show', :as => :pretty_url

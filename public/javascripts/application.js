@@ -73,8 +73,9 @@ $(function() {
   }
 
   function panelAsLink(e) {
-    var url = $(this).children()[0].innerHTML.toLowerCase().replace("/", "-").replace(" ", "-");
-    window.location.replace(e.view.location.href + url);
+    var path = $(this).children()[0].innerHTML.toLowerCase().replace(" ", "-").replace("&amp; ", "&-"),
+    url = e.view.location.href.split("/");
+    window.location.replace(url [0] + "//" + url[2] + "/" + path);
   }
 
   function menuSlideDown(e) {

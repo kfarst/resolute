@@ -3,6 +3,6 @@ class Item < ActiveRecord::Base
   validates_presence_of :title
 
   def to_param
-    title.to_s.parameterize.gsub("/", "-")
+    title.to_s.downcase.gsub(" ", "-")
   end
 end

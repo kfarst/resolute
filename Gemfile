@@ -13,15 +13,8 @@ gem 'devise', '1.1.rc2'
 gem 'youtube-g'
 gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
-<<<<<<< HEAD
-<<<<<<< HEAD
 gem 'mysql'
-=======
->>>>>>> 6445f4bcc7674234a17172c93e7afe2774045cc7
 gem 'factory_girl'
-=======
-gem 'mysql'
->>>>>>> replaced sqlite3 with mysql
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 

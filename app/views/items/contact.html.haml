@@ -1,4 +1,6 @@
-= form_tag @item, contest_email(@item) do |f|
+#title
+  Contact Us
+- form_tag @item, contest_email(@item) do |f|
   - if @item.errors.any?
     #error_explanation
       %h2
@@ -22,4 +24,3 @@
 
   .actions
     = f.submit
-

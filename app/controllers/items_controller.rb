@@ -93,6 +93,9 @@ class ItemsController < ApplicationController
   def welcome
   end
 
+  def contact
+  end
+
 private
 
   def find_item

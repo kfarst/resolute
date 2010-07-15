@@ -13,6 +13,7 @@ gem 'devise', '1.1.rc2'
 gem 'youtube-g'
 gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
+gem 'mysql'
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 

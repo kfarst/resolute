@@ -13,11 +13,8 @@ gem 'devise', '1.1.rc2'
 gem 'youtube-g'
 gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
-<<<<<<< HEAD
 gem 'mysql'
-=======
 gem 'factory_girl'
->>>>>>> WIP: adding contact form to the site
 #gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 

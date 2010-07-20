@@ -1,6 +1,7 @@
 Resolute::Application.routes.draw do |map|
   resources :items 
-  resources :contest, :controller => :contest
+  resources :contest
+  resources :contact, :only => [:new, :create]
   resources :pages, :controller => :items
   resources :categories, :controller => :items
   devise_for :users
@@ -10,7 +11,6 @@ Resolute::Application.routes.draw do |map|
   match '/admin' => 'admin#index', :as => :admin
   match '/home' => 'items#welcome', :as => :welcome
   match '/videos' => 'items#videos', :as => :videos
-  match '/contact-us' => 'items#contact', :as => :contact_us
 
   # Sample of regular route:
   match ':id' => 'items#show', :as => :pretty_url

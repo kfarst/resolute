@@ -15,8 +15,6 @@ gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branc
 gem 'paperclip'
 gem 'mysql'
 gem 'factory_girl'
-#gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
-
 
 # Deploy with Capistrano
 # gem 'capistrano'

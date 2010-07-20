@@ -1,0 +1,30 @@
+#title
+  Contact Us
+- form_for @message, :url => contacts_path(@message) do |f|
+  - if @message.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@message.errors.count, "error")
+        prohibited this message from being sent:
+      %ul
+        - @message.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :first_name
+    %br
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email
+  .field
+    = f.label :message
+    %br
+    = f.text_area :message, :width => "80%", :height => "600px"
+
+  .actions
+    = f.submit "Send Message"

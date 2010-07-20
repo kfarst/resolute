@@ -51,7 +51,7 @@ Resolute::Application.configure do
                                           :port => 587,  
                                           :domain => 'resolutelacrosse.com',  
                                           :user_name => 'resolutelacrosse@gmail.com',  
-                                          :password => '',  
+                                          :password => 'beresolute3444',  
                                           :authentication => 'plain',  
                                           :enable_starttls_auto => true } 
 end

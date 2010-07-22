@@ -45,14 +45,13 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.xml
   def create
-    raise params.inspect.to_s
-
+    raise params.inspect
     respond_to do |format|
       if @item.save
         format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :alert => 'There was a problem creating this item.' }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end

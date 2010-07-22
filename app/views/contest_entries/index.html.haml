@@ -1,27 +1,20 @@
-%head
-  %title Listing contest entries
-  = stylesheet_link_tag :all
-
-%body
-  #container
-    #content
-      #title
-        Listing contest entries
-      %table{:width => "100%", :border => "1", :style => "text-align: center;"}
-        %tr
-          %th Name
-          %th Email
-          %th Age
-          %th Position
-          %th School
-          %th
-        - ContestEntry.all.each do |contest|
-          %tr
-            %td= contest.name
-            %td= contest.email
-            %td= contest.age
-            %td= contest.position
-            %td= contest.school
-            %td= link_to 'Destroy', contest_entry_path(contest), :confirm => 'Are you sure?', :method => :delete
-      %br
-      = link_to 'Admin Home', admin_path
+#title
+  Listing contest entries
+%table{:width => "100%", :border => "1", :style => "text-align: center;"}
+  %tr
+    %th Name
+    %th Email
+    %th Age
+    %th Position
+    %th School
+    %th
+  - ContestEntry.all.each do |contest|
+    %tr
+      %td= contest.name
+      %td= contest.email
+      %td= contest.age
+      %td= contest.position
+      %td= contest.school
+      %td= link_to 'Destroy', contest, :confirm => 'Are you sure?', :method => :delete
+%br
+= link_to 'Admin Home', admin_path

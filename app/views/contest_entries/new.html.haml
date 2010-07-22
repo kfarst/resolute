@@ -1,18 +1,11 @@
-%head
-  %title Enter to win a Proton Power with Katana handle!
-  = stylesheet_link_tag :all
+#title
+  Enter to win a Proton Power with Katana handle!
+%br
+  (Only one entry per person)
+%br
+- if flash.any?
+  #flash
+    - flash.each do |key, message|
+      %span{ :class => key }= message
 
-%body
-  #container
-    #content
-      #title
-        Enter to win a Proton Power with Katana handle!
-      %br
-        (Only one entry per person)
-      %br
-      - if flash.any?
-        #flash
-          - flash.each do |key, message|
-            %span{ :class => key }= message
-
-      = render 'form'
+= render 'form'

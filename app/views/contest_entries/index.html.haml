@@ -15,13 +15,13 @@
           %th Position
           %th School
           %th
-        - Contest.all.each do |contest|
+        - ContestEntry.all.each do |contest|
           %tr
             %td= contest.name
             %td= contest.email
             %td= contest.age
             %td= contest.position
             %td= contest.school
-            %td= link_to 'Destroy', contest, :confirm => 'Are you sure?', :method => :delete
+            %td= link_to 'Destroy', contest_entry_path(contest), :confirm => 'Are you sure?', :method => :delete
       %br
       = link_to 'Admin Home', admin_path

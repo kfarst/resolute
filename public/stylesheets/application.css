@@ -239,10 +239,12 @@ color: #990000;
 border: 1px solid #990000;
 padding: 5px;
 margin: 5px 0 5px 0;
+width: 100%;
 }
 
 div#flash {
 margin: 10px 0 10px 0;
+width: 100%;
 }
 
 #contest {

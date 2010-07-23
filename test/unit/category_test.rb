@@ -12,7 +12,9 @@ class CategoryTest < ActiveSupport::TestCase
     category.pages.build(:title => "Test Page")
     category.save!
     assert category.pages.count == 1
+
+    page_name = category.pages.first.title
     category.destroy
-    assert Page.all.count == 0
+    assert_nil Page.find_by_title(page_name)
   end
 end

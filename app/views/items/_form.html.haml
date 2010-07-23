@@ -20,7 +20,7 @@
 
   - if params[:type] == "page"
     .field
-      = f.label "Category"
+      = f.label :category_id
       %br
       = f.collection_select :category_id, Category.find(:all), :id, :title, :prompt => true 
 

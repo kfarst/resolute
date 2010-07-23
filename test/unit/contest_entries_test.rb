@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContestTest < ActiveSupport::TestCase
   def setup
-    @contest = Contest.new(:name => "John Smith", :email => "john@example.com", 
+    @contest = ContestEntry.new(:name => "John Smith", :email => "john@example.com", 
                           :age => "22", :school => "James Woods High School",
                           :position => "Defense")
   end
@@ -40,7 +40,7 @@ class ContestTest < ActiveSupport::TestCase
   test "should not save the contest entry if the email is not unique" do
     assert @contest.save, "contest not saved"
 
-    @clone_contest = Contest.new(:name => "John Smith", :email => "john@example.com", 
+    @clone_contest = ContestEntry.new(:name => "John Smith", :email => "john@example.com", 
                                 :age => "22", :school => "James Woods High School",
                                 :position => "Defense")
 

@@ -4,10 +4,10 @@
     %title 
       Resolute Lacrosse
     = stylesheet_link_tag :all
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{RAILS_ROOT}/public/javascripts/video.js", :ckeditor, :defaults
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{Rails.root}/public/javascripts/video.js", :ckeditor, :defaults
     = csrf_meta_tag
   %body
-    = render :partial => "items/popup", :locals => {:source => "#{RAILS_ROOT}/public/videos/mirror.avi" }            
+    = render :partial => "items/popup", :locals => {:source => "#{Rails.root}/public/videos/mirror.avi" }            
     
     #container
       #header 

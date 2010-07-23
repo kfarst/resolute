@@ -24,14 +24,14 @@ gem 'mysql'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for certain environments:
-gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
+# gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
  group :development do
-   gem 'webrat'
  end
 
 gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test
  group :test do
-   gem 'webrat'
    gem 'factory_girl'
    gem 'database_cleaner'
+   gem 'capybara'
+   gem 'launchy'
  end

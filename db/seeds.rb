@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-["Home", "About Us", "R.E.D. Training", "Consulting", "Contact Us"].each do |name|
+["Home", "About Us", "Camps & Clinics", "Consulting", "Contact Us"].each do |name|
   category = Category.find_or_create_by_title(name)
 
   page = Page.find_or_create_by_title("#{name} Page")

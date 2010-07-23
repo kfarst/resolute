@@ -1,14 +1,15 @@
 #title
   Listing items
 
-%table{:width => "100%"}
+%ul#sortable{:width => "100%"}
   - @items.each do |item|
-    %tr
-      %td= item.title
-      %td{:style => "color: gray;"}= item.category.title if params[:type] == "page"
-      %td= link_to 'Show', polymorphic_path(item)
-      %td= link_to 'Edit', edit_polymorphic_path(item, :type => params[:type])
-      %td= link_to 'Destroy', polymorphic_path(item), :confirm => 'Are you sure?', :method => :delete
+    %li{:id => "item_#{item.id}"}
+      %div.sort-item= item.title
+      %div#actions
+        %div.sort-item{:style => "color: gray;"}= item.category.title if params[:type] == "page"
+        %div.sort-item= link_to 'Show', polymorphic_path(item)
+        %div.sort-item= link_to 'Edit', edit_polymorphic_path(item, :type => params[:type])
+        %div.sort-item= link_to 'Destroy', polymorphic_path(item), :confirm => 'Are you sure?', :method => :delete
 %br
 = link_to 'New Item', new_item_path(:type => params[:type])
 |

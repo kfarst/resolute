@@ -26,6 +26,7 @@ gem 'mysql'
 # Bundle gems for certain environments:
 # gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
  group :development do
+  gem 'ruby-debug'
  end
 
 gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test

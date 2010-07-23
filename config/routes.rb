@@ -3,7 +3,13 @@ Resolute::Application.routes.draw do |map|
   resources :contest_entries, :only => [:new, :create, :index, :destroy]
   resources :contact, :only => [:new, :create]
   resources :pages, :controller => :items
-  resources :categories, :controller => :items
+
+  resources :categories, :controller => :items do
+    collection do
+      post :sort
+    end
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation:

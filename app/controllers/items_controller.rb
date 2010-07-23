@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos, :contact]
-  before_filter :find_item, :except => [:index, :new, :welcome, :videos, :contact, :create]
+  before_filter :find_item, :only => [:show, :edit, :update, :destroy]
 
   def index
     if params[:type] == "page"
-      @items = Page.all
+      @items = Page.list_order
     elsif params[:type] == "category"
-      @items = Category.all
+      @items = Category.list_order
     end
 
     respond_to do |format|
@@ -97,6 +97,13 @@ class ItemsController < ApplicationController
   end
 
   def welcome
+  end
+
+  def sort
+    params[:item].each_with_index do |item_id, i|
+      Item.find(item_id).update_attribute(:position, i)
+    end
+    render :text => params[:item]
   end
 
 private

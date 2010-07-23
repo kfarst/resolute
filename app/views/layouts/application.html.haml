@@ -4,7 +4,7 @@
     %title 
       Resolute Lacrosse
     = stylesheet_link_tag :all
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{Rails.root}/public/javascripts/video.js", :ckeditor, :defaults
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{Rails.root}/public/javascripts/video.js", :ckeditor, :defaults, "jquery-ui"
     = csrf_meta_tag
   %body
     = render :partial => "items/popup", :locals => {:source => "#{Rails.root}/public/videos/mirror.avi" }            
@@ -18,7 +18,7 @@
           Never Stop. Never Quit. Be Resolute.
         #nav
           %ul.nav_links
-            - Category.all.each do |category|
+            - Category.list_order.each do |category|
               %li.first_level
                 = link_to category.title, pretty_url_path(category)
                 %ul.second_level

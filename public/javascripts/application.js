@@ -8,10 +8,15 @@ $(function() {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $('#window #tab a')                               .live('click', hideVideo);
-  $('#contest-text a')                              .live('click', openContestWindow);
+  $(document)                                       .ready(listSort);
 
-  function openContestWindow(e) {
-    //debugger;
+  function listSort(e) {
+    $("#sortable").sortable({
+      update: function() {
+        $.post("/categories/sort", $(this).sortable('serialize'));
+      }
+    });
+		$("#sortable").disableSelection();
   }
 
   function hideVideo(e) {

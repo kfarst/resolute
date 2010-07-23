@@ -2,12 +2,12 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos, :contact]
-  before_filter :find_item, :except => [:index, :new, :welcome, :videos, :contact]
+  before_filter :find_item, :except => [:index, :new, :welcome, :videos, :contact, :create]
 
   def index
     if params[:type] == "page"
       @items = Page.all
-    elsif params[:type] == "cat"
+    elsif params[:type] == "category"
       @items = Category.all
     end
 
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   # GET /items/new.xml
   def new
     @item = Item.new
-
+    @item.type = params[:type].classify
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }
@@ -40,12 +40,20 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item.update_attributes(params[:item])
+
+    respond_to do |format|
+      format.html { render :action => :show }
+      format.xml  { render :xml => @item }
+    end
   end
 
   # POST /items
   # POST /items.xml
   def create
-    raise params.inspect
+    @item = Item.new(params[:item])
+    @item.type = params[:item][:type]
+
     respond_to do |format|
       if @item.save
         format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
@@ -76,10 +84,11 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.xml
   def destroy
+    type = @item.type.to_s.downcase
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to(items_url) }
+      format.html { redirect_to items_url(:type => type) }
       format.xml  { head :ok }
     end
   end

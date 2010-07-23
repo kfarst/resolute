@@ -1,5 +1,5 @@
-Factory.define :page do |p|
-  p.title 'Test Page Title'
-  p.body  'Test Page Body'
-  p.category_id nil
+Factory.define :category, :class => 'Item' do |p|
+  p.type 'Category'
+  p.title 'Test Category Title'
+  p.body  'Test Category Body'
 end

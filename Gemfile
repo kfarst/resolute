@@ -13,7 +13,6 @@ gem 'youtube-g'
 gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
 gem 'mysql'
-gem 'factory_girl'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -33,4 +32,6 @@ gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
 gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test
  group :test do
    gem 'webrat'
+   gem 'factory_girl'
+   gem 'database_cleaner'
  end

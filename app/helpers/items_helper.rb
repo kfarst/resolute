@@ -1,5 +1,5 @@
 module ItemsHelper
-  def editable_item_form_options(item)
+  def item_form_options(item)
     options = {}
     options[:url] = polymorphic_path(item)
     options[:html] = {}

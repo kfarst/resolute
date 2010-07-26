@@ -2,7 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(function() { 
   $(document)                                       .ready(hideBackground);
-  //$(document)                                       .ready(showIntroVideo);
   $('#video img')                                   .live('click', showYouTubeVideo);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);

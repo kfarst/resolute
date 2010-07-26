@@ -1,7 +1,7 @@
 class ContestEntriesController < ApplicationController
   # GET /contest_entries/new
   # GET /contest_entries/new.xml
-  before_filter :authenticate_user!, :except => [:new]
+  before_filter :authenticate_user!, :except => [:new, :create]
 
   def new
     @contest_entry = ContestEntry.new

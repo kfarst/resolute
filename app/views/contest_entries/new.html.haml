@@ -3,9 +3,4 @@
 %br
   (Only one entry per person)
 %br
-- if flash.any?
-  #flash
-    - flash.each do |key, message|
-      %span{ :class => key }= message
-
 = render 'form'

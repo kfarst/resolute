@@ -40,7 +40,6 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item.update_attributes(params[:item])
 
     respond_to do |format|
       format.html { render :action => :show }
@@ -68,6 +67,7 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.xml
   def update
+    @item.update_attributes(params[:item])
 
     respond_to do |format|
 

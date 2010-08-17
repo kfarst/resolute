@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   def edit
 
     respond_to do |format|
-      format.html { render :action => :show }
+      format.html { render :action => :edit }
       format.xml  { render :xml => @item }
     end
   end

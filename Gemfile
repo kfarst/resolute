@@ -10,7 +10,7 @@ gem 'clearance'
 gem 'mongrel'
 gem 'devise', '1.1.rc2'
 gem 'youtube-g'
-gem 'ckeditor', :git => "git://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
+gem 'ckeditor', :git => "http://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
 gem 'mysql'
 

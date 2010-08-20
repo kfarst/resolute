@@ -1,0 +1,43 @@
+= form_for(@camp_registration) do |f|
+  - if @camp_registration.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@camp_registration.errors.count, "error")
+        prohibited this camp_registration from being saved:
+      %ul
+        - @camp_registration.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  .field
+    = f.label :age
+    %br/
+    = f.text_field :age, :size => 2
+  .field
+    = f.label :position
+    %br/
+    = f.text_field :position
+  .field
+    = f.label :school
+    %br/
+    = f.text_field :school
+  .field
+    = f.label :comments
+    %br/
+    = f.text_area :comments, :rows => "10", :cols => "50"
+  .actions
+    %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post"}
+      %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}
+      %input{:name => "hosted_button_id", :type => "hidden", :value => "UQUUEGQTEF5TC"}
+      %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif", :type => "image"}
+      %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypal.com/en_US/i/scr/pixel.gif", :width => "1"}

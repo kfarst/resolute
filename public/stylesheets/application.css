@@ -308,3 +308,7 @@ padding: 10px;
 div#actions {
 float: right;
 }
+
+div.field {
+margin: 5px;
+}

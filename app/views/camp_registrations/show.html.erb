@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @camp_registration.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @camp_registration.age %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @camp_registration.position %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @camp_registration.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @camp_registration.phone %>
+</p>
+
+<p>
+  <b>School:</b>
+  <%= @camp_registration.school %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @camp_registration.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_camp_registration_path(@camp_registration) %> |
+<%= link_to 'Back', camp_registrations_path %>

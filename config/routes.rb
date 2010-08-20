@@ -1,4 +1,6 @@
 Resolute::Application.routes.draw do |map|
+  resources :camp_registration, :controller => :camp_registrations
+
   resources :items 
   resources :contest_entries, :only => [:new, :create, :index, :destroy]
   resources :contact, :only => [:new, :create]

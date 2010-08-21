@@ -109,7 +109,7 @@ class ItemsController < ApplicationController
 private
 
   def find_item
-    unless @item = Item.find_by_title((params[:id]).to_s.titleize)
+    unless @item = Item.find_by_slug(params[:id])
       redirect_to(root_path)
     end
   end

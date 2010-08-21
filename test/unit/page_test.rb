@@ -13,4 +13,10 @@ class PageTest < ActiveSupport::TestCase
     category.save!
     assert category.pages.count == 1
   end
+
+  test "should ensure slug gets updated before save" do
+    page = Page.create(:title => "Test Page")
+    assert page.save!
+    assert_equal page.slug, "test-page"
+  end
 end

@@ -45,8 +45,7 @@ class CampRegistrationsController < ApplicationController
 
     respond_to do |format|
       if @camp_registration.save
-        format.html { redirect_to(@camp_registration, :notice => 'Camp registration was successfully created.') }
-        format.xml  { render :xml => @camp_registration, :status => :created, :location => @camp_registration }
+        format.html { redirect_to "https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UQUUEGQTEF5TC" }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @camp_registration.errors, :status => :unprocessable_entity }

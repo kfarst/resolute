@@ -36,8 +36,6 @@
     %br/
     = f.text_area :comments, :rows => "10", :cols => "50"
   .actions
-    %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post"}
-      %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}
-      %input{:name => "hosted_button_id", :type => "hidden", :value => "UQUUEGQTEF5TC"}
-      %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif", :type => "image"}
-      %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypal.com/en_US/i/scr/pixel.gif", :width => "1"}
+    = f.submit "Register and Pay Now"
+
+    = "NOTE: After successful registration you will automatically be redirected to PayPal."

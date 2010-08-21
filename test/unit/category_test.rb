@@ -17,4 +17,10 @@ class CategoryTest < ActiveSupport::TestCase
     category.destroy
     assert_nil Page.find_by_title(page_name)
   end
+
+  test "should ensure slug gets updated before save" do
+    category = Category.create(:title => "Test Category")
+    assert category.save!
+    assert_equal category.slug, "test-category"
+  end
 end

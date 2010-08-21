@@ -3,7 +3,15 @@ class Item < ActiveRecord::Base
   validates_presence_of :title
   scope :list_order, order("position ASC")
 
+  before_save :update_slug
+
   def to_param
-    title.to_s.downcase.gsub(" ", "-")
+    title.downcase.parameterize
+  end
+
+  private 
+
+  def update_slug
+    self.slug == self.title.downcase.parameterize
   end
 end

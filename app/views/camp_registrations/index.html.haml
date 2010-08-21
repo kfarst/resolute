@@ -1,0 +1,29 @@
+#title
+  Listing Camp Registrations
+
+%table{:width => "100%", :border => "1"}
+  %tr
+    %th Name
+    %th Age
+    %th Position
+    %th Email
+    %th Phone
+    %th School
+    %th Comments
+    %th
+    %th
+    %th
+  - @camp_registrations.each do |camp_registration|
+    %tr
+      %td= camp_registration.name
+      %td= camp_registration.age
+      %td= camp_registration.position
+      %td= camp_registration.email
+      %td= camp_registration.phone
+      %td= camp_registration.school
+      %td= camp_registration.comments
+      %td= link_to 'Show', camp_registration
+      %td= link_to 'Edit', edit_camp_registration_path(camp_registration)
+      %td= link_to 'Destroy', camp_registration, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Camp registration', new_camp_registration_path

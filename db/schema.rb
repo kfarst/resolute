@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20100723194558) do
     t.datetime "updated_at"
     t.integer  "position"
     t.string   "slug"
+    t.boolean  "include_camp_registration_form", :default => false
   end
 
   create_table "users", :force => true do |t|

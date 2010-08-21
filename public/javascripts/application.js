@@ -77,7 +77,7 @@ $(function() {
   }
 
   function panelAsLink(e) {
-    var path = $(this).children()[0].innerHTML.toLowerCase().replace(" ", "-").replace("&amp; ", "&-"),
+    var path = $(this).children()[0].innerHTML.toLowerCase().replace("&amp; ", "").replace(" ", "-"),
     url = e.view.location.href.split("/");
     window.location.replace(url [0] + "//" + url[2] + "/" + path);
   }

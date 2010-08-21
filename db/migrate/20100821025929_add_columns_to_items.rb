@@ -1,6 +1,6 @@
 class AddColumnsToItems < ActiveRecord::Migration
   def self.up
-    add_column :items, :slug, :string, :null => false
+    add_column :items, :slug, :string
     add_column :items, :camp_registration_form, :boolean, :default => false
 
     Item.transaction do

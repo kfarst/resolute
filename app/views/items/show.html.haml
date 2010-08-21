@@ -3,7 +3,7 @@
 
 = raw(@item.body)
 
-- if @item.camp_registration_form?
+- if @item.include_camp_registration_form?
   - @camp_registration = CampRegistration.new
   = render :partial => "camp_registrations/form", :objects => @camp_registration 
 

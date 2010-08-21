@@ -24,9 +24,9 @@
       %br
       = f.collection_select :category_id, Category.find(:all), :id, :title, :prompt => true 
     .field
-      = f.label :camp_registration_form
+      = f.label :include_camp_registration_form
       %br
-      = f.check_box :camp_registration_form
+      = f.check_box :include_camp_registration_form
 
   .actions
     = f.submit

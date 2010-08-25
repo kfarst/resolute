@@ -32,6 +32,11 @@ color: #97BFDE;
 font-weight: bold;
 }
 
+img.main_logo {
+width: 300px;
+height: auto;
+}
+
 span.tagline {
 font-style: italic;
 color: white;

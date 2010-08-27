@@ -30,7 +30,7 @@ $(function() {
       $('.video-js-box').css('display', 'none');
 
       var winHeight = "425",
-          winWidth = $(".youtube-box object").width() + 10,
+          winWidth = $(".youtube-box object").outerWidth(true),
           halfHeight = ($(window).height() / 2) - (winHeight / 2),
           halfWidth = ($(window).width() / 2) - (winWidth / 2),
           videoSource = $(this).attr('video_url'); 

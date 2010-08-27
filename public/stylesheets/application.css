@@ -176,12 +176,19 @@ color: black;
 }
 
 #video {
-width: 90%;
 padding: 10px;
-border-bottom: 1px solid black;
 float: left;
 margin-left: auto;
 margin-right: auto;
+width: 960px;
+}
+
+.even {
+background-color:#E8E8E8;
+}
+
+.odd {
+background-color:white;
 }
 
 #thumbnail {
@@ -196,12 +203,13 @@ width: 80%;
 }
 
 #video_title {
-float: left;
-font-weight: bold;
-font-size: 16px;
-top: 0;
-margin: 0 10px 10px 10px;
-clear: right;
+clear:right;
+float:left;
+font-size:16px;
+font-weight:bold;
+margin:0 10px 20px;
+top:0;
+width:100%;
 }
 
 #video_description {

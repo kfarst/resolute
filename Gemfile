@@ -13,6 +13,7 @@ gem 'youtube-g'
 gem 'ckeditor', :git => "git://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
 gem 'mysql'
+gem 'capistrano'
 
 # Deploy with Capistrano
 # gem 'capistrano'

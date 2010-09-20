@@ -144,7 +144,9 @@ text-shadow: #000000 2px 2px 5px;
 
 #overlay {
 display: none;
-background: rgba(0,0,0,0.5);
+background: black;
+opacity:0.5;
+filter:alpha(opacity=50);
 z-index: 100;
 width: 100%;
 height: 100%;
@@ -159,6 +161,7 @@ background-color: white;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;
+z-index:101;
 }
 
 #tab {

@@ -6,11 +6,12 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 ["Home", "About Us", "Camps & Clinics", "Consulting", "Contact Us"].each do |name|
-  category = Category.find_or_create_by_title(name)
-
-  page = Page.find_or_create_by_title("#{name} Page")
-  page.category_id = category.id
-  page.save!
+  unless category = Category.find_or_create_by_title(name)
+    category = Category.create(:name => name)
+    page = Page.find_or_create_by_title("#{name} Page")
+    page.category_id = category.id
+    page.save
+  end
 end
 
 ["farst.6@osu.edu", "resolutelacrosse@gmail.com"].each do |email|
@@ -18,6 +19,6 @@ end
     user = User.new
     user.email = email
     user.password = user.password_confirmation = "buckeyes44"
-    user.save!
+    user.save
   end
 end

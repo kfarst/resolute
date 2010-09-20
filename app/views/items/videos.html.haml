@@ -1,13 +1,13 @@
 #title<
   Videos
 
-- videos = $youtube.videos_by(:most_viewed)
+- videos = $youtube.videos_by(:author => "resolutelacrosse")
 
 - videos.videos.each do |video|
   #video{:class => cycle("even","odd")}
     %img{:id => "thumbnail", :src => video.thumbnails.first.url, :video_url => video.embed_url }
     #video_info
-      =link_to video.title, video.embed_url, :id => "video_title"
+      =link_to video.title, video.embed_url, :id => "video_title", :video_url => video.embed_url
       %span{:id => "video_description"}= video.description 
 
 %div.clear

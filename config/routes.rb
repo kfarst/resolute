@@ -1,4 +1,4 @@
-Resolute::Application.routes.draw do |map|
+Resolute::Application.routes.draw do 
   resources :camp_registration, :controller => :camp_registrations
 
   resources :items 

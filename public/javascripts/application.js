@@ -3,11 +3,19 @@
 $(function() { 
   $(document)                                       .ready(hideBackground);
   $('#video img')                                   .live('click', showYouTubeVideo);
+  $('#video a')                                     .live('click', showYouTubeVideo);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $('#window #tab a')                               .live('click', hideVideo);
   $(document)                                       .ready(listSort);
+
+  $.fn.pause = function() { 
+    return this.each(function(i, element) {
+      element.pause();
+    });
+  }
+  $(document).ready(showIntroVideo);
 
   function listSort(e) {
     $("#sortable").sortable({
@@ -19,18 +27,23 @@ $(function() {
   }
 
   function hideVideo(e) {
-    e.preventDefault();
-    $('#overlay').css('display', 'none');
+    if ($('.video-js-box').is(':visible')) $('video.video-js').pause();
+    $('#overlay').hide();
+    $('#window').hide();
+    $('#window').find("div").hide();
   }
 
   function showYouTubeVideo(e) {
     if ($('div#title').html() == "Videos") {
+      e.preventDefault();
 
-      $('#overlay').css('display', 'block');
-      $('.video-js-box').css('display', 'none');
+      $('#overlay').show();
+      $('#window').show();
+      $('#window').find("div").show();
+      $('.video-js-box').hide();
 
       var winHeight = "425",
-          winWidth = $(".youtube-box object").outerWidth(true),
+          winWidth = $(".youtube-box object").outerWidth(true) + 20,
           halfHeight = ($(window).height() / 2) - (winHeight / 2),
           halfWidth = ($(window).width() / 2) - (winWidth / 2),
           videoSource = $(this).attr('video_url'); 
@@ -47,11 +60,12 @@ $(function() {
   }
 
   function showIntroVideo(e) {
-    if ($('div#panel').length > 0) {
+    if (false) {
       if ($('div#panel').first().hasClass('no_popup')) { return false; }
 
-      $('#overlay').css('display', 'block');
-      $('.youtube-box').css('display', 'none');
+      $('#overlay').show();
+      $('#window').show();
+      $('.youtube-box').hide();
       
       var winHeight = $(".video-js-box video").height() + 40,
           winWidth = $(".video-js-box video").width() + 10,
@@ -65,6 +79,9 @@ $(function() {
 
       $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
       $('video.video-js').css('margin-top', '7px');
+    }
+    else {
+      hideVideo();
     }
   }
 
@@ -90,3 +107,4 @@ $(function() {
     $(this).children('ul.second_level').slideUp('slow', function(){});
   }
 });
+

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,9 +28,10 @@ gem 'capistrano'
 # gem "rspec-rails", ">= 2.0.0.beta.17", :group => :development
  group :development do
   gem 'ruby-debug'
+  gem 'factory_girl'
  end
 
-gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test
+#gem "rspec-rails", ">= 2.0.0.beta.17", :group => :test
  group :test do
    gem 'factory_girl'
    gem 'database_cleaner'

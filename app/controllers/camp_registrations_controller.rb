@@ -1,11 +1,11 @@
-class CampRegistrationsController < ApplicationController
+class CampRegistrationssController < ApplicationController
   # GET /camp_registrations
   # GET /camp_registrations.xml
   before_filter :authenticate_user!, :except => [:new, :create]
   before_filter :find_registration, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @camp_registrations = CampRegistration.all
+    @camp_registrations = CampRegistrations.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +26,7 @@ class CampRegistrationsController < ApplicationController
   # GET /camp_registrations/new
   # GET /camp_registrations/new.xml
   def new
-    @camp_registration = CampRegistration.new
+    @camp_registration = CampRegistrations.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class CampRegistrationsController < ApplicationController
   # POST /camp_registrations
   # POST /camp_registrations.xml
   def create
-    @camp_registration = CampRegistration.new(params[:camp_registration])
+    @camp_registration = CampRegistrations.new(params[:camp_registration])
 
     respond_to do |format|
       if @camp_registration.save
@@ -82,6 +82,6 @@ class CampRegistrationsController < ApplicationController
   private
 
   def find_registration
-    @camp_registration = CampRegistration.find(params[:id])
+    @camp_registration = CampRegistrations.find(params[:id])
   end
 end

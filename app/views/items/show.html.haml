@@ -4,7 +4,7 @@
 = raw(@item.body)
 
 - if @item.include_camp_registration_form?
-  - @camp_registration = CampRegistration.new
+  - @camp_registration = CampRegistrations.new
   = render :partial => "camp_registrations/form", :objects => @camp_registration 
 
 = render :partial => "admin/admin_links"

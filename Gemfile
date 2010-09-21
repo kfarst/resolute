@@ -5,10 +5,10 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'haml', '3.0.13'
+gem 'haml'
 gem 'clearance'
 gem 'mongrel'
-gem 'devise'
+gem 'devise', '1.1.2'
 gem 'youtube-g'
 gem 'ckeditor', :git => "git://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'

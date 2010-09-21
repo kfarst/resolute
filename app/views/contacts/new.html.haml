@@ -1,6 +1,6 @@
 #title
   Contact Us
-- form_for @message, :url => contacts_path(@message) do |f|
+= form_for @message, :url => contacts_path(@message) do |f|
   - if @message.errors.any?
     #error_explanation
       %h2

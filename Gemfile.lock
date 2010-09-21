@@ -60,7 +60,7 @@ GEM
     culerity (0.2.12)
     daemons (1.1.0)
     database_cleaner (0.5.2)
-    devise (1.1.rc2)
+    devise (1.1.2)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     erubis (2.6.6)
@@ -70,7 +70,7 @@ GEM
     ffi (0.6.3)
       rake (>= 0.8.7)
     gem_plugin (0.2.3)
-    haml (3.0.13)
+    haml (3.0.18)
     highline (1.6.1)
     i18n (0.4.1)
     json_pure (1.4.6)
@@ -147,9 +147,9 @@ DEPENDENCIES
   ckeditor!
   clearance
   database_cleaner
-  devise (= 1.1.rc2)
+  devise (= 1.1.2)
   factory_girl
-  haml (= 3.0.13)
+  haml
   launchy
   mongrel
   mysql

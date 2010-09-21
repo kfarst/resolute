@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
  end  
  
  def create  
-   @message = Contacts.new(params[:contact])  
+   @message = Contacts.new(params[:contacts])  
    if @message.valid?
      ContactMailer.contact_email(@message).deliver
      ContactMailer.response_email(@message).deliver

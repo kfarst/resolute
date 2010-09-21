@@ -1,4 +1,4 @@
-class CampRegistrationssController < ApplicationController
+class CampRegistrationsController < ApplicationController
   # GET /camp_registrations
   # GET /camp_registrations.xml
   before_filter :authenticate_user!, :except => [:new, :create]
@@ -41,7 +41,7 @@ class CampRegistrationssController < ApplicationController
   # POST /camp_registrations
   # POST /camp_registrations.xml
   def create
-    @camp_registration = CampRegistrations.new(params[:camp_registration])
+    @camp_registration = CampRegistrations.new(params[:camp_registrations])
 
     respond_to do |format|
       if @camp_registration.save

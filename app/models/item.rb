@@ -3,6 +3,8 @@ class Item < ActiveRecord::Base
   validates_presence_of :title
   scope :list_order, order("position ASC")
 
+  CATEGORY_AS_LINK = ["Home", "Videos"]
+
   before_save :update_slug
 
   def to_param

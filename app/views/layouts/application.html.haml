@@ -20,7 +20,7 @@
           %ul.nav_links
             - Category.list_order.each do |category|
               %li.first_level
-                = (only_whitespace?(category.body) && category.title != "Home") ? category.title : (link_to category.title, pretty_url_path(category))
+                = (only_whitespace?(category.body) && !Category::CATEGORY_AS_LINK.include?(category.title)) ? category.title : (link_to category.title, pretty_url_path(category))
                 %ul.second_level
                   - category.pages.each do |page| 
                     %li

@@ -9,13 +9,7 @@ $(function() {
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $('#window #tab a')                               .live('click', hideVideo);
   $(document)                                       .ready(listSort);
-
-  $.fn.pause = function() { 
-    return this.each(function(i, element) {
-      element.pause();
-    });
-  }
-  $(document).ready(showIntroVideo);
+  $(document)                                       .ready(hideVideo);
 
   function listSort(e) {
     $("#sortable").sortable({
@@ -40,7 +34,7 @@ $(function() {
       $('#overlay').show();
       $('#window').show();
       $('#window').find("div").show();
-      $('.video-js-box').hide();
+      $('.youtube-box').show();
 
       var winHeight = "425",
           winWidth = $(".youtube-box object").outerWidth(true) + 20,
@@ -56,29 +50,6 @@ $(function() {
                   .css('width', winWidth + 'px') 
                   .css('margin-top', halfHeight + 'px') 
                   .css('margin-left', halfWidth + 'px'); 
-    }
-  }
-
-  function showIntroVideo(e) {
-    if ($('div#panel').length > 0) {
-      if ($('div#panel').first().hasClass('no_popup')) { hideVideo();return false; }
-
-      $('#overlay').show();
-      $('#window').show();
-      $('.youtube-box').hide();
-      
-      var winHeight = $(".video-js-box video").height() + 40,
-          winWidth = $(".video-js-box video").width() + 10,
-          halfWidth = ($(window).width() / 2) - (winWidth / 2),
-          halfHeight = ($(window).height() / 2) - (winHeight / 2);
-
-      $('#window').css('height', winHeight + 'px')
-                  .css('width', winWidth + 'px') 
-                  .css('margin-top', halfHeight + 'px') 
-                  .css('margin-left', halfWidth + 'px'); 
-
-      $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
-      $('video.video-js').css('margin-top', '7px');
     }
   }
 

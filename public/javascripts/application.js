@@ -60,8 +60,8 @@ $(function() {
   }
 
   function showIntroVideo(e) {
-    if (false) {
-      if ($('div#panel').first().hasClass('no_popup')) { return false; }
+    if ($('div#panel').length > 0) {
+      if ($('div#panel').first().hasClass('no_popup')) { hideVideo();return false; }
 
       $('#overlay').show();
       $('#window').show();
@@ -79,9 +79,6 @@ $(function() {
 
       $('#window video').attr('autoplay', 'autoplay').attr('preload', 'preload');
       $('video.video-js').css('margin-top', '7px');
-    }
-    else {
-      hideVideo();
     }
   }
 

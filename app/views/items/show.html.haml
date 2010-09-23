@@ -6,5 +6,8 @@
 - if @item.include_camp_registration_form?
   - @camp_registration = CampRegistrations.new
   = render :partial => "camp_registrations/form", :objects => @camp_registration 
+- elsif is_elite_teams_page?(@item)
+  - @resolute_team_sign_up = ResoluteTeamSignUp.new
+  = render :partial => "resolute_team_sign_ups/form", :objects => @resolute_team_sign_up, :html_options => {:style => "float:left;width:50%;"}
 
 = render :partial => "admin/admin_links"

@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %b First name:
+  = @resolute_team_sign_up.first_name
+%p
+  %b Last name:
+  = @resolute_team_sign_up.last_name
+%p
+  %b Age:
+  = @resolute_team_sign_up.age
+%p
+  %b School:
+  = @resolute_team_sign_up.school
+%p
+  %b Position:
+  = @resolute_team_sign_up.position
+%p
+  %b Position:
+  = @resolute_team_sign_up.position
+= link_to 'Edit', edit_resolute_team_sign_up_path(@resolute_team_sign_up)
+|
+\#{link_to 'Back', resolute_team_sign_ups_path}

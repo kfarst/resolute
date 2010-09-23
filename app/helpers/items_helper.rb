@@ -6,4 +6,8 @@ module ItemsHelper
     options[:html][:method] = (item.new_record? ? :post : :put)
     options
   end
+
+  def is_elite_teams_page?(item)
+    item.slug == "elite-teams"
+  end
 end

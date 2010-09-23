@@ -328,3 +328,8 @@ float: right;
 div.field {
 margin: 5px;
 }
+
+#video_link {
+padding-bottom:15px;
+font-size:16px;
+}

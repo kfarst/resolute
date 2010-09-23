@@ -1,6 +1,10 @@
 #title<
   Videos
 
+#video_link
+  Catch these videos on our YouTube channel at: 
+  = link_to "http://www.youtube.com/resolutelacrosse", "http://www.youtube.com/resolutelacrosse", :target => "_blank"
+
 - videos = $youtube.videos_by(:author => "resolutelacrosse")
 
 - videos.videos.each do |video|

@@ -6,7 +6,6 @@ Resolute::Application.routes.draw do
   resources :resolute_team_sign_ups
   resources :camp_registrations
 
-
   resources :categories, :controller => :items do
     collection do
       post :sort

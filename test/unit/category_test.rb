@@ -8,7 +8,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "should ensure a cateogy's pages get destroyed if the category gets destroyed" do
-    category = Category.create(:title => "Test Category")
+    category = Category.create!(:title => "Test Category")
     category.pages.build(:title => "Test Page")
     assert category.pages.count == 1
 
@@ -18,8 +18,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "should ensure slug gets updated before save" do
-    category = Category.new(:title => "Test Category")
-    assert category.save!
+    category = Category.create!(:title => "Test Category")
     assert_equal category.slug, "test-category"
   end
 end

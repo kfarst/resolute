@@ -68,11 +68,11 @@ $(function() {
   }
 
   function menuSlideDown(e) {
-    $(this).children('ul.second_level').slideDown('slow', function(){});
+    $(this).children('ul.second_level').slideDown('fast');
   }
 
   function menuSlideUp(e) {
-    $(this).children('ul.second_level').slideUp('slow', function(){});
+    $(this).children('ul.second_level').slideUp('fast');
   }
 });
 

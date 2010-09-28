@@ -94,6 +94,7 @@ class ItemsController < ApplicationController
   end
 
   def videos
+    @channel = Item.get_youtube_videos
   end
 
   def welcome

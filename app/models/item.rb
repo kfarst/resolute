@@ -11,9 +11,13 @@ class Item < ActiveRecord::Base
     title.downcase.parameterize
   end
 
+  def self.get_youtube_videos
+    $youtube.videos_by(:author => "resolutelacrosse")
+  end
+
   private 
 
   def update_slug
-    self.slug == self.title.downcase.parameterize
+    slug == title.downcase.parameterize
   end
 end

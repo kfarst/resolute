@@ -44,7 +44,7 @@ class CampRegistrationsController < ApplicationController
     @camp_registration = CampRegistrations.new(params[:camp_registrations])
 
       if @camp_registration.save
-        redirect_to "https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UQUUEGQTEF5TC" 
+        redirect_to "https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11240645" 
       else
         render :action => "new"
       end

@@ -84,12 +84,11 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.xml
   def destroy
-    type = @item.type.to_s.downcase
+    type = @item.type
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to items_url(:type => type) }
-      format.xml  { head :ok }
+      format.html { redirect_to items_path(:notice => "#{type} deleted.") }
     end
   end
 

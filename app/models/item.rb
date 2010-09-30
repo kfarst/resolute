@@ -18,6 +18,6 @@ class Item < ActiveRecord::Base
   private 
 
   def update_slug
-    slug == title.downcase.parameterize
+    slug = title.downcase.parameterize
   end
 end

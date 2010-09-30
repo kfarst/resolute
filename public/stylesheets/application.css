@@ -140,6 +140,9 @@ ul.second_level li.first_level {
   width: 65%;
   height: 420px;
   float: left;
+  background-image: url('../images/lacrosse_the_nations.png');
+  background-repeat: no-repeat; 
+  background-position: 0 top;
 }
 
 #panel:hover {
@@ -284,10 +287,10 @@ div#flash {
 #contest {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   height: 0;
   width: 0;
-  border-width: 0 250px 250px 0;
+  border-width: 0 0 250px 250px;
   border-style: solid;
   border-color: transparent transparent #97BFDE transparent;
   color: white;
@@ -295,11 +298,11 @@ div#flash {
 
 #contest-text {
   bottom: 0;
-  left: 0;
+  right: 10px;
   position: fixed;
   width: 90px;
   margin: 0 0 10px 10px;
-  position: fixed;
+  text-align: right;
 }
 
 #contest-text a {

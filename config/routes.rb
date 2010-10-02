@@ -9,7 +9,6 @@ Resolute::Application.routes.draw do
   resources :contest_entries, :only => [:new, :create, :index, :destroy]
   resources :contacts, :only => [:new, :create]
   resources :pages, :controller => :items
-  resources :resolute_team_sign_ups
   resources :camp_registrations
 
   resources :categories, :controller => :items do

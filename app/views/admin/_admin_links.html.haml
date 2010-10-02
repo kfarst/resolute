@@ -1,7 +1,7 @@
 - if user_signed_in?
-  %br
-  = link_to 'Edit', edit_item_path(@item) 
-  |
-  = link_to 'Back', :back
-  |
-  = link_to 'Admin Home', admin_path
+  #admin_links
+    = link_to 'Edit', edit_item_path(@item) 
+    |
+    = link_to 'Back', :back
+    |
+    = link_to 'Admin Home', admin_path

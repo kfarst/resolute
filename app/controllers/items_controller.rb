@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @camp_registration = CampRegistrations.new
     respond_with @item
   end
 

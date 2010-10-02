@@ -1,95 +1,44 @@
 class ItemsController < ApplicationController
-  # GET /items
-  # GET /items.xml
+  respond_to :html
+
   before_filter :authenticate_user!, :except => [:show, :welcome, :videos, :contact]
   before_filter :find_item, :only => [:show, :edit, :update, :destroy]
 
-  def index
-    if params[:type] == "page"
-      @items = Page.list_order
-    elsif params[:type] == "category"
-      @items = Category.list_order
-    end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @items }
-    end
+  def pages
+    @items = Page.list_order
+    render 'index'
   end
 
-  # GET /items/1
-  # GET /items/1.xml
+  def categories
+    @items = Category.list_order
+    render 'index'
+  end
+
   def show
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @item }
-    end
+    respond_with @item
   end
 
-  # GET /items/new
-  # GET /items/new.xml
   def new
-    @item = Item.new
-    @item.type = params[:type].classify
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @item }
-    end
+    respond_with @item = Item.new
   end
 
-  # GET /items/1/edit
   def edit
-
-    respond_to do |format|
-      format.html { render :action => :edit }
-      format.xml  { render :xml => @item }
-    end
+    respond_with @item
   end
 
-  # POST /items
-  # POST /items.xml
   def create
     @item = Item.new(params[:item])
     @item.type = params[:item][:type]
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
-        format.xml  { render :xml => @item, :status => :created, :location => @item }
-      else
-        format.html { render :action => "new", :alert => 'There was a problem creating this item.' }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
-      end
-    end
+    respond_with @item.save, :method => :get
   end
 
-  # PUT /items/1
-  # PUT /items/1.xml
   def update
-    @item.update_attributes(params[:item])
-
-    respond_to do |format|
-
-      if @item.update_attributes(params[@item.type.to_s.downcase])
-        format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
-      end
-    end
+    respond_with @item.update_attributes(params[:item])
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.xml
   def destroy
-    type = @item.type
-    @item.destroy
-
-    respond_to do |format|
-      format.html { redirect_to items_path(:notice => "#{type} deleted.") }
-    end
+    respond_with @item.destroy, :method => :put
   end
 
   def videos
@@ -106,11 +55,16 @@ class ItemsController < ApplicationController
     render :text => params[:item]
   end
 
+  def is_page?(item)
+    item.type == "Page"
+  end
+  helper_method :is_page?
+
 private
 
   def find_item
     unless @item = Item.find_by_slug(params[:id])
-      redirect_to(root_path)
+      redirect_to rooth_path
     end
   end
 end 

@@ -1,5 +1,11 @@
 Resolute::Application.routes.draw do 
-  resources :items 
+  resources :items, :except => [:index] do
+    collection do
+      get :pages, :as => :pages
+      get :categories, :as => :categories
+    end
+  end
+
   resources :contest_entries, :only => [:new, :create, :index, :destroy]
   resources :contacts, :only => [:new, :create]
   resources :pages, :controller => :items

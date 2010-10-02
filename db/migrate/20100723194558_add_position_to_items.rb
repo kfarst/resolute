@@ -1,6 +1,6 @@
 class AddPositionToItems < ActiveRecord::Migration
   def self.up
-    add_column :items, :position, :integer
+    add_column :items, :position, :integer, :default => 0
   end
 
   def self.down

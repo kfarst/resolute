@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem "rails", "3.0.0"
 
 gem 'haml'
 gem 'clearance'
@@ -11,6 +11,7 @@ gem 'ckeditor', :git => "git://github.com/galetahub/rails-ckeditor.git", :branch
 gem 'paperclip'
 gem 'mysql'
 gem 'capistrano'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'cucumber' 

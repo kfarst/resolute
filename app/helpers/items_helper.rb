@@ -10,4 +10,8 @@ module ItemsHelper
   def is_elite_teams_page?(item)
     item.slug == "elite-teams"
   end
+
+  def get_type_from_position(position)
+    request.fullpath.split("/")[position]
+  end
 end

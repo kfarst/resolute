@@ -8,7 +8,7 @@
         - @item.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.hidden_field :type
+    = hidden_field_tag "item[type]", get_type_from_position(1).to_s.singularize.capitalize
   .field
     = f.label :title
     %br
@@ -18,11 +18,11 @@
     %br
     = f.cktext_area :body, :width => "80%", :height => "600px"
 
-  - if params[:type] == "page"
+  - if is_page?(@item)
     .field
       = f.label :category_id
       %br
-      = f.collection_select :category_id, Category.find(:all), :id, :title, :prompt => true 
+      = f.collection_select :category_id, Category.all, :id, :title, :prompt => true 
     .field
       = f.label :include_camp_registration_form
       %br

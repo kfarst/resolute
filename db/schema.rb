@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
     t.string   "slug"
     t.boolean  "include_camp_registration_form", :default => false
+    t.integer  "position",                       :default => 0
   end
 
   create_table "resolute_team_sign_ups", :force => true do |t|

@@ -6,6 +6,7 @@ Feature: managing category items
 
   Scenario: creating a category
     When I create a category titled "Test Category"
+    Then show me the page
     Then I should be on the root page
 
   Scenario: editing a category

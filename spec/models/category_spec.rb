@@ -1,22 +1,28 @@
 require 'spec_helper'
 
 describe Category do
-  it "should not save category without title" do
+  it "does not save category without title" do
     category = Category.new
-    category.save.should_not be_true, "Saved category without title"
+    category.should_not be_valid, "Saved category without title"
   end
 
-  it "should ensure a cateogy's pages get destroyed if the category gets destroyed" do
-    category = Category.create!(:title => "Test Category")
-    category.pages.build(:title => "Test Page")
-    assert category.pages.count == 1
+  context "has child pages" do
+    let(:category) { Category.create!(:title => "Test Category") }
 
-    page_name = category.pages.first.title
-    category.destroy
-    Page.find_by_title(page_name).should be_nil
+    it "ensures the pages get destroyed if the category gets destroyed" do
+
+      category.pages.build(:title => "Test Page")
+      category.should have(1).pages
+
+      page_name = category.pages.first.title
+      category.destroy!
+      Page.find_by_title(page_name).should be_nil
+    end
   end
 
-  it "should ensure slug gets updated before save" do
+  it "ensures slug gets updated before save" do
+    let(:category) { Category.create!(:title => "Test Category") }
+
     category = Category.create!(:title => "Test Category")
     category.slug.should == "test-category"
   end

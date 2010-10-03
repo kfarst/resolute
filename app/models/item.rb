@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
   validates_uniqueness_of :title
   validates_presence_of :title
-  after_save :update_slug
+  after_validation :update_slug
 
   scope :list_order, order("position ASC")
 
@@ -15,9 +15,17 @@ class Item < ActiveRecord::Base
     title.downcase.parameterize
   end
 
+  def update_by_type(params)
+    if self.type == "Page"
+      update_attributes(params[:page])
+    else
+      update_attributes(params[:category])
+    end
+  end
+
   private 
 
   def update_slug
-    update_attribute(:slug, title.parameterize)
+    self.slug = self.title.to_s.parameterize
   end
 end

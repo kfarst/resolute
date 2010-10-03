@@ -1,21 +1,20 @@
 require 'spec_helper'
 
 describe Page do
-  it "should not save page without title" do
+  it "does not save page without title" do
     page = Page.new
-    assert !page.save, "Saved page without title"
+    page.should_not be_valid, "Saved page without title"
   end
 
-  it "should ensure page belongs to a category" do
-    category = Category.create(:title => "Test Category")
+  it "ensures page belongs to a category" do
+    let(:category) { Category.create(:title => "Test Category") }
+
     category.pages.build(:title => "Test Page")
-    category.save!
     category.should have(1).pages
   end
 
-  it "should ensure slug gets updated before save" do
-    page = Page.create(:title => "Test Page")
-    assert page.save!
+  it "ensures slug gets updated before save" do
+    let(:page) { Page.create(:title => "Test Page") }
     page.slug.should == "test-page"
   end
 end

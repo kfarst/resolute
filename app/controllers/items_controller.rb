@@ -31,11 +31,19 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
     @item.type = params[:item][:type]
 
-    respond_with @item.save, :method => :get
+    if @item.save
+      redirect_to polymorphic_path(@item)
+    else
+      render 'new'
+    end
   end
 
   def update
-    respond_with @item.update_attributes(params[:item])
+    if @item.update_by_type(params)
+      redirect_to polymorphic_path(@item)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

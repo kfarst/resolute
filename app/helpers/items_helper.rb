@@ -14,4 +14,14 @@ module ItemsHelper
   def get_type_from_position(position)
     request.fullpath.split("/")[position]
   end
+
+  def item_type(item)
+    if item.type == "Category"
+      "category"
+    elsif item.type == "Page"
+      "page"
+    else
+      "item"
+    end
+  end
 end

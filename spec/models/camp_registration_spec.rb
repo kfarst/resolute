@@ -41,7 +41,7 @@ describe CampRegistrations do
   it "should not save the camp registration if the email is not unique" do
     @contest.save.should be_true, "contest not saved"
 
-    @contest = CampRegistrations.new(:name => "John Smith", :email => "john@example.com", 
+    @clone_contest = CampRegistrations.new(:name => "John Smith", :email => "john@example.com", 
                                 :age => "22", :school => "James Woods High School",
                                 :position => "Defense", :comments => "Hello World!", 
                                 :phone => "5840384381")

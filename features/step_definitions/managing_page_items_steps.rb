@@ -1,6 +1,6 @@
 Given /^I am a site administrator$/ do
   user = User.new(:email => "test@example.com")
-  user.password = user.password_confirmation = "password"
+  user.password, user.password_confirmation = "password"
   user.save!
   Category.create!(:title => "About Us")
 end

@@ -8,7 +8,7 @@
         - @item.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = hidden_field_tag "#{item_type(@item)}[type]", get_type_from_position(1).to_s.singularize.capitalize
+    = hidden_field_tag "#{item_type_for_form_hash(@item)}[type]", get_type_from_position(1).to_s.singularize.capitalize
   .field
     = f.label :title
     %br
@@ -18,7 +18,7 @@
     %br
     = f.cktext_area :body, :width => "80%", :height => "600px"
 
-  - if is_page?(@item)
+  - if is_page?(get_type_from_position(1).capitalize.singularize)
     .field
       = f.label :category_id
       %br

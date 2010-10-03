@@ -6,7 +6,7 @@ describe Category do
     category.should_not be_valid, "Saved category without title"
   end
 
-  context "has child pages" do
+  context "with child pages" do
     let(:category) { Category.create!(:title => "Test Category") }
 
     it "ensures the pages get destroyed if the category gets destroyed" do
@@ -15,14 +15,12 @@ describe Category do
       category.should have(1).pages
 
       page_name = category.pages.first.title
-      category.destroy!
+      category.destroy
       Page.find_by_title(page_name).should be_nil
     end
   end
 
   it "ensures slug gets updated before save" do
-    let(:category) { Category.create!(:title => "Test Category") }
-
     category = Category.create!(:title => "Test Category")
     category.slug.should == "test-category"
   end

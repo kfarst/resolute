@@ -7,15 +7,15 @@ module ItemsHelper
     options
   end
 
-  def is_elite_teams_page?(item)
-    item.slug == "elite-teams"
+  def get_type_from_position(position, path = request.fullpath)
+    path.split("/")[position]
   end
 
-  def get_type_from_position(position)
-    request.fullpath.split("/")[position]
+  def is_page?(type)
+    type == "Page"
   end
 
-  def item_type(item)
+  def item_type_for_form_hash(item)
     if item.type == "Category"
       "category"
     elsif item.type == "Page"

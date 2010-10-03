@@ -10,8 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /the new poop page/
-      new_poop_path
+    when /the Test Category page/
+      "/items/test-category"
+    when /the Test Page page/
+      "/items/test-page"
 
 
     # Add more mappings here.

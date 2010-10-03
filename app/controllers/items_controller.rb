@@ -64,11 +64,6 @@ class ItemsController < ApplicationController
     render :text => params[:item]
   end
 
-  def is_page?(item)
-    item.type == "Page"
-  end
-  helper_method :is_page?
-
 private
 
   def find_item

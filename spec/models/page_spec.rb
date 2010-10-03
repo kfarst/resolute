@@ -7,14 +7,14 @@ describe Page do
   end
 
   it "ensures page belongs to a category" do
-    let(:category) { Category.create(:title => "Test Category") }
+    category = Category.create(:title => "Test Category")
 
     category.pages.build(:title => "Test Page")
     category.should have(1).pages
   end
 
   it "ensures slug gets updated before save" do
-    let(:page) { Page.create(:title => "Test Page") }
+    page = Page.create(:title => "Test Page")
     page.slug.should == "test-page"
   end
 end

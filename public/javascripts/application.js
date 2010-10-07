@@ -33,7 +33,7 @@ $(function() {
 
       $('#overlay').show();
       $('#window').show();
-      $('#window').find("div").show();
+      $('#window div').show();
       $('.youtube-box').show();
 
       var winHeight = "425",

@@ -57,7 +57,8 @@ $(function() {
     if ($('div#panel').length > 0) {
       $('div#content').css('background-color', 'transparent')
                       .css('-moz-box-shadow', 'none')
-                      .css('-webkit-box-shadow', 'none');
+                      .css('-webkit-box-shadow', 'none')
+                      .css('background-image', 'none');
     }
   }
 

@@ -28,6 +28,13 @@
     %br/
     = f.text_field :position
   .field
+    = f.label :camp_level
+    %br/
+    = radio_button_tag "camp_registrations[camp_level]", "Junior High"
+    = f.label :junior_high
+    = radio_button_tag "camp_registrations[camp_level]", "High School"
+    = f.label :high_school
+  .field
     = f.label :school
     %br/
     = f.text_field :school

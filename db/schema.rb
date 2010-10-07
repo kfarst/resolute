@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100923130508) do
+ActiveRecord::Schema.define(:version => 20101007040856) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "camp_level"
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -69,9 +70,9 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
     t.string   "slug"
     t.boolean  "include_camp_registration_form", :default => false
-    t.integer  "position",                       :default => 0
   end
 
   create_table "resolute_team_sign_ups", :force => true do |t|

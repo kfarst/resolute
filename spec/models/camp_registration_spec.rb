@@ -5,7 +5,7 @@ describe CampRegistrations do
     @contest = CampRegistrations.new(:name => "John Smith", :email => "john@example.com", 
                                 :age => "22", :school => "James Woods High School",
                                 :position => "Defense", :comments => "Hello World!", 
-                                :phone => "5840384381")
+                                :phone => "5840384381", :camp_level => "High School")
   end
 
   it "should not save the camp registration without a name" do
@@ -72,6 +72,11 @@ describe CampRegistrations do
   it "should not save the camp registration with a phone number longer than 10 characters" do
     @contest.phone = "48304839203"
     @contest.save.should_not be_true, "camp registration saved with a phone number longer than 10 characters"
+  end
+
+  it "should not save the camp registration without a camp level" do
+    @contest.camp_level = ""
+    @contest.save.should_not be_true, "camp registration saved without camp level"
   end
 end
 

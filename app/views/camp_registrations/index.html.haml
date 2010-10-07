@@ -10,9 +10,7 @@
     %th Phone
     %th School
     %th Comments
-    %th
-    %th
-    %th
+    %th Camp Level
   - @camp_registrations.each do |camp_registration|
     %tr
       %td= camp_registration.name
@@ -22,5 +20,6 @@
       %td= camp_registration.phone
       %td= camp_registration.school
       %td= camp_registration.comments
+      %td= camp_registration.camp_level
 %br
 = link_to 'New Camp registration', new_camp_registration_path

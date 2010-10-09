@@ -14,6 +14,12 @@ module NavigationHelpers
       "/items/test-category"
     when /the Test Page page/
       "/items/test-page"
+    when /the camp registration page/
+      "/camp_registrations/new"
+    when /the Contact Us page/
+      "/contact-us"
+    when /the contest page/
+      "/contest_entries/new"
 
 
     # Add more mappings here.

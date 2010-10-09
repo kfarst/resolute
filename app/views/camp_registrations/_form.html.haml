@@ -3,7 +3,7 @@
     #error_explanation
       %h2
         = pluralize(@camp_registration.errors.count, "error")
-        prohibited this camp_registration from being saved:
+        prohibited this Camp Registration from being saved:
       %ul
         - @camp_registration.errors.full_messages.each do |msg|
           %li= msg

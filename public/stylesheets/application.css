@@ -1,5 +1,5 @@
 body {
-  background-image:/*url("../images/wallpaper.jpg")*/;
+  background-image:url("../images/wallpaper.jpg");
   background-color: #16202c;
   background-repeat:no-repeat;
   background-position: top center;

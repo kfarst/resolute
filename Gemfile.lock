@@ -166,6 +166,7 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
+    will_paginate (2.3.15)
     youtube-g (0.5.0)
 
 PLATFORMS
@@ -191,4 +192,5 @@ DEPENDENCIES
   rspec
   rspec-rails (>= 2.0.0.beta.22)
   ruby-debug
+  will_paginate
   youtube-g

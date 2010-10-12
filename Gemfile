@@ -12,6 +12,7 @@ gem 'paperclip'
 gem 'mysql'
 gem 'capistrano'
 gem 'jquery-rails'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'cucumber' 

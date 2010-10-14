@@ -10,7 +10,7 @@ set :applicationdir, "/home2/#{user}/rails/#{application}"
 # NOTE:  hostmonster supports http port 80,   
 #   svn port 3690 doesnt work,
 #   and svn+ssh is not tested...
-set :scm, :git
+set :scm, "git"
 set :repository,  "git@github.com:kfarst/resolute.git" 
 set :user, "resolu11"  # The server's user for deploys
 set :scm_passphrase, "elgxsy"  # The deploy user's password
@@ -30,6 +30,7 @@ role :db,  domain, :primary => true
 
 # additional config options
 default_run_options[:pty] = true
-ssh_options[:keys] = %w(/Path/to/id_rsa)            # If you are using ssh_keys
+ssh_options[:forward_agent] = true
 set :chmod755, %w(app config db lib public vendor script tmp public/dispatch.cgi public/dispatch.fcgi public/dispatch.rb)
 set :use_sudo, false
+

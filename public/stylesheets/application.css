@@ -1,8 +1,8 @@
 body {
-  background-image:url("../images/wallpaper.jpg");
-  background-color: #16202c;
+  background-image:url(../images/wallpaper.jpg);
   background-repeat:no-repeat;
-  background-position: top center;
+  background-position: center top;
+  background-color: #16202c;
   font-family: "arial", sans-serif;
 }
 

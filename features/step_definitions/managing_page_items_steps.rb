@@ -14,7 +14,7 @@ Given /^I am logged in$/ do
 end
 
 When /^I create a page titled "([^"]*)"$/ do |title|
-  click "Edit Pages"
+  click "Manage Pages"
   click "New Item"
   fill_in "Title", :with => title
 end
@@ -29,7 +29,7 @@ When /^I have a page titled "([^"]*)"$/ do |page|
 end
 
 When /^I change the page title to "([^"]*)"$/ do |new_title|
-  click "Edit Pages"
+  click "Manage Pages"
 
   within("#item_#{@page.id}") do
     click "Edit"
@@ -40,7 +40,7 @@ When /^I change the page title to "([^"]*)"$/ do |new_title|
 end
 
 When /^I delete the page$/ do
-  click "Edit Pages"
+  click "Manage Pages"
 
   page.evaluate_script("window.alert = function(msg) { return true; }")
   page.evaluate_script("window.confirm = function(msg) { return true; }")

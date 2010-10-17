@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Product do
   before(:each) do
-    @product = Factory.build(:name => "Test Product",
+    @product = Product.new(:name => "Test Product",
                             :url => "www.example.com",
                             :price => 12.00,
                             :size => "Small,Medium,Large")

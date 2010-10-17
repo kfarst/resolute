@@ -2,7 +2,6 @@ class CreateProducts < ActiveRecord::Migration
   def self.up
     create_table :products do |t|
       t.string   :name
-      t.string   :url
       t.float    :price
       t.string   :size
       t.string   :picture_file_name

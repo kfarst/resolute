@@ -33,6 +33,8 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(params[:product])
+
     respond_to do |format|
       if @product.save
         format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
@@ -63,13 +65,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def find_registration
-    @camp_registration = CampRegistrations.find(params[:id])
-  end
-
-  private
-
-  def find_registration
+  def find_product
     @product = Product.find(params[:id])
   end
 end

@@ -369,3 +369,18 @@ form#new_camp_registrations {
   padding: 10px 0 0 0;
   clear:both;
 }
+
+/*----------------- Store -------------------*/
+
+#store-products {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#product-box {
+  padding: 5px;
+  margin: 10px;
+  background-color: #C0C0C0;
+  text-align: center;
+}

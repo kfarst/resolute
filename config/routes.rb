@@ -1,10 +1,4 @@
 Resolute::Application.routes.draw do 
-  resources :products do
-    collection do
-      get :store, :as => :store
-    end
-  end
-
   resources :items, :except => [:index] do
     collection do
       get :pages, :as => :pages
@@ -12,6 +6,7 @@ Resolute::Application.routes.draw do
     end
   end
 
+  resources :products
   resources :contest_entries, :only => [:new, :create, :index, :destroy]
   resources :contacts, :only => [:new, :create]
   resources :pages, :controller => :items
@@ -31,6 +26,7 @@ Resolute::Application.routes.draw do
   match '/home' => 'items#welcome', :as => :welcome
   match '/videos' => 'items#videos', :as => :videos
   match '/contact-us' => 'contacts#new'
+  match '/store' => 'products#store', :as => :store
 
   # Sample of regular route:
   match ':id' => 'items#show', :as => :pretty_url

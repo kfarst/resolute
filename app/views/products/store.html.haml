@@ -1,28 +1,37 @@
 #title
   Store
 
-%table
-  - @products.each do |product|
+%table{:id => "store-products"}
+  - @products.in_groups_of(3, false) do |row|
     %tr
-      %td= image_tag product.picture.url
-      %td= product.name
-      %td= product.price
+    - row.each do |product|
       %td
-        %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "paypal"}
-          %input{:name => "cmd", :type => "hidden", :value => "_cart"}/
-          %input{:name => "add", :type => "hidden", :value => "1"}/
-          %input{:name => "business", :type => "hidden", :value => "resolutelacrosse@gmail.com"}/
-          %input{:name => "item_name", :type => "hidden", :value => product.name}/
-          %input{:name => "item_number", :type => "hidden", :value => product.id}/
-          %input{:name => "amount", :type => "hidden", :value => product.price}/
-          %input{:name => "currency_code", :type => "hidden", :value => "USD"}/
-          %input{:name => "return", :type => "hidden", :value => "http://www.yoursite.com/thankyou.htm"}/
-          %input{:name => "undefined_quantity", :type => "hidden", :value => "1"}/
+        #product-box
+          = image_tag product.picture.url(:thumb)
+          %br/
+          %b
+            = product.name
+          %br/
+          = number_to_currency(product.price)
+          %br/
+          %br/
+          %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "paypal"}
+            %input{:name => "cmd", :type => "hidden", :value => "_cart"}/
+            %input{:name => "add", :type => "hidden", :value => "1"}/
+            %input{:name => "business", :type => "hidden", :value => "resolutelacrosse@gmail.com"}/
+            %input{:name => "item_name", :type => "hidden", :value => product.name}/
+            %input{:name => "item_number", :type => "hidden", :value => product.id}/
+            %input{:name => "amount", :type => "hidden", :value => product.price}/
+            %input{:name => "currency_code", :type => "hidden", :value => "USD"}/
+            %input{:name => "return", :type => "hidden", :value => "http://www.resolutelacrosse.com/store"}/
+            %input{:name => "undefined_quantity", :type => "hidden", :value => "1"}/
 
-          - unless product.size.blank?
-            %input{:name => "on0", :type => "hidden", :value => "Size"} 
-            = select(:product, :size, product.size.split(",").collect {|size| [size, size] }, { :include_blank => true })
-
-          %input{:alt => "Make payments with PayPal - it's fast, free and secure!", :border => "0", :height => "23", :name => "submit", :src => "http://images.paypal.com/en_US/i/btn/x-click-but22.gif", :type => "image", :width => "87"}/
+            - unless product.size.blank?
+              %input{:name => "on0", :type => "hidden", :value => "Size"} 
+              = label :product, :size
+              = select_tag "os0", options_for_select(product.size.split(",").collect {|size| [size, size] }, product.size.split(",").first)
+              %br/
+              %br/
+            %input{:alt => "Make payments with PayPal - it's fast, free and secure!", :border => "0", :height => "23", :name => "submit", :src => "http://images.paypal.com/en_US/i/btn/x-click-but22.gif", :type => "image", :width => "87"}/
 %br/
 = link_to 'New Product', new_product_path

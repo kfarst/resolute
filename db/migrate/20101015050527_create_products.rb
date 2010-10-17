@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string   :name
       t.string   :url
       t.float    :price
+      t.string   :size
       t.string   :picture_file_name
       t.string   :picture_content_type
       t.integer  :picture_file_size

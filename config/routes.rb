@@ -1,6 +1,4 @@
 Resolute::Application.routes.draw do 
-  resources :products
-
   resources :products do
     collection do
       get :store, :as => :store

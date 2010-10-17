@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20101015050527) do
     t.string   "name"
     t.string   "url"
     t.float    "price"
+    t.string   "size"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"

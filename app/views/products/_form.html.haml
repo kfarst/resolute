@@ -1,4 +1,4 @@
-= form_for(@product), :html => { :multipart => true } do |f|
+= form_for :product, :html => { :multipart => true } do |f|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -19,6 +19,12 @@
     = f.label :price
     %br/
     = f.text_field :price
+  .field
+    = f.label :size
+    %br/
+    = f.text_field :size
+  .field
+    = f.label :picture
     %br/
     = f.file_field :picture
   .actions

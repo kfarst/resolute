@@ -2,7 +2,10 @@ require 'spec_helper'
 
 describe Product do
   before(:each) do
-    @product = Factory.build(:product)
+    @product = Factory.build(:name => "Test Product",
+                            :url => "www.example.com",
+                            :price => 12.00,
+                            :size => "Small,Medium,Large")
   end
 
   it "saves with valid attributes" do
@@ -25,6 +28,11 @@ describe Product do
   end
 
   it "does not save if price is a number" do
+    @product.price = "aldsifjadslj"
+    @product.save.should be_false
+  end
+
+  it "does not save if size is malformed" do
     @product.price = "aldsifjadslj"
     @product.save.should be_false
   end

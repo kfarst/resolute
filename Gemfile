@@ -13,6 +13,7 @@ gem 'mysql'
 gem 'capistrano'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'eycap'
 
 group :development, :test do
   gem 'cucumber' 

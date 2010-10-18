@@ -7,7 +7,7 @@
     - row.each do |product|
       %td
         #product-box
-          = image_tag product.picture.url(:thumb)
+          = image_tag product.picture.url(:thumb), :rel => "lightbox"
           %br/
           %b
             = product.name
@@ -34,4 +34,13 @@
               %br/
             %input{:alt => "Make payments with PayPal - it's fast, free and secure!", :border => "0", :height => "23", :name => "submit", :src => "http://images.paypal.com/en_US/i/btn/x-click-but22.gif", :type => "image", :width => "87"}/
 %br/
-= link_to 'New Product', new_product_path
+%br/
+%form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "paypal"}
+  / Identify your business so that you can collect the payments.
+  %input{:name => "business", :type => "hidden", :value => "resolutelacrosse@gmail.com"}
+    / Specify a PayPal Shopping Cart View Cart button.
+    %input{:name => "cmd", :type => "hidden", :value => "_cart"}
+      %input{:name => "display", :type => "hidden", :value => "1"}
+        / Display the View Cart button.
+        %input{:alt => "PayPal - The safer, easier way to pay online", :border => "0", :name => "submit", :src => "https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif", :type => "image"}
+          %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypal.com/en_US/i/scr/pixel.gif", :width => "1"}

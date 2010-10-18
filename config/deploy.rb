@@ -1,4 +1,6 @@
 # RAILS_ROOT/config/deploy.rb
+require "eycap/recipes"
+
 # server config
 set :user, 'resolu11'
 set :domain, "host377.hostmonster.com"
@@ -10,14 +12,19 @@ set :applicationdir, "/home2/#{user}/rails/#{application}"
 # NOTE:  hostmonster supports http port 80,   
 #   svn port 3690 doesnt work,
 #   and svn+ssh is not tested...
-set :scm, "git"
+set :scm, :git
 set :repository,  "git@github.com:kfarst/resolute.git" 
-set :user, "resolu11"  # The server's user for deploys
+set :scm_username, "kfarst"
+set :scm_password, "elgxsy"  # The deploy user's password
 set :scm_passphrase, "elgxsy"  # The deploy user's password
+set :branch, "master"
+set :user, "resolu11"  # The server's user for deploys
+set :password, "Beresolute3444!"
+set :git, "/git"
 
 # deployment config
 set :deploy_to, applicationdir
-set :deploy_via, :remote_cache
+set :deploy_via, :filtered_remote_cache
 set :branch, "master"
 
 # production database config

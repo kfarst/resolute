@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
 
   def show
     @camp_registration = CampRegistrations.new
+    @coach_clinic_registration = CoachClinicRegistration.new
     respond_with @item
   end
 
@@ -68,7 +69,7 @@ private
 
   def find_item
     unless @item = Item.find_by_slug(params[:id])
-      redirect_to rooth_path
+      redirect_to root_path
     end
   end
 end 

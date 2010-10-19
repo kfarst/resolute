@@ -74,6 +74,7 @@ span.tagline {
   background: #efefef;
   text-decoration: none;
   width: 15em;
+  z-index: 100;
 }
 
 ul.nav_links li.first_level {
@@ -82,25 +83,30 @@ ul.nav_links li.first_level {
   margin-right: 20px;
   position: relative;
   color: white;
+  z-index: 100;
 }
 
 ul.nav_links li:hover a {
   background-color: #97BFDE;
+  z-index: 100;
 }
 
 ul.nav_links li.first_level ul.second_level {
   display: none;
   position: absolute;
+  z-index: 100;
 }
 
 ul.nav_links li.first_level:hover ul.second_level {
   display: block;
   position: absolute;
+  z-index: 100;
 }
 
 ul.second_level li.first_level {
   clear:both;
   float: left;
+  z-index: 100;
 }
 
 #content{
@@ -133,10 +139,11 @@ ul.second_level li.first_level {
   margin-top: 10px;
 }
 
-#panel.staff {
-  background-image: url('../images/panel1.jpg'); 
+#panel.nov-8th-coaches-clinic {
+  background-image: url('../images/panel4.jpg'); 
   background-repeat: no-repeat; 
   background-position: 90% top;
+  background-size: 100%;
 }
 
 #panel.lacrosse-the-nations {

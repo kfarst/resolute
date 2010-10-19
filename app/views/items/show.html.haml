@@ -5,5 +5,9 @@
 
 - if @item.include_camp_registration_form?
   = render :partial => "camp_registrations/form", :objects => @camp_registration 
+- elsif @item.slug == "nov-8th-coaches-clinic"
+  %br/
+  %br/
+  = render :partial => "coach_clinic_registrations/form", :objects => @coach_clinic_registration 
 
 = render :partial => "admin/admin_links"

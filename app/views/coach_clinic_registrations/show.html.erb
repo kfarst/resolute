@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @coach_clinic_registration.name %>
+</p>
+
+<p>
+  <b>Program:</b>
+  <%= @coach_clinic_registration.program %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @coach_clinic_registration.email %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @coach_clinic_registration.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_coach_clinic_registration_path(@coach_clinic_registration) %> |
+<%= link_to 'Back', coach_clinic_registrations_path %>

@@ -1,4 +1,6 @@
 Resolute::Application.routes.draw do 
+  resources :coach_clinic_registrations
+
   resources :items, :except => [:index] do
     collection do
       get :pages, :as => :pages

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100923130508) do
+ActiveRecord::Schema.define(:version => 20101018055614) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "camp_level"
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -41,6 +42,15 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
+  create_table "coach_clinic_registrations", :force => true do |t|
+    t.string   "name"
+    t.string   "program"
+    t.string   "email"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contest_entries", :force => true do |t|
     t.string   "name"
@@ -76,7 +86,6 @@ ActiveRecord::Schema.define(:version => 20100923130508) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.string   "url"
     t.float    "price"
     t.string   "size"
     t.string   "picture_file_name"

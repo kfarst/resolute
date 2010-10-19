@@ -1,0 +1,24 @@
+#title
+  Coach Clinic Registrations
+
+%table
+  %tr
+    %th Name
+    %th Program
+    %th Email
+    %th Comments
+    %th
+    %th
+    %th
+  - @coach_clinic_registrations.each do |coach_clinic_registration|
+    %tr
+      %td= coach_clinic_registration.name
+      %td= coach_clinic_registration.program
+      %td= coach_clinic_registration.email
+      %td= coach_clinic_registration.comments
+      %td= link_to 'Show', coach_clinic_registration
+      %td= link_to 'Edit', edit_coach_clinic_registration_path(coach_clinic_registration)
+      %td= link_to 'Destroy', coach_clinic_registration, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to "Admin Home", admin_path
+

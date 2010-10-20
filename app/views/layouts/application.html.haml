@@ -17,6 +17,11 @@
         %br
         %span.tagline 
           Never Stop. Never Quit. Be Resolute.
+        #social-network-links
+          %span
+            Check us out on Facebok and Twitter!
+          = link_to (image_tag "fb_icon.png"), "http://www.facebook.com/profile.php?id=100000102725042", :target => "_blank"
+          = link_to (image_tag "twtr_icon.png"), "http://twitter.com/ResoluteLax", :target => "_blank"
         #nav
           %ul.nav_links
             - Category.list_order.each do |category|

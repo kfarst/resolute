@@ -377,6 +377,28 @@ form#new_camp_registrations {
   clear:both;
 }
 
+#social-network-links {
+  position: absolute;
+  background-color:#2A2B1C;
+  margin-left:auto;
+  margin-right:auto;
+  padding:10px;
+  top:20px;
+  right:0;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  color: white;
+  font-size: 12px;
+}
+
+#social-network-links span {
+margin-right: 5px;
+}
+
 /*----------------- Store -------------------*/
 
 #store-products {

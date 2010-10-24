@@ -34,7 +34,9 @@ span.logo {
 
 img.main_logo {
   width: 300px;
+  height: 129px;
   height: auto;
+  /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo.png');*/
 }
 
 span.tagline {

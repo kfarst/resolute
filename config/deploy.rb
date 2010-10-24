@@ -20,11 +20,11 @@ set :scm_passphrase, "elgxsy"  # The deploy user's password
 set :branch, "master"
 set :user, "resolu11"  # The server's user for deploys
 set :password, "Beresolute3444!"
-set :git, "/git"
+set :git, "git"
 
 # deployment config
 set :deploy_to, applicationdir
-set :deploy_via, :filtered_remote_cache
+set :deploy_via, :copy
 set :branch, "master"
 
 # production database config

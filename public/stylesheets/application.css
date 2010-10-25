@@ -76,7 +76,7 @@ span.tagline {
   background: #efefef;
   text-decoration: none;
   width: 15em;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.nav_links li.first_level {
@@ -85,33 +85,33 @@ ul.nav_links li.first_level {
   margin-right: 20px;
   position: relative;
   color: white;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.nav_links li:hover a {
   background-color: #97BFDE;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.nav_links li.first_level ul.second_level {
   display: none;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.nav_links li.first_level:hover ul.second_level {
   display: block;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.second_level li.first_level {
   clear:both;
   float: left;
-  z-index: 100;
+  z-index: 1;
 }
 
-#content{
+#content {
   background-image:url("../images/camp-background.png");
   background-position: bottom center;
   background-repeat:no-repeat;

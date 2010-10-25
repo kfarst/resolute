@@ -25,7 +25,7 @@ Resolute::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   match '/admin' => 'admin#index', :as => :admin
-  match '/home' => 'items#welcome', :as => :welcome
+  match '/home', :to => redirect("/")
   match '/videos' => 'items#videos', :as => :videos
   match '/contact-us' => 'contacts#new'
   match '/store' => 'products#store', :as => :store

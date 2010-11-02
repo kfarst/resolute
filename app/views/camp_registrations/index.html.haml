@@ -21,5 +21,6 @@
       %td= camp_registration.school
       %td= camp_registration.comments
       %td= camp_registration.camp_level
+      %td= link_to 'Destroy', "/camp_registrations/#{camp_registration.id}", :method => :delete, :confirm => "Are your sure?"
 %br
 = link_to 'New Camp registration', new_camp_registration_path

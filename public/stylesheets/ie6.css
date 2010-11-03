@@ -1,0 +1,25 @@
+#logo {
+  width: 300px;
+  height: 129px;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo.png');
+}
+
+img.main_logo {
+  display: none;
+}
+
+#panel.lacrosse-the-nations {
+  width: 630px;
+  height: 420px;
+  float: left;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/lacrosse_the_nations.png');
+  background-repeat: no-repeat; 
+  background-position: 0 top;
+}
+
+#panel.nov-8th-coaches-clinic {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/panel4.jpg');
+  background-repeat: no-repeat; 
+  background-position: 90% top;
+  background-size: 100%;
+}

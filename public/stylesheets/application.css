@@ -26,7 +26,7 @@ p {
   margin-bottom: 30px;
 }
 
-span.logo {
+#logo {
   font-size: 50px;
   color: #97BFDE;
   font-weight: bold;
@@ -35,8 +35,6 @@ span.logo {
 img.main_logo {
   width: 300px;
   height: 129px;
-  height: auto;
-  /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo.png');*/
 }
 
 span.tagline {

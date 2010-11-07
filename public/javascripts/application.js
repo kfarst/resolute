@@ -1,13 +1,11 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-$(function() { 
+jQuery(function($) { 
   $(document)                                       .ready(hideBackground);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
-  $('#window #tab a')                               .live('click', hideVideo);
   $(document)                                       .ready(listSort);
-  $(document)                                       .ready(hideVideo);
 
   function listSort(e) {
     $("#sortable").sortable({
@@ -18,11 +16,13 @@ $(function() {
 		$("#sortable").disableSelection();
   }
 
-  function hideVideo(e) {
-    if ($('.video-js-box').is(':visible')) $('video.video-js').pause();
-    $('#overlay').hide();
-    $('#window').hide();
-    $('#window').find("div").hide();
+  function hideBackground(e) {
+    if ($('div#panel').length > 0) {
+      $('div#content').css('background-color', 'transparent')
+                      .css('-moz-box-shadow', 'none')
+                      .css('-webkit-box-shadow', 'none')
+                      .css('background-image', 'none');
+    }
   }
 
   function panelAsLink(e) {

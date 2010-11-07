@@ -2,8 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(function() { 
   $(document)                                       .ready(hideBackground);
-  $('#video img')                                   .live('click', showYouTubeVideo);
-  $('#video a')                                     .live('click', showYouTubeVideo);
   $('#panel')                                       .live('click', panelAsLink);
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
@@ -25,41 +23,6 @@ $(function() {
     $('#overlay').hide();
     $('#window').hide();
     $('#window').find("div").hide();
-  }
-
-  function showYouTubeVideo(e) {
-    if ($('div#title').html() == "Videos") {
-      e.preventDefault();
-
-      $('#overlay').show();
-      $('#window').show();
-      $('#window div').show();
-      $('.youtube-box').show();
-
-      var winHeight = "425",
-          winWidth = $(".youtube-box object").outerWidth(true) + 20,
-          halfHeight = ($(window).height() / 2) - (winHeight / 2),
-          halfWidth = ($(window).width() / 2) - (winWidth / 2),
-          videoSource = $(this).attr('video_url'); 
-
-      $('.youtube-box object param').first().attr('value',videoSource);
-      $('.youtube-box').css('margin-top', '7px');
-      $('.youtube-box object embed').attr('src', videoSource);
-
-      $('#window').css('height', winHeight + 'px')
-                  .css('width', winWidth + 'px') 
-                  .css('margin-top', halfHeight + 'px') 
-                  .css('margin-left', halfWidth + 'px'); 
-    }
-  }
-
-  function hideBackground(e) {
-    if ($('div#panel').length > 0) {
-      $('div#content').css('background-color', 'transparent')
-                      .css('-moz-box-shadow', 'none')
-                      .css('-webkit-box-shadow', 'none')
-                      .css('background-image', 'none');
-    }
   }
 
   function panelAsLink(e) {

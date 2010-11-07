@@ -175,42 +175,6 @@ ul.second_level li.first_level {
   text-shadow: #000000 2px 2px 5px;
 }
 
-#overlay {
-  position: fixed;
-  display: none;
-  background: black;
-  opacity:0.5;
-  filter:alpha(opacity=50);
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#window {
-  position: fixed;
-  background-color: white;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  z-index: 11;
-}
-
-#tab {
-  width: 70px;
-  height: 20px;
-  background-color: white;
-  -moz-box-shadow: 5px 5px 10px #C0C0C0;
-  -webkit-box-shadow: 5px 5px 10px #C0C0C0;
-  padding: 5px 0 0 5px;
-  margin: 2px 0 0 2px;
-}
-
-#tab a {
-  color: black;
-}
-
 #video {
   padding: 10px;
   float: left;
@@ -243,7 +207,7 @@ ul.second_level li.first_level {
   float:left;
   font-size:16px;
   font-weight:bold;
-  margin:0 10px 20px;
+  margin:0 10px 20px 10px;
   top:0;
   width:100%;
 }

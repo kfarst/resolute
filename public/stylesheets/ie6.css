@@ -23,3 +23,7 @@ img.main_logo {
   background-position: 90% top;
   background-size: 100%;
 }
+
+#video_info {
+  clear:both;
+}

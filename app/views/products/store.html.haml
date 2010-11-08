@@ -7,7 +7,7 @@
     - row.each do |product|
       %td
         #product-box
-          = image_tag product.picture.url(:thumb), :rel => "lightbox"
+          = link_to (image_tag product.picture.url(:thumb)), product.picture.url(:medium), :rel => "vidbox"
           %br/
           %b
             = product.name

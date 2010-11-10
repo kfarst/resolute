@@ -372,6 +372,7 @@ margin-right: 5px;
 }
 
 #product-box {
+  width: 300px;
   padding: 5px;
   margin: 10px;
   background-color: #C0C0C0;

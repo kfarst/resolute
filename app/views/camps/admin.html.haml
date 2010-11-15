@@ -1,0 +1,25 @@
+%h1 Listing camps
+%table
+  %tr
+    %th Name
+    %th Start at
+    %th End at
+    %th Description
+    %th Location
+    %th Group
+    %th
+    %th
+    %th
+  - @camps.each do |camp|
+    %tr
+      %td= camp.name
+      %td= camp.start_at
+      %td= camp.end_at
+      %td= camp.description
+      %td= camp.location
+      %td= camp.group
+      %td= link_to 'Show', camp
+      %td= link_to 'Edit', edit_camp_path(camp)
+      %td= link_to 'Destroy', camp, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Camp', new_camp_path

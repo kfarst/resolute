@@ -98,6 +98,10 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    meta_where (0.9.6)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 1.0.1)
     mime-types (1.16)
     mongrel (1.1.5)
       cgi_multipart_eof_fix (>= 2.4)
@@ -169,6 +173,7 @@ GEM
     warden (0.10.7)
       rack (>= 1.0.0)
     will_paginate (2.3.15)
+    ym4r (0.6.1)
     youtube-g (0.5.0)
 
 PLATFORMS
@@ -188,6 +193,7 @@ DEPENDENCIES
   haml
   jquery-rails
   launchy
+  meta_where
   mongrel
   mysql
   paperclip
@@ -196,4 +202,5 @@ DEPENDENCIES
   rspec-rails (>= 2.0.0.beta.22)
   ruby-debug
   will_paginate
+  ym4r
   youtube-g

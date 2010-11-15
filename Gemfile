@@ -14,6 +14,8 @@ gem 'capistrano'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'eycap'
+gem 'meta_where'
+gem 'ym4r'
 
 group :development, :test do
   gem 'cucumber' 

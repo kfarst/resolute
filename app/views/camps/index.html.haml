@@ -1,0 +1,21 @@
+#title
+  Camps & Clinics
+
+#camp-list.blue.float-left
+  Junior High
+  - @junior_high.each do |camp|
+    %b= link_to camp.title, camp_path(camp)
+    %br/
+    %b= camp.start_at
+#camp-list.gray.float-left
+  High School
+  - @high_school.each do |camp|
+    %b= link_to camp.title, camp_path(camp)
+    %br/
+    %b= camp.start_at
+#camp-list.light-gray.float-right
+  Other Camps
+  - @other_camps.each do |camp|
+    %b= link_to camp.title, camp_path(camp)
+    %br/
+    %b= camp.start_at

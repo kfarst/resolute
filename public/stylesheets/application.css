@@ -378,3 +378,34 @@ margin-right: 5px;
   background-color: #C0C0C0;
   text-align: center;
 }
+
+/*----------------- Camps -------------------*/
+
+#camp-list {
+  width: auto;
+  padding: 5px;
+  height: auto;
+  width: 400px;
+  margin: 5px;
+  text-align: center;
+}
+
+.blue {
+  background-color: #97BFDE;
+}
+
+.gray {
+  background-color: Gray;
+}
+
+.light-gray {
+  background-color: LightGray;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

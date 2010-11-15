@@ -1,4 +1,10 @@
 Resolute::Application.routes.draw do 
+  resources :camps do
+    collection do
+      get :admin, :as => :admin
+    end
+  end
+
   resources :coach_clinic_registrations
 
   resources :items, :except => [:index] do

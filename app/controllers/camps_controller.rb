@@ -1,11 +1,12 @@
 class CampsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
+
   def admin
     @camps = Camp.all
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @camps }
-    end
+  def new
+    @camp = Camp.new
   end
 
   def index
@@ -13,80 +14,50 @@ class CampsController < ApplicationController
     @junior_high = Camp.junior_high_camps
     @other_camps = Camp.other_camps
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @camps }
-    end
+    @month = (params[:month] || Time.zone.now.month).to_i
+    @year = (params[:year] || Time.zone.now.year).to_i
+
+    @shown_month = Date.civil(@year, @month)
+
+    @event_strips = Camp.event_strips_for_month(@shown_month)
   end
 
-  # GET /camps/1
-  # GET /camps/1.xml
   def show
-    @camp = Camp.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @camp }
-    end
+    @camp = Camp.find_by_name(params[:id].titleize)
   end
 
-  # GET /camps/new
-  # GET /camps/new.xml
-  def new
-    @camp = Camp.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @camp }
-    end
-  end
-
-  # GET /camps/1/edit
   def edit
     @camp = Camp.find(params[:id])
   end
 
-  # POST /camps
-  # POST /camps.xml
   def create
     @camp = Camp.new(params[:camp])
 
     respond_to do |format|
       if @camp.save
         format.html { redirect_to(@camp, :notice => 'Camp was successfully created.') }
-        format.xml  { render :xml => @camp, :status => :created, :location => @camp }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @camp.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /camps/1
-  # PUT /camps/1.xml
   def update
     @camp = Camp.find(params[:id])
 
     respond_to do |format|
       if @camp.update_attributes(params[:camp])
         format.html { redirect_to(@camp, :notice => 'Camp was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @camp.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /camps/1
-  # DELETE /camps/1.xml
   def destroy
     @camp = Camp.find(params[:id])
     @camp.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(camps_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(camps_url)
   end
 end

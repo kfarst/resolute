@@ -7,7 +7,7 @@ class CreateCamps < ActiveRecord::Migration
       t.text :description
       t.string :location
       t.string :group
-      t.string :payment_url
+      t.decimal :cost
 
       t.timestamps
     end

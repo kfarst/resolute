@@ -1,0 +1,22 @@
+#title= @camp.name
+
+%p#notice= notice
+
+= image_tag @camp.get_map, :id => "map"
+
+%b Location:
+%br/
+= street_address(@camp)
+%p
+  %b Starts at:
+  = formatted_datetime(@camp.start_at)
+%p
+  %b Ends at:
+  = formatted_datetime(@camp.end_at)
+%p
+  %b Cost:
+  = number_to_currency(@camp.cost)
+%p
+  = raw @camp.description
+
+= render :partial => "admin/admin_links"

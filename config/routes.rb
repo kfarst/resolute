@@ -1,9 +1,12 @@
 Resolute::Application.routes.draw do 
-  resources :camps do
+  resources :camps, :except => [:index] do
     collection do
       get :admin, :as => :admin
     end
   end
+
+  match "/camps-clinics(/:year(/:month))" => "camps#index",
+    :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :coach_clinic_registrations
 

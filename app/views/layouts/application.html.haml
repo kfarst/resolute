@@ -3,13 +3,13 @@
   %head
     %title 
       Resolute Lacrosse - Columbus, Ohio Lacrosse Camps and Clinics Featuring Anthony Kelly, Greg Bice, and Ricky Pages
-    = stylesheet_link_tag "application", "reset", "video-js", "videobox"
+    = stylesheet_link_tag "application", "reset", "video-js", "videobox", "event_calendar"
 
     /[if IE 6]
       = stylesheet_link_tag "ie6"
 
     = javascript_include_tag "jquery", "video", :ckeditor, :defaults, "jquery-ui", "videobox/mootools",
-      "videobox/swfobject", "videobox/videobox"
+      "videobox/swfobject", "videobox/videobox", "event_calendar"
     = csrf_meta_tag
     %meta{:content => "wQVZzM2rcFd-jjiR9ZFo3_FBZo7NWANvYd4nnDnlZ70", :name => "google-site-verification"}/
   %body

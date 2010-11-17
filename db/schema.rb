@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.text     "description"
     t.string   "location"
     t.string   "group"
-    t.string   "payment_url"
+    t.decimal  "cost",        :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

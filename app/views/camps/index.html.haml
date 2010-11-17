@@ -1,21 +1,49 @@
 #title
   Camps & Clinics
 
-#camp-list.blue.float-left
-  Junior High
-  - @junior_high.each do |camp|
-    %b= link_to camp.title, camp_path(camp)
+#camp-container
+  #camp-list.blue.float-left
+    #camp-list-name Junior High
     %br/
-    %b= camp.start_at
-#camp-list.gray.float-left
-  High School
-  - @high_school.each do |camp|
-    %b= link_to camp.title, camp_path(camp)
+    - if @junior_high.count.zero?
+      There are no junior high camps scheduled at this time.
+    - else
+      - @junior_high.each do |camp|
+        %b= link_to camp.name, camp_path(camp)
+        %br/
+        = formatted_datetime(camp.start_at)
+        %br/
+        = city_and_state(camp)
+        %br/
+        %br/
+  #camp-list.gray.float-left
+    #camp-list-name High School
     %br/
-    %b= camp.start_at
-#camp-list.light-gray.float-right
-  Other Camps
-  - @other_camps.each do |camp|
-    %b= link_to camp.title, camp_path(camp)
+    - if @high_school.count.zero?
+      There are no high school camps scheduled at this time.
+    - else
+      - @high_school.each do |camp|
+        %b= link_to camp.name, camp_path(camp)
+        %br/
+        = formatted_datetime(camp.start_at)
+        %br/
+        = city_and_state(camp)
+        %br/
+        %br/
+  #camp-list.light-gray.float-right
+    #camp-list-name Other Camps
     %br/
-    %b= camp.start_at
+    - if @other_camps.count.zero?
+      There are no other camps scheduled at this time.
+    - else
+      - @other_camps.each do |camp|
+        %b= link_to camp.name, camp_path(camp)
+        %br/
+        = formatted_datetime(camp.start_at)
+        %br/
+        = city_and_state(camp)
+        %br/
+        %br/
+
+#calendar
+  = raw(event_calendar)

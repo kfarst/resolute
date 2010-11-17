@@ -137,25 +137,25 @@ ul.second_level li.first_level {
 }
 
 #panel.camps-clinics {
-  background-image: url('../images/panel2.jpg'); 
+  background-image: url('../images/panel4.jpg'); 
   background-repeat: no-repeat; 
-  background-position: center 0%;
+  background-position: 90% top;
   clear: right;
   margin-top: 10px;
 }
 
-#panel.nov-8th-coaches-clinic {
-  background-image: url('../images/panel4.jpg'); 
+#panel.staff {
+  background-image: url('../images/panel2.jpg'); 
   background-repeat: no-repeat; 
-  background-position: 90% top;
+  background-position: center 0%;
   background-size: 100%;
 }
 
-#panel.lacrosse-the-nations {
+#panel.turkey-shootout-champs {
   width: 65%;
   height: 420px;
   float: left;
-  background-image: url('../images/lacrosse_the_nations.png');
+  background-image: url('../images/turkey-shootout.png');
   background-repeat: no-repeat; 
   background-position: 0 top;
 }

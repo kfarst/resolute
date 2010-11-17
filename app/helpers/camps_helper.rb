@@ -1,5 +1,5 @@
 module CampsHelper
-  include CalendarHelper
+  #include CalendarHelper
 
   def formatted_datetime(datetime)
     datetime.strftime("%B %e, %Y at %l:%M %p")

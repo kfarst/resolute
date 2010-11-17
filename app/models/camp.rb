@@ -1,5 +1,5 @@
 class Camp < ActiveRecord::Base
-  has_event_calendar
+  #has_event_calendar
   validates_presence_of :name,
                         :start_at,
                         :end_at,

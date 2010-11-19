@@ -12,25 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20101118045907) do
 
-  create_table "camp_registrations", :force => true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "position"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "school"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "street_address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.integer  "grade"
-    t.integer  "yrs_of_exp"
-    t.string   "finding_resolute"
-  end
-
   create_table "camps", :force => true do |t|
     t.string   "name"
     t.datetime "start_at"

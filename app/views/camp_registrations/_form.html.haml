@@ -7,27 +7,27 @@
       %ul
         - @camp_registration.errors.full_messages.each do |msg|
           %li= msg
-  - if @camp_registration.registration_form.name.true?
+  - if @camp.registration_form.name.true?
     .field
       = f.label :name
       %br/
       = f.text_field :name
-  - if @camp_registration.registration_form.email.true?
+  - if @camp.registration_form.email.true?
     .field
       = f.label :email
       %br/
       = f.text_field :email
-  - if @camp_registration.registration_form.phone.true?
+  - if @camp.registration_form.phone.true?
     .field
       = f.label :phone
       %br/
       = f.text_field :phone
-  - if @camp_registration.registration_form.age.true?
+  - if @camp.registration_form.age.true?
     .field
       = f.label :age
       %br/
       = f.text_field :age, :size => 2
-  - if @camp_registration.registration_form.position.true?
+  - if @camp.registration_form.position.true?
     .field
       = f.label :position
       %br/
@@ -35,17 +35,17 @@
       = f.check_box :position, "Middle"
       = f.check_box :position, "Defense"
       = f.check_box :position, "Goalie"
-  - if @camp_registration.registration_form.school.true?
+  - if @camp.registration_form.school.true?
     .field
       = f.label :school
       %br/
       = f.text_field :school
-  - if @camp_registration.registration_form.phone.true?
+  - if @camp.registration_form.phone.true?
     .field
       = f.label :phone
       %br/
       = f.text_field :phone, :size => 14
-  - if @camp_registration.registration_form.address.true?
+  - if @camp.registration_form.address.true?
     .field
       = f.label :street_address
       %br/
@@ -66,17 +66,17 @@
       = f.label :grade
       %br/
       = f.text_field :grade, :size => 2
-  - if @camp_registration.registration_form.years_of_exp.true?
+  - if @camp.registration_form.years_of_exp.true?
     .field
-      = f.label :yrs_of_exp
+      = f.label :yrs_of_exp, "Years of Experience"
       %br/
       = f.text_field :yrs_of_exp, :size => 2
-  - if @camp_registration.registration_form.finding_resolute.true?
+  - if @camp.registration_form.finding_resolute.true?
     .field
       = f.label :finding_resolute
       %br/
       = f.text_field :finding_resolute
-  - if @camp_registration.registration_form.comments.true?
+  - if @camp.registration_form.comments.true?
     .field
       = f.label :comments
       %br/

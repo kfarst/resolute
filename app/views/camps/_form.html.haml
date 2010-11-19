@@ -28,7 +28,7 @@
     %br/
     = f.text_field :location
   .field
-    = f.label :payment_url
+    = f.label :payment_url, "PayPal URL"
     %br/
     = f.text_field :payment_url
     %br/
@@ -39,6 +39,7 @@
     = f.label :group
     %br/
     = f.select :group, options_for_select(["Junior High","High School","Other"]), {:include_blank => true}
+
   %h2 Registration Form
   = f.fields_for :registration_form do |reg|
     .field
@@ -74,7 +75,7 @@
       %br/
       = reg.check_box :grade
     .field
-      = reg.label :yrs_of_exp
+      = reg.label :yrs_of_exp, "Years of Experience"
       %br/
       = reg.check_box :yrs_of_exp
     .field

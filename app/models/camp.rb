@@ -7,7 +7,7 @@ class Camp < ActiveRecord::Base
                       :with => /\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\d{5}(?:-\d{4})?/,
                       :message => "must have a full address"
 
-  has_many :registration_forms
+  has_one :registration_forms
   has_many :camp_registrations, :through => :registration_form, :dependent => :destroy
 
   accepts_nested_attributes_for :registration_forms

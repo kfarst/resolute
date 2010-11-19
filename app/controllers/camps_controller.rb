@@ -24,6 +24,7 @@ class CampsController < ApplicationController
 
   def show
     @camp = Camp.find_by_name(params[:id].titleize)
+    @camp_registration = CampRegistration.new
   end
 
   def edit

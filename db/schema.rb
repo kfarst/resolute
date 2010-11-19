@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101112232638) do
+ActiveRecord::Schema.define(:version => 20101118045907) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,13 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "camp_level"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "grade"
+    t.integer  "yrs_of_exp"
+    t.string   "finding_resolute"
   end
 
   create_table "camps", :force => true do |t|
@@ -104,6 +110,24 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registration_forms", :force => true do |t|
+    t.boolean  "name"
+    t.boolean  "age"
+    t.boolean  "school"
+    t.boolean  "position"
+    t.boolean  "email"
+    t.boolean  "phone"
+    t.boolean  "address"
+    t.boolean  "grade"
+    t.boolean  "yrs_of_exp"
+    t.boolean  "finding_resolute"
+    t.boolean  "comments"
+    t.integer  "camp_registration_id"
+    t.integer  "camp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

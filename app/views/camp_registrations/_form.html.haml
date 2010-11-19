@@ -26,18 +26,46 @@
   .field
     = f.label :position
     %br/
-    = f.text_field :position
-  .field
-    = f.label :camp_level
-    %br/
-    = radio_button_tag "camp_registrations[camp_level]", "Youth"
-    = f.label :youth, "Youth (8th grade and under)"
-    = radio_button_tag "camp_registrations[camp_level]", "High School"
-    = f.label :high_school
+    = f.check_box :position, "Attack"
+    = f.check_box :position, "Middle"
+    = f.check_box :position, "Defense"
+    = f.check_box :position, "Goalie"
   .field
     = f.label :school
     %br/
     = f.text_field :school
+  .field
+    = f.label :phone
+    %br/
+    = f.text_field :phone, :size => 14
+  .field
+    = f.label :street_address
+    %br/
+    = f.text_field :street_address
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :state
+    %br/
+    = f.select :state
+  .field
+    = f.label :zip
+    %br/
+    = f.text_field :zip, :size => 5
+  .field
+    = f.label :grade
+    %br/
+    = f.text_field :grade, :size => 2
+  .field
+    = f.label :yrs_of_exp
+    %br/
+    = f.text_field :yrs_of_exp, :size => 2
+  .field
+    = f.label :finding_resolute
+    %br/
+    = f.text_field :finding_resolute
   .field
     = f.label :comments
     %br/

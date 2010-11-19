@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
     t.string   "street_address"
     t.string   "city"
     t.string   "state"
-    t.integer  "zip"
+    t.string   "zip"
     t.integer  "grade"
     t.integer  "yrs_of_exp"
     t.string   "finding_resolute"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
     t.string   "location"
     t.string   "group"
     t.decimal  "cost",        :precision => 10, :scale => 0
+    t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -115,17 +116,17 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
   end
 
   create_table "registration_forms", :force => true do |t|
-    t.boolean  "name"
-    t.boolean  "age"
-    t.boolean  "school"
-    t.boolean  "position"
-    t.boolean  "email"
-    t.boolean  "phone"
-    t.boolean  "address"
-    t.boolean  "grade"
-    t.boolean  "yrs_of_exp"
-    t.boolean  "finding_resolute"
-    t.boolean  "comments"
+    t.boolean  "name",                 :default => false
+    t.boolean  "age",                  :default => false
+    t.boolean  "school",               :default => false
+    t.boolean  "position",             :default => false
+    t.boolean  "email",                :default => false
+    t.boolean  "phone",                :default => false
+    t.boolean  "address",              :default => false
+    t.boolean  "grade",                :default => false
+    t.boolean  "yrs_of_exp",           :default => false
+    t.boolean  "finding_resolute",     :default => false
+    t.boolean  "comments",             :default => false
     t.integer  "camp_registration_id"
     t.integer  "camp_id"
     t.datetime "created_at"

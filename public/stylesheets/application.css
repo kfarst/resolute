@@ -365,7 +365,13 @@ form#new_camp_registrations {
 }
 
 #social-network-links span {
-margin-right: 5px;
+  margin-right: 5px;
+}
+
+.subtext {
+  font-size: 12px;
+  clear: left;
+  margin-bottom: 5px;
 }
 
 /*----------------- Store -------------------*/

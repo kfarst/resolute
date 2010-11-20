@@ -21,7 +21,7 @@ class CampRegistrations < ActiveRecord::Base
   validates_numericality_of :grade, :less_than => 13, :greater_than => 0, :if => :grade_in_form?
   validates_numericality_of :yrs_of_exp, :if => :yrs_of_exp_in_form?
 
-  has_one :camp, :through => :registration_forms
+  has_one :camp, :through => :registration_form
 
   def to_param
     id
@@ -30,46 +30,46 @@ class CampRegistrations < ActiveRecord::Base
   private
 
   def name_in_form?
-    registration_form.name.true?
+    self.registration_form.name?
   end
 
   def email_in_form?
-    registration_form.email.true?
+    self.registration_form.email?
   end
 
   def phone_in_form?
-    registration_form.phone.true?
+    self.registration_form.phone?
   end
 
   def age_in_form?
-    registration_form.age.true?
+    self.registration_form.age?
   end
   
   def position_in_form?
-    registration_form.position.true?
+    self.registration_form.position?
   end
 
   def school_in_form?
-    registration_form.school.true?
+    self.registration_form.school?
   end
 
   def phone_in_form?
-    registration_form.phone.true?
+    self.registration_form.phone?
   end
 
   def address_in_form?
-    registration_form.address.true?
+    self.registration_form.address?
   end
 
   def grade_in_form?
-    registration_form.grade.true?
+    self.registration_form.grade?
   end
 
   def yrs_of_exp_in_form?
-    registration_form.yrs_of_exp.true?
+    self.registration_form.yrs_of_exp?
   end
 
   def finding_resolute_in_form?
-    registration_form.finding_resolute.true?
+    self.registration_form.finding_resolute?
   end
 end

@@ -41,10 +41,11 @@ class CampRegistrationsController < ApplicationController
   # POST /camp_registrations
   # POST /camp_registrations.xml
   def create
+    payment_url = params[:camp][:payment_url]
     @camp_registration = CampRegistrations.new(params[:camp_registrations])
 
       if @camp_registration.save
-        redirect_to "https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11240645" 
+        redirect_to payment_url
       else
         render :action => "new"
       end

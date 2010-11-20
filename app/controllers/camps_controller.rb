@@ -7,6 +7,7 @@ class CampsController < ApplicationController
 
   def new
     @camp = Camp.new
+    @camp.registration_form = RegistrationForm.new
   end
 
   def index
@@ -24,7 +25,7 @@ class CampsController < ApplicationController
 
   def show
     @camp = Camp.find_by_name(params[:id].titleize)
-    @camp_registration = CampRegistration.new
+    @camp_registration = CampRegistrations.new
   end
 
   def edit

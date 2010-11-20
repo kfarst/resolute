@@ -19,7 +19,8 @@
 %p
   = raw @camp.description
 
-%h2 Camp Registration
-= render :partial => "camp_registration/form", :object => @camp
+#new_camp_registrations
+  #title Register Now!
+  = render :partial => "camp_registrations/form", :object => @camp
 
 = render :partial => "admin/admin_links"

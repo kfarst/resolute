@@ -336,9 +336,11 @@ div.field {
   font-size:16px;
 }
 
-form#new_camp_registrations {
+#new_camp_registrations {
+  margin: 15px 0 0 0;
   float: left;
-  width: 48%;
+  background-color: #C0C0C0;
+  padding: 5px;
 }
 
 #admin_links {

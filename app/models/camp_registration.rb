@@ -1,4 +1,4 @@
-class CampRegistrations < ActiveRecord::Base
+class CampRegistration < ActiveRecord::Base
   validates_presence_of :name, :if => :name_in_form?
   validates_presence_of :email, :if => :email_in_form?
   validates_presence_of :age, :if => :age_in_form?

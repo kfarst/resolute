@@ -4,7 +4,7 @@
 = raw(@item.body)
 
 - if @item.include_camp_registration_form?
-  = render :partial => "camp_registrations/form", :objects => @camp_registration 
+  = render :partial => "camp_registration/form", :objects => @camp_registration 
 - elsif @item.slug == "nov-8th-coaches-clinic"
   %br/
   %br/

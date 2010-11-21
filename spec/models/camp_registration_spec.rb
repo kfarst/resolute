@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CampRegistrations do
+describe CampRegistration do
   before(:each) do
     @camp_registration = Factory.build(:camp_registration)
   end

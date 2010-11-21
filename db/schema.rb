@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
     t.integer  "grade"
     t.integer  "yrs_of_exp"
     t.string   "finding_resolute"
+    t.string   "registration_form_id"
   end
 
   create_table "camps", :force => true do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
     t.string   "location"
     t.string   "group"
     t.decimal  "cost",        :precision => 10, :scale => 0
+    t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

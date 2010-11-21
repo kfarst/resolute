@@ -1,4 +1,4 @@
-= form_for @camp_registration, :url => camp_registrations_path(@camp_registration) do |f|
+= form_for @camp_registration, :url => camp_registration_path(@camp_registration) do |f|
   = hidden_field(:camp, :payment_url)
 
   - if @camp_registration.errors.any?
@@ -10,9 +10,6 @@
         - @camp_registration.errors.full_messages.each do |msg|
           %li= msg
 
-  %fieldset
-    %legend
-      Register Now!
   - if @camp.registration_form.name?
     .field
       = f.label :name
@@ -23,11 +20,6 @@
       = f.label :email
       %br/
       = f.text_field :email
-  - if @camp.registration_form.phone?
-    .field
-      = f.label :phone
-      %br/
-      = f.text_field :phone
   - if @camp.registration_form.age?
     .field
       = f.label :age
@@ -38,13 +30,13 @@
       = f.label :position
       %br/
       = label_tag "Attack"
-      = check_box_tag "camp_registrations[position]", "Attack"
+      = check_box_tag "camp_registration[position]", "Attack"
       = label_tag "Middle"
-      = check_box_tag "camp_registrations[position]", "Middle"
+      = check_box_tag "camp_registration[position]", "Middle"
       = label_tag "Defense"
-      = check_box_tag "camp_registrations[position]", "Defense"
+      = check_box_tag "camp_registration[position]", "Defense"
       = label_tag "Goalie"
-      = check_box_tag "camp_registrations[position]", "Goalie"
+      = check_box_tag "camp_registration[position]", "Goalie"
   - if @camp.registration_form.school?
     .field
       = f.label :school

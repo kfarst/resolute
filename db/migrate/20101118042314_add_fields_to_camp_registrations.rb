@@ -7,6 +7,7 @@ class AddFieldsToCampRegistrations < ActiveRecord::Migration
     add_column :camp_registrations, :grade, :integer
     add_column :camp_registrations, :yrs_of_exp, :integer
     add_column :camp_registrations, :finding_resolute, :string
+    add_column :camp_registrations, :registration_form_id, :string
     remove_column :camp_registrations, :camp_level
   end
 

@@ -18,7 +18,7 @@ module NavigationHelpers
       "/items/test-page"
 
     when /the camp registration page/
-      "/camp_registrations/new"
+      "/camp_registration/new"
 
     when /the Contact Us page/
       "/contact-us"

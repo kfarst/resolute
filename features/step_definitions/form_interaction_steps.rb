@@ -9,7 +9,7 @@ When /^I fill out the camp registration form$/ do
   fill_in "Age", :with => "12"
   fill_in "School", :with => "James Woods High School"
   fill_in "Position", :with => "Defense"
-  choose "camp_registrations_camp_level_High_School"
+  choose "camp_registration_camp_level_High_School"
   fill_in "Comments", :with => "English are a fun subjekt in skewl!"
   click "Register and Pay Now"
 end

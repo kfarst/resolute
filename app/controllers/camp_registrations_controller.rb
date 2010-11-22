@@ -1,11 +1,11 @@
-class CampRegistrationController < ApplicationController
+class CampRegistrationsController < ApplicationController
   # GET /camp_registration
   # GET /camp_registration.xml
   before_filter :authenticate_user!, :except => [:new, :create]
   before_filter :find_registration, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @camp_registration = CampRegistration.all
+    @camp_registrations = CampRegistration.all
 
     respond_to do |format|
       format.html # index.html.erb

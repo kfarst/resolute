@@ -1,0 +1,73 @@
+#title
+  Listing Camp Registrations
+
+- Camp.all.each do |camp|
+  %h1= camp.name
+  %br
+  %br
+  %table{:width => "100%", :border => "1"}
+    %tr
+      - if camp.registration_form.name?
+        %th Name 
+      - if camp.registration_form.age?
+        %th Age
+      - if camp.registration_form.position?
+        %th Position
+      - if camp.registration_form.email?
+        %th Email
+      - if camp.registration_form.phone?
+        %th Phone
+      - if camp.registration_form.school?
+        %th School
+      - if camp.registration_form.comments?
+        %th Comments
+      - if camp.registration_form.address?
+        %th Street Address
+      - if camp.registration_form.address?
+        %th City
+      - if camp.registration_form.address?
+        %th State
+      - if camp.registration_form.address?
+        %th Zip
+      - if camp.registration_form.grade?
+        %th Grade
+      - if camp.registration_form.yrs_of_exp?
+        %th Years of Experience
+      - if camp.registration_form.finding_resolute?
+        %th How did you find Resolute?
+    - @camp_registrations.each do |camp_registration|
+      %tr
+        - if camp.registration_form.name?
+          %td= camp_registration.name
+        - if camp.registration_form.age?
+          %td= camp_registration.age
+        - if camp.registration_form.position?
+          %td= camp_registration.position
+        - if camp.registration_form.email?
+          %td= camp_registration.email
+        - if camp.registration_form.phone?
+          %td= camp_registration.phone
+        - if camp.registration_form.school?
+          %td= camp_registration.school
+        - if camp.registration_form.comments?
+          %td= camp_registration.comments
+        - if camp.registration_form.address?
+          %td= camp_registration.street_address
+        - if camp.registration_form.address?
+          %td= camp_registration.city
+        - if camp.registration_form.address?
+          %td= camp_registration.state
+        - if camp.registration_form.address?
+          %td= camp_registration.zip
+        - if camp.registration_form.grade?
+          %td= camp_registration.grade
+        - if camp.registration_form.yrs_of_exp?
+          %td= camp_registration.yrs_of_exp
+        - if camp.registration_form.finding_resolute?
+          %td= camp_registration.finding_resolute
+        %td= link_to 'Destroy', "/camp_registration/#{camp_registration.id}", :method => :delete, :confirm => "Are your sure?"
+  %br
+  %br
+  %br
+%br
+= link_to 'New camp.registration_form.registration', new_camp_registration_path

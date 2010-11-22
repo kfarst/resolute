@@ -11,7 +11,7 @@ class CampRegistration < ActiveRecord::Base
   validates_presence_of :zip, :if => :address_in_form?
   validates_presence_of :grade, :if => :grade_in_form?
   validates_presence_of :yrs_of_exp, :if => :yrs_of_exp_in_form?
-  validates_presence_of :finding_resolute, :if => :find_resolute_in_form?
+  validates_presence_of :finding_resolute, :if => :finding_resolute_in_form?
 
   validates_format_of :phone, :with => /^(\()?([0-9]{3})(\)|-|.\s)?([0-9]{3})(-)?([0-9]{4}|[0-9]{4})$/, :on => :create, :if => :phone_in_form?
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :if => :email_in_form?
@@ -27,49 +27,53 @@ class CampRegistration < ActiveRecord::Base
     id
   end
 
+  def registration_form
+    @form ||= RegistrationForm.find_by_id(registration_form_id)
+  end
+
   private
 
   def name_in_form?
-    self.registration_form.name?
+    registration_form.name?
   end
 
   def email_in_form?
-    self.registration_form.email?
+    registration_form.email?
   end
 
   def phone_in_form?
-    self.registration_form.phone?
+    registration_form.phone?
   end
 
   def age_in_form?
-    self.registration_form.age?
+    registration_form.age?
   end
   
   def position_in_form?
-    self.registration_form.position?
+    registration_form.position?
   end
 
   def school_in_form?
-    self.registration_form.school?
+    registration_form.school?
   end
 
   def phone_in_form?
-    self.registration_form.phone?
+    registration_form.phone?
   end
 
   def address_in_form?
-    self.registration_form.address?
+    registration_form.address?
   end
 
   def grade_in_form?
-    self.registration_form.grade?
+    registration_form.grade?
   end
 
   def yrs_of_exp_in_form?
-    self.registration_form.yrs_of_exp?
+    registration_form.yrs_of_exp?
   end
 
   def finding_resolute_in_form?
-    self.registration_form.finding_resolute?
+    registration_form.finding_resolute?
   end
 end

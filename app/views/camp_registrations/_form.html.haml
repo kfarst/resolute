@@ -1,5 +1,6 @@
-= form_for @camp_registration, :url => camp_registration_path(@camp_registration) do |f|
+= form_for @camp_registration, :url => camp_registrations_path(@camp_registration) do |f|
   = hidden_field(:camp, :payment_url)
+  = hidden_field_tag "camp_registration[registration_form_id]", "#{@camp.registration_form.id}"
 
   - if @camp_registration.errors.any?
     #error_explanation
@@ -59,7 +60,7 @@
     .field
       = f.label :state
       %br/
-      = f.text_field :state
+      = f.select :state, state_abbreviations, {:include_blank => true}
     .field
       = f.label :zip
       %br/
@@ -77,7 +78,7 @@
     .field
       = f.label :finding_resolute, "How did you hear about us?"
       %br/
-      = f.text_field :finding_resolute
+      = f.select :finding_resolute, found_resolute, {:include_blank => true}
   - if @camp.registration_form.comments?
     .field
       = f.label :comments

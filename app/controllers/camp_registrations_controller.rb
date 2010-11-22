@@ -42,7 +42,7 @@ class CampRegistrationsController < ApplicationController
   # POST /camp_registration.xml
   def create
     payment_url = params[:camp][:payment_url]
-    @camp_registration = CampRegistration.new(params[:camp_registration])
+    @camp_registration = CampRegistration.new(CampRegistration.format_for_save(params[:camp_registration]))
 
       if @camp_registration.save
         redirect_to payment_url

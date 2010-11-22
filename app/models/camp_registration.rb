@@ -31,6 +31,15 @@ class CampRegistration < ActiveRecord::Base
     @form ||= RegistrationForm.find_by_id(registration_form_id)
   end
 
+  def self.format_for_save(object)
+    pos_string = ""
+    object[:position].each_pair do |key, value| 
+      pos_string << "#{value}, "
+      object.delete(pos)
+    end
+    object.merge({:position => pos_string})
+  end
+
   private
 
   def name_in_form?

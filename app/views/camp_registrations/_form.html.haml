@@ -1,4 +1,7 @@
 = form_for @camp_registration, :url => camp_registrations_path(@camp_registration) do |f|
+  = hidden_field(:camp, :payment_url)
+  = hidden_field_tag "camp_registration[registration_form_id]", "#{@camp.registration_form.id}"
+
   - if @camp_registration.errors.any?
     #error_explanation
       %h2
@@ -7,42 +10,82 @@
       %ul
         - @camp_registration.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :email
-    %br/
-    = f.text_field :email
-  .field
-    = f.label :phone
-    %br/
-    = f.text_field :phone
-  .field
-    = f.label :age
-    %br/
-    = f.text_field :age, :size => 2
-  .field
-    = f.label :position
-    %br/
-    = f.text_field :position
-  .field
-    = f.label :camp_level
-    %br/
-    = radio_button_tag "camp_registrations[camp_level]", "Youth"
-    = f.label :youth, "Youth (8th grade and under)"
-    = radio_button_tag "camp_registrations[camp_level]", "High School"
-    = f.label :high_school
-  .field
-    = f.label :school
-    %br/
-    = f.text_field :school
-  .field
-    = f.label :comments
-    %br/
-    = f.text_area :comments, :rows => "10", :cols => "50"
+
+  - if @camp.registration_form.name?
+    .field
+      = f.label :name
+      %br/
+      = f.text_field :name
+  - if @camp.registration_form.email?
+    .field
+      = f.label :email
+      %br/
+      = f.text_field :email
+  - if @camp.registration_form.age?
+    .field
+      = f.label :age
+      %br/
+      = f.text_field :age, :size => 2
+  - if @camp.registration_form.position?
+    .field
+      = f.label :position
+      %br/
+      = label_tag "Attack"
+      = check_box_tag "camp_registration[position]", "Attack"
+      = label_tag "Middle"
+      = check_box_tag "camp_registration[position]", "Middle"
+      = label_tag "Defense"
+      = check_box_tag "camp_registration[position]", "Defense"
+      = label_tag "Goalie"
+      = check_box_tag "camp_registration[position]", "Goalie"
+  - if @camp.registration_form.school?
+    .field
+      = f.label :school
+      %br/
+      = f.text_field :school
+  - if @camp.registration_form.phone?
+    .field
+      = f.label :phone
+      %br/
+      = f.text_field :phone, :size => 14
+  - if @camp.registration_form.address?
+    .field
+      = f.label :street_address
+      %br/
+      = f.text_field :street_address
+    .field
+      = f.label :city
+      %br/
+      = f.text_field :city
+    .field
+      = f.label :state
+      %br/
+      = f.select :state, state_abbreviations, {:include_blank => true}
+    .field
+      = f.label :zip
+      %br/
+      = f.text_field :zip, :size => 5
+    .field
+      = f.label :grade
+      %br/
+      = f.text_field :grade, :size => 2
+  - if @camp.registration_form.yrs_of_exp?
+    .field
+      = f.label :yrs_of_exp, "Years of Experience"
+      %br/
+      = f.text_field :yrs_of_exp, :size => 2
+  - if @camp.registration_form.finding_resolute?
+    .field
+      = f.label :finding_resolute, "How did you hear about us?"
+      %br/
+      = f.select :finding_resolute, found_resolute, {:include_blank => true}
+  - if @camp.registration_form.comments?
+    .field
+      = f.label :comments
+      %br/
+      = f.text_area :comments, :rows => "10", :cols => "50"
+
   .actions
     = f.submit "Register and Pay Now"
 
-    .clear= "NOTE: After successful registration you will automatically be redirected for payment."
+    %h4.clear= "NOTE: After successful registration you will automatically be redirected for payment."

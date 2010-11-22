@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101112232638) do
+ActiveRecord::Schema.define(:version => 20101118045907) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,14 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "camp_level"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.integer  "grade"
+    t.integer  "yrs_of_exp"
+    t.string   "finding_resolute"
+    t.string   "registration_form_id"
   end
 
   create_table "camps", :force => true do |t|
@@ -33,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.string   "location"
     t.string   "group"
     t.decimal  "cost",        :precision => 10, :scale => 0
+    t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -104,6 +112,24 @@ ActiveRecord::Schema.define(:version => 20101112232638) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registration_forms", :force => true do |t|
+    t.boolean  "name",                 :default => false
+    t.boolean  "age",                  :default => false
+    t.boolean  "school",               :default => false
+    t.boolean  "position",             :default => false
+    t.boolean  "email",                :default => false
+    t.boolean  "phone",                :default => false
+    t.boolean  "address",              :default => false
+    t.boolean  "grade",                :default => false
+    t.boolean  "yrs_of_exp",           :default => false
+    t.boolean  "finding_resolute",     :default => false
+    t.boolean  "comments",             :default => false
+    t.integer  "camp_registration_id"
+    t.integer  "camp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

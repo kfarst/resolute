@@ -27,6 +27,10 @@
     = f.label :location
     %br/
     = f.text_field :location
+  .field
+    = f.label :payment_url, "PayPal URL"
+    %br/
+    = f.text_field :payment_url
     %br/
     %span.subtext Use full street address.
     %br/
@@ -39,5 +43,42 @@
     = f.label :group
     %br/
     = f.select :group, options_for_select(["Junior High","High School","Other"]), {:include_blank => true}
+
+  %h2 Registration Form
+  = f.fields_for :registration_form do |reg|
+    .field
+      = reg.label :name
+      = reg.check_box :name
+    .field
+      = reg.label :age
+      = reg.check_box :age
+    .field
+      = reg.label :school
+      = reg.check_box :school
+    .field
+      = reg.label :position
+      = reg.check_box :position
+    .field
+      = reg.label :email
+      = reg.check_box :email
+    .field
+      = reg.label :phone
+      = reg.check_box :phone
+    .field
+      = reg.label :address
+      = reg.check_box :address
+    .field
+      = reg.label :grade
+      = reg.check_box :grade
+    .field
+      = reg.label :yrs_of_exp, "Years of Experience"
+      = reg.check_box :yrs_of_exp
+    .field
+      = reg.label :finding_resolute
+      = reg.check_box :finding_resolute
+    .field
+      = reg.label :comments
+      = reg.check_box :comments
+
   .actions
     = f.submit

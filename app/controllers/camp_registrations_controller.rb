@@ -1,20 +1,20 @@
 class CampRegistrationsController < ApplicationController
-  # GET /camp_registrations
-  # GET /camp_registrations.xml
+  # GET /camp_registration
+  # GET /camp_registration.xml
   before_filter :authenticate_user!, :except => [:new, :create]
   before_filter :find_registration, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @camp_registrations = CampRegistrations.all
+    @camp_registrations = CampRegistration.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @camp_registrations }
+      format.xml  { render :xml => @camp_registration }
     end
   end
 
-  # GET /camp_registrations/1
-  # GET /camp_registrations/1.xml
+  # GET /camp_registration/1
+  # GET /camp_registration/1.xml
   def show
 
     respond_to do |format|
@@ -23,10 +23,10 @@ class CampRegistrationsController < ApplicationController
     end
   end
 
-  # GET /camp_registrations/new
-  # GET /camp_registrations/new.xml
+  # GET /camp_registration/new
+  # GET /camp_registration/new.xml
   def new
-    @camp_registration = CampRegistrations.new
+    @camp_registration = CampRegistration.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,24 +34,25 @@ class CampRegistrationsController < ApplicationController
     end
   end
 
-  # GET /camp_registrations/1/edit
+  # GET /camp_registration/1/edit
   def edit
   end
 
-  # POST /camp_registrations
-  # POST /camp_registrations.xml
+  # POST /camp_registration
+  # POST /camp_registration.xml
   def create
-    @camp_registration = CampRegistrations.new(params[:camp_registrations])
+    payment_url = params[:camp][:payment_url]
+    @camp_registration = CampRegistration.new(params[:camp_registration])
 
       if @camp_registration.save
-        redirect_to "https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11240645" 
+        redirect_to payment_url
       else
         render :action => "new"
       end
   end
 
-  # PUT /camp_registrations/1
-  # PUT /camp_registrations/1.xml
+  # PUT /camp_registration/1
+  # PUT /camp_registration/1.xml
   def update
 
     respond_to do |format|
@@ -65,13 +66,13 @@ class CampRegistrationsController < ApplicationController
     end
   end
 
-  # DELETE /camp_registrations/1
-  # DELETE /camp_registrations/1.xml
+  # DELETE /camp_registration/1
+  # DELETE /camp_registration/1.xml
   def destroy
     @camp_registration.destroy
 
     respond_to do |format|
-      format.html { redirect_to(camp_registrations_url) }
+      format.html { redirect_to(camp_registration_url) }
       format.xml  { head :ok }
     end
   end
@@ -79,6 +80,6 @@ class CampRegistrationsController < ApplicationController
   private
 
   def find_registration
-    @camp_registration = CampRegistrations.find(params[:id])
+    @camp_registration = CampRegistration.find(params[:id])
   end
 end

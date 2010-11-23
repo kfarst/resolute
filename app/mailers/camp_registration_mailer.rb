@@ -1,5 +1,4 @@
 class CampRegistrationMailer < ActionMailer::Base
-  include CampsHelper
   default :from => "Resolute Lacrosse"
 
   def registration_email(registration)

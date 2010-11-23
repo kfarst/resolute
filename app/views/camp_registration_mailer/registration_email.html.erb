@@ -2,7 +2,7 @@
   <head>
     <title>Resolute Lacrosse</title>
     <%= stylesheet_link_tag :all %>
-    <%= javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{Rails.root}/public/javascripts/video.js", :ckeditor %>
+    <%= javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js" %>
   </head>
   <body>
     <div id="container">
@@ -16,18 +16,8 @@
         <%= @registration.name %>,
         <br />
         <br />
-        Thank you for sigining up for the <b><%= @registration.camp.name %>.</b><br /><br />
-        As a reminder, the camp is on <%= formatted_datetime(@registration.camp.start_at) %>.
-        The camp is located at:
-        <br />
-        <br />
-        <%= street_address(@registration.camp) %>
-        <%= city_and_state(@registration.camp) %>
-        <br />
-        <br />
-        If your payment process was interrupted, you may make your payment at:<br /><br />
-        <%= link_to "#{@registration.camp.payment_url}", @registration.camp.payment_url  %><br /><br />
-        We look forward to seeing you at the camp!<br /><br />
+        Thank you for sigining up for the <b><%= @registration.registration_form.camp.name %>.</b><br /><br />
+        We look forward to seeing you!<br /><br />
         Sincerely,<br />
         The Resolute Lacrosse Team
       </div>

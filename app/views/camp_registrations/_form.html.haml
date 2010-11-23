@@ -65,6 +65,7 @@
       = f.label :zip
       %br/
       = f.text_field :zip, :size => 5
+  - if @camp.registration_form.grade?
     .field
       = f.label :grade
       %br/

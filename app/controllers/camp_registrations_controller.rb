@@ -45,6 +45,7 @@ class CampRegistrationsController < ApplicationController
     @camp_registration = CampRegistration.new(CampRegistration.format_for_save(params[:camp_registration]))
 
       if @camp_registration.save
+        CampRegistrationMailer.registration_email(@camp_registration).deliver if @camp_registration.registration_form.email?
         redirect_to payment_url
       else
         render :action => "new"

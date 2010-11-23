@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------
+Resolute Lacrosse Camp Confirmation
+------------------------------------------------------------------------------------
+
+<%= @registration.name %>,
+
+Thank you for sigining up for the <b><%= @registration.camp.name %>.
+
+As a reminder, the camp is on <%= formatted_datetime(@registration.camp.start_at) %>.
+The camp is located at:
+
+<%= street_address(@registration.camp) %>
+<%= city_and_state(@registration.camp) %>
+
+If your payment process was interrupted, you may make your payment at:
+
+<%= link_to "#{@registration.camp.payment_url}", @registration.camp.payment_url  %>
+
+We look forward to seeing you at the camp!
+
+Sincerely,
+The Resolute Lacrosse Team
+

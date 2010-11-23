@@ -22,6 +22,7 @@ class CampRegistration < ActiveRecord::Base
   validates_numericality_of :yrs_of_exp, :if => :yrs_of_exp_in_form?
 
   has_one :camp, :through => :registration_form
+  has_one :registration_form
 
   def to_param
     id

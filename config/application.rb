@@ -33,9 +33,9 @@ module Resolute
     # Configure generators values. Many other options are available, be sure to check the documentation.
     config.generators do |g|
       g.orm                 :active_record
-      g.template_engine     :erb
+      g.template_engine     :haml
       g.test_framework      :rspec, :fixtues => true
-      g.fixture_replacement :factory_girl 
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.

@@ -40,11 +40,7 @@ class CampRegistration < ActiveRecord::Base
       pos_string << "#{value}, "
       object.delete(key)
     end
-    object.merge({:position => pos_string})
-  end
-
-  def form_reference
-    RegistrationForm.find_by_id(registration_form_id)
+    object[:position].merge({:position => pos_string})
   end
 
   private

@@ -59,45 +59,16 @@ describe Camp do
     @camp.save.should_not be_true, "camp saved with non-numeric cost"
   end
 
-  context "returning multiple location results" do
-    before(:each) do
-      @camp.stub_chain(:get_address, :count => 2)
-    end
-
-    it "should not save" do
-      @camp.save.should_not be_true, "camp saved with multiple locations"
-    end
-
-    it "should return a custom error message" do
-      @camp.errors.full_messages.should include("Camp location address returns no results. Please try again.")
-    end
-  end
-
-  context "returning no location results" do
-    before(:each) do
-      @camp.stub_chain(:get_address, :count => 0)
-    end
-
-    it "should not save" do
-      @camp.save.should_not be_true, "camp saved with no locations"
-    end
-    
-    it "should return a custom error message" do
-      @camp.errors.full_messages.should include("Camp location address returns more than one results. Please refine your search.")
-    end
-  end
-
   describe "#get_address" do
-    it "returns a GeoCode struct" do
-      @camp.should_receive(:get_address).and_return(1).struct
+    it "calls a get request on the Geocoding class" do
+      Geocoding.should_receive(:get).with(@camp.location)
       @camp.get_address
     end
   end
 
   describe "#get_map" do
-    it "returns an image file" do
-      @camp.should_receive(:get_map).and_return(1).string
-      @camp.get_map
+    it "returns a map image URL" do
+      @camp.get_map.should be_a(String)
     end
   end
 end

@@ -23,7 +23,7 @@ group :development, :test do
   gem 'rspec'
   gem "rspec-rails", ">= 2.0.0.beta.22"
   gem 'ruby-debug'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'

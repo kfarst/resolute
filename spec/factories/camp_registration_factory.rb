@@ -1,15 +1,16 @@
 Factory.define :camp_registration do |r|
-  c.name              "John Smith"
-  c.email             "example@example.com"
-  c.age               17
-  c.position          "Attack, Goalie"
-  c.school            "James Woods High School"
-  c.phone             "(483) 394-2393"
-  c.street_address    "123 Fake Street"
-  c.city              "Columbus"
-  c.state             "OH"
-  c.zip               48304
-  c.grade             11
-  c.yrs_of_exp        3
-  c.finding_resolute  "Google"
+  r.name              "John Smith"
+  r.email             "example@example.com"
+  r.age               17
+  r.position          "Attack, Goalie"
+  r.school            "James Woods High School"
+  r.phone             "(483) 394-2393"
+  r.street_address    "123 Fake Street"
+  r.city              "Columbus"
+  r.state             "OH"
+  r.zip               48304
+  r.grade             11
+  r.yrs_of_exp        3
+  r.finding_resolute  "Google"
+  r.association :registration_form
 end

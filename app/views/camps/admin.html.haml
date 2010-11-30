@@ -4,7 +4,6 @@
     %th Name
     %th Start at
     %th End at
-    %th Description
     %th Location
     %th Group
     %th
@@ -13,9 +12,8 @@
   - @camps.each do |camp|
     %tr
       %td= camp.name
-      %td= camp.start_at
-      %td= camp.end_at
-      %td= camp.description
+      %td= formatted_datetime(camp.start_at)
+      %td= formatted_datetime(camp.end_at)
       %td= camp.location
       %td= camp.group
       %td= link_to 'Show', camp

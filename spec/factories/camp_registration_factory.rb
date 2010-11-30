@@ -12,5 +12,6 @@ Factory.define :camp_registration do |r|
   r.grade             11
   r.yrs_of_exp        3
   r.finding_resolute  "Google"
+  r.comments          "This is a test comment."
   r.association :registration_form
 end

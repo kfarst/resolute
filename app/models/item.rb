@@ -28,10 +28,10 @@ class Item < ActiveRecord::Base
   private 
 
   def sanitize_title
-    title.titleize
+    title.to_s.titleize
   end
 
   def update_slug
-    slug = title.to_s.parameterize
+    self.slug = self.title.to_s.parameterize
   end
 end

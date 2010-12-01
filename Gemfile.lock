@@ -130,8 +130,6 @@ GEM
     paperclip (2.3.6)
       activerecord
       activesupport
-    paperclipftp (0.1.0)
-      paperclip (>= 2.3.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -210,7 +208,7 @@ DEPENDENCIES
   meta_where
   mongrel
   mysql
-  paperclipftp
+  paperclip
   rails (= 3.0.0)
   rspec
   rspec-rails (>= 2.0.0.beta.22)

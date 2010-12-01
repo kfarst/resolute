@@ -54,4 +54,11 @@ Resolute::Application.configure do
                                           :password => 'beresolute3444',  
                                           :authentication => 'plain',  
                                           :enable_starttls_auto => true } 
+
+  config.after_initialize do
+   config.middleware.use "::ExceptionNotifier",
+        :email_prefix => "[Resolute Lacrosse Exception] ",
+        :sender_address => %{"Resolute Lacrosse <resolutelacrosse@gmail.com>},
+        :exception_recipients => %w{farst.6@osu.edu}
+  end
 end

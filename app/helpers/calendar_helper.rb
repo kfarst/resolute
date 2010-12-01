@@ -10,7 +10,7 @@ module CalendarHelper
       :month => @month,
       :event_strips => @event_strips,
       :month_name_text => I18n.localize(@shown_month, :format => "%B %Y"),
-      :previous_month_text => "<< " + month_link(@shown_month.last_month),
+      :previous_month_text => "<< " + month_link(@shown_month.prev_month),
       :next_month_text => month_link(@shown_month.next_month) + " >>"
     }
   end
@@ -18,7 +18,7 @@ module CalendarHelper
   def event_calendar
     calendar event_calendar_options do |args|
       event = args[:event]
-      %(<a href="/events/#{event.id}" title="#{h(event.name)}">#{h(event.name)}</a>)
+      %(<a href="/camps/#{event.name.parameterize}" title="#{h(event.name)}">#{h(event.name)}</a>)
     end
   end
 end

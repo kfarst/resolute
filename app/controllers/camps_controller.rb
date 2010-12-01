@@ -15,12 +15,12 @@ class CampsController < ApplicationController
     @junior_high = Camp.junior_high_camps
     @other_camps = Camp.other_camps
 
-    #@month = (params[:month] || Time.zone.now.month).to_i
-    #@year = (params[:year] || Time.zone.now.year).to_i
+    @month = (params[:month] || Time.zone.now.month).to_i
+    @year = (params[:year] || Time.zone.now.year).to_i
 
-    #@shown_month = Date.civil(@year, @month)
+    @shown_month = Date.civil(@year, @month)
 
-    #@event_strips = Camp.event_strips_for_month(@shown_month)
+    @event_strips = Camp.event_strips_for_month(@shown_month)
   end
 
   def show

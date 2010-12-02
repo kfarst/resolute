@@ -38,9 +38,9 @@ class CampRegistration < ActiveRecord::Base
     pos_string = ""
     object[:position].each_pair do |key, value| 
       pos_string << "#{value}, "
-      object.delete(key)
+      object[:position].delete(key)
     end
-    object[:position].merge({:position => pos_string})
+    object.merge({:position => pos_string})
   end
 
   private

@@ -194,10 +194,11 @@ describe CampRegistration do
                                                                                       :defense => "Defense"})}
 
     it "comma separates selected position checkboxes into one field" do
-      CampRegistration.format_for_save(camp_registration)[:position].should match "Attack,"
-      CampRegistration.format_for_save(camp_registration)[:position].should match "Goalie,"
-      CampRegistration.format_for_save(camp_registration)[:position].should match "Middle,"
-      CampRegistration.format_for_save(camp_registration)[:position].should match "Defense,"
+      result = CampRegistration.format_for_save(camp_registration)
+      
+      %w[Attack Goalie Middle Defense].each do |position|
+        result[:position].should include position
+      end
     end
   end
 

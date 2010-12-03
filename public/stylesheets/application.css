@@ -136,8 +136,8 @@ ul.second_level li.first_level {
   z-index: 0;
 }
 
-#panel.camps-clinics {
-  background-image: url('../images/panel4.jpg'); 
+#panel.turkey-shootout-champs {
+  background-image: url('../images/turkey-shootout-small.png'); 
   background-repeat: no-repeat; 
   background-position: 90% top;
   clear: right;
@@ -151,11 +151,11 @@ ul.second_level li.first_level {
   background-size: 100%;
 }
 
-#panel.turkey-shootout-champs {
+#panel.camps-clinics {
   width: 65%;
   height: 420px;
   float: left;
-  background-image: url('../images/turkey-shootout.png');
+  background-image: url('../images/winter-camps.png');
   background-repeat: no-repeat; 
   background-position: 0 top;
 }

@@ -1,0 +1,20 @@
+#title Listing Staff Members
+%table
+  %tr
+    %th Name
+    %th Stats
+    %th Bio
+    %th
+    %th
+    %th
+    %th
+  - @staff_members.each do |staff_member|
+    %tr
+      %td= staff_member.name
+      %td= staff_member.stats
+      %td= staff_member.bio
+      %td= link_to 'Show', staff_member
+      %td= link_to 'Edit', edit_staff_member_path(staff_member)
+      %td= link_to 'Destroy', staff_member, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Staff Member', new_staff_member_path

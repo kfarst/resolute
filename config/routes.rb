@@ -1,4 +1,6 @@
 Resolute::Application.routes.draw do 
+  resources :staff_members
+
   resources :camps, :except => [:index] do
     collection do
       get :admin, :as => :admin

@@ -8,19 +8,29 @@ img.main_logo {
   display: none;
 }
 
-#panel.lacrosse-the-nations {
-  width: 630px;
-  height: 420px;
+#panel.camps-clinics {
+  width: 640px;
+  height: 425px;
   float: left;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/lacrosse_the_nations.png');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/winter-camps.png');
   background-repeat: no-repeat; 
   background-position: 0 top;
+  z-index: 2;
 }
 
-#panel.nov-8th-coaches-clinic {
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/panel4.jpg');
+#panel.club-teams {
+  background-image: url('../images/panel2.jpg'); 
   background-repeat: no-repeat; 
-  background-position: 90% top;
+  background-position: top top;
+  background-size: 100%;
+}
+
+#panel.turkey-shootout-champs {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/turkey-shootout-small.png');
+  display: inline-block;
+  background-repeat: no-repeat; 
+  background-position: 39% 45%;
+  clear: right;
   background-size: 100%;
 }
 

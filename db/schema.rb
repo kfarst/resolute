@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101118045907) do
+ActiveRecord::Schema.define(:version => 20101203013850) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -141,6 +141,18 @@ ActiveRecord::Schema.define(:version => 20101118045907) do
     t.integer  "age"
     t.string   "school"
     t.string   "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "staff_members", :force => true do |t|
+    t.string   "name"
+    t.text     "stats"
+    t.text     "bio"
+    t.string   "profile_picture_file_name"
+    t.string   "profile_picture_content_type"
+    t.integer  "profile_picture_file_size"
+    t.datetime "profile_picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

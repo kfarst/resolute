@@ -139,7 +139,7 @@ ul.second_level li.first_level {
 #panel.turkey-shootout-champs {
   background-image: url('../images/turkey-shootout-small.png'); 
   background-repeat: no-repeat; 
-  background-position: 90% top;
+  background-position: 39% 45%;
   clear: right;
   margin-top: 10px;
 }
@@ -446,4 +446,27 @@ div.field {
   float: right; 
   width: 50%;
   height: 50%;
+}
+
+
+/*----------------- Staff -------------------*/
+
+#staff-member {
+  width: 90%;
+  background-color: black;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+}
+
+#profile-picture {
+  float: left;
+  margin-left: 5px;
+}
+
+#member-content {
+  float: right;
+}
+
+ul.staff-stats {
+ list-style-type: square;
 }

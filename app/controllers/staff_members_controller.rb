@@ -9,6 +9,17 @@ class StaffMembersController < ApplicationController
       format.xml  { render :xml => @staff_members }
     end
   end
+  #
+  # GET /staff_members
+  # GET /staff_members.xml
+  def admin
+    @staff_members = StaffMember.all
+
+    respond_to do |format|
+      format.html # admin.html.erb
+      format.xml  { render :xml => @staff_members }
+    end
+  end
 
   # GET /staff_members/1
   # GET /staff_members/1.xml

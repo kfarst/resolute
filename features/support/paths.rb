@@ -32,6 +32,9 @@ module NavigationHelpers
     when /the store page/
       "/store"
 
+    when /the staff member admin page/
+      "/staff_members"
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

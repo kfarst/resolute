@@ -6,6 +6,11 @@ jQuery(function($) {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
+  $('a#add_stat')                                   .live('click', addStatField);
+
+  function addStatField(e) {
+    alert(e);
+  }
 
   function listSort(e) {
     $("#sortable").sortable({

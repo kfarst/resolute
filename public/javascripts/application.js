@@ -6,11 +6,18 @@ jQuery(function($) {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
-  $('a#add_stat')                                   .live('click', addStatField);
+  // $('a#add_stat')                                   .live('click', addStatField);
+  // $(document)                                       .ready(hideEmptyStatFields);
 
-  function addStatField(e) {
-    alert(e);
-  }
+  // function hideEmptyStatFields(e) {
+  //   $("form#stat_field").each(function(index, field) {
+  //     //$(field).attr("name", "staff_member[stats][" + index "]");
+  //   }
+  // }
+
+  // function addStatField(e) {
+  //   alert(e);
+  // }
 
   function listSort(e) {
     $("#sortable").sortable({
@@ -44,4 +51,3 @@ jQuery(function($) {
     $(this).children('ul.second_level').slideUp('fast');
   }
 });
-

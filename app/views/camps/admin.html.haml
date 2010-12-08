@@ -17,7 +17,7 @@
       %td= camp.location
       %td= camp.group
       %td= link_to 'Show', camp
-      %td= link_to 'Edit', edit_camp_path(camp.id)
+      %td= link_to 'Edit', edit_camp_path(camp)
       %td= link_to 'Destroy', camp, :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Camp', new_camp_path

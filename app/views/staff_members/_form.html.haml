@@ -15,7 +15,10 @@
     = f.label :stats
     %br/
     = f.text_field :stats
-    = link_to "Add Stat", "#", {:id => "add_stat"}
+    = link_to "Remove", "#", {:id => "stat_field"}
+    %br/
+    = f.text_field :stats
+    = link_to "Add Stat", "#", {:name => "staff_member[stats][1]"}
   .field
     = f.label :bio
     %br/

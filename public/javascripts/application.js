@@ -7,16 +7,16 @@ jQuery(function($) {
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
   // $('a#add_stat')                                   .live('click', addStatField);
-  // $(document)                                       .ready(hideEmptyStatFields);
+  // $(document)                                       .ready(hideStatField);
 
-  // function hideEmptyStatFields(e) {
-  //   $("form#stat_field").each(function(index, field) {
-  //     //$(field).attr("name", "staff_member[stats][" + index "]");
-  //   }
+  // function hideStatField(e) {
+  //   $("form#stat_field").hide();
   // }
 
   // function addStatField(e) {
-  //   alert(e);
+  //   $("form#stat_field").each(function(index, field) {
+  //     $(field).attr("name", "staff_member[stats][" + index "]");
+  //   }
   // }
 
   function listSort(e) {

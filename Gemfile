@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem "rails", "3.0.0"
 
 gem 'haml'
-gem 'clearance'
 gem 'mongrel'
 gem 'devise', '1.1.2'
 gem 'youtube-g'
@@ -18,7 +17,6 @@ gem 'meta_where'
 gem 'ym4r'
 gem "exception_notification", :git => "git://github.com/sickill/exception_notification"
 gem 'event-calendar', :require => 'event_calendar'
-gem 'right_aws'
 
 group :development, :test do
   gem 'cucumber' 

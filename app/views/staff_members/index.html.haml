@@ -1,16 +1,15 @@
 #title Staff Members
 
 - @staff_members.each do |member|
-  #staff-member
+  #staff-member.clear
     #profile-picture
       = link_to (image_tag member.profile_picture.url(:thumb)), member.profile_picture.url(:medium), :rel => "vidbox"
     #member-content
-      %h2= member.name
+      #staff-member-name= member.name
       %br/
-      %ul
-        - member.get_stats do |stat|
-          %li stat
+      %ul.staff-stats
+        - member.stats_array.each do |stat|
+          %li= stat
       %br/
-      = member.bio
+      = raw member.bio
 %br/
-= link_to 'New Staff Member', new_staff_member_path

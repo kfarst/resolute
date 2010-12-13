@@ -1,5 +1,5 @@
 Resolute::Application.routes.draw do 
-  resources :staff_members do
+  resources :staff_members, :except => [:show] do
     collection do
       get :admin, :as => :admin
     end
@@ -44,6 +44,7 @@ Resolute::Application.routes.draw do
   match '/videos' => 'items#videos', :as => :videos
   match '/contact-us' => 'contacts#new'
   match '/store' => 'products#store', :as => :store
+  match '/staff' => 'staff_members#index', :as => :staff
 
   # Sample of regular route:
   match ':id' => 'items#show', :as => :pretty_url

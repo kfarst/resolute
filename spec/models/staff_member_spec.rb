@@ -20,15 +20,35 @@ describe StaffMember do
     @member.should_not be_valid
   end
 
-  describe "#get_stats" do
-    let(:member) { Factory.build(:staff_member) }
+  describe "#stats_array" do
+    let(:member) { Factory.build(:staff_member, :stats => "") }
 
     it "returns an array" do
-      member.get_stats.should be_a(Array)
+      member.stats_array.should be_a(Array)
     end
 
-    it "splits the member stats into individual stats" do
-      member.get_stats.should == ["Stat 1", "Stat 2", "Stat 3"]
+    context "with data" do
+      it "splits the member stats into individual stats" do
+        member.stats_array.should == ["Stat 1", "Stat 2", "Stat 3"]
+      end
+    end
+
+    context "without data" do
+      it "returns an empty array" do
+        member.stats_array.should == []
+      end
+    end
+  end
+
+  describe "#stats_csv" do
+    let(:member) { Factory.build(:staff_member) }
+
+    it "returns a string" do
+      member.stats_csv.should be_a(String)
+    end
+
+    it "concatanates the member stats into comma separated values" do
+      member.stats_csv.should == "Stat 1,Stat 2,Stat 3"
     end
   end
 end

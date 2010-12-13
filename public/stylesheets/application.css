@@ -452,10 +452,13 @@ div.field {
 /*----------------- Staff -------------------*/
 
 #staff-member {
-  width: 90%;
+  width: auto;
   background-color: black;
   padding: 5px;
   margin: 5px 0 5px 0;
+  color: white;
+  overflow: auto;
+  padding: 10px;
 }
 
 #profile-picture {
@@ -468,5 +471,10 @@ div.field {
 }
 
 ul.staff-stats {
- list-style-type: square;
+  list-style: square inside;
+  color: #97BFDE;
+}
+
+#staff-member-name {
+  font-size: 30px;
 }

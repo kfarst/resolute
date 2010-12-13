@@ -10,13 +10,16 @@ jQuery(function($) {
   // $(document)                                       .ready(hideStatField);
 
   // function hideStatField(e) {
-  //   $("form#stat_field").hide();
+  //   e.preventDefault();
+  //   $(e.target).remove();
+  //   $(e.target).parent("form#stat_field").remove();
   // }
 
   // function addStatField(e) {
-  //   $("form#stat_field").each(function(index, field) {
-  //     $(field).attr("name", "staff_member[stats][" + index "]");
-  //   }
+  //   e.preventDefault();
+  //   var count = $("form#stat_field").size(),
+  //       newField = $(e.target).parent("form#stat_field").clone();
+  //   $(e.target).parent(".field").append(newField.attr("name", "staff_member[stats][" + count + "]"));
   // }
 
   function listSort(e) {

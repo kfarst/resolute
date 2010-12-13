@@ -14,11 +14,13 @@
   .field
     = f.label :stats
     %br/
+    -# = @staff_member.stats_array.each_with_index do |stat, index|
+    -#   = f.text_field_tag :stats, {:name => "staff_member[stats][#{index + 1}]"}
+    -#   = link_to "Remove", "#", {:id => "stat_field"}
+    -#   %br/
+    -# %br/
     = f.text_field :stats
-    = link_to "Remove", "#", {:id => "stat_field"}
-    %br/
-    = f.text_field :stats
-    = link_to "Add Stat", "#", {:name => "staff_member[stats][1]"}
+    -# = link_to "Add Stat", "#", {:name => "staff_member[stats][0]"}
   .field
     = f.label :bio
     %br/

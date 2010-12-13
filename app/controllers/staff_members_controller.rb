@@ -9,10 +9,6 @@ class StaffMembersController < ApplicationController
     respond_with @staff_members = StaffMember.all
   end
 
-  def show
-    respond_with @staff_member = StaffMember.find(params[:id])
-  end
-
   def new
     respond_with @staff_member = StaffMember.new
   end
@@ -28,7 +24,7 @@ class StaffMembersController < ApplicationController
       flash[:notice] = 'Staff member was successfully created.'
     end
 
-    respond_with @staff_member
+    redirect_to :index
   end
 
   def update

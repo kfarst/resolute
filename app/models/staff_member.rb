@@ -11,15 +11,8 @@ class StaffMember < ActiveRecord::Base
                       :styles => { :medium => "300x300>", :thumb => "100x100>" }
   end
 
+  # has_many :stats, :dependent => :destroy
+  # accepts_nested_attributes_for :stats, :reject_if => lambda { |a| a[:content].blank? }
 
-  validates_presence_of :name, :stats, :bio
-
-  def stats_array
-    return [] if stats.blank?
-    stats.split(",")
-  end
-
-  def stats_csv
-    stats.to_csv
-  end
+  validates_presence_of :name, :bio, :stats
 end

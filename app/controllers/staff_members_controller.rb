@@ -1,4 +1,5 @@
 class StaffMembersController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index]
   respond_to :html
 
   def index
@@ -10,7 +11,8 @@ class StaffMembersController < ApplicationController
   end
 
   def new
-    respond_with @staff_member = StaffMember.new
+    @staff_member = StaffMember.new
+    respond_with @staff_member
   end
 
   def edit
@@ -22,9 +24,10 @@ class StaffMembersController < ApplicationController
 
     if @staff_member.save
       flash[:notice] = 'Staff member was successfully created.'
+      redirect_to :action => :index
+    else
+      render 'new'
     end
-
-    redirect_to :index
   end
 
   def update
@@ -41,6 +44,6 @@ class StaffMembersController < ApplicationController
     @staff_member = StaffMember.find(params[:id])
     @staff_member.destroy
 
-    respond_with @staff_member
+    redirect_to :action => :admin
   end
 end

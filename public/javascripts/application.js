@@ -6,21 +6,17 @@ jQuery(function($) {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
-  // $('a#add_stat')                                   .live('click', addStatField);
-  // $(document)                                       .ready(hideStatField);
 
-  // function hideStatField(e) {
-  //   e.preventDefault();
-  //   $(e.target).remove();
-  //   $(e.target).parent("form#stat_field").remove();
-  // }
-
-  // function addStatField(e) {
-  //   e.preventDefault();
-  //   var count = $("form#stat_field").size(),
-  //       newField = $(e.target).parent("form#stat_field").clone();
-  //   $(e.target).parent(".field").append(newField.attr("name", "staff_member[stats][" + count + "]"));
-  // }
+  function remove_fields(link) {  
+      $(link).prev("input[type=hidden]").val("1");  
+      $(link).closest(".field").hide();  
+  }  
+    
+  function add_fields(link, association, content) {  
+      var new_id = new Date().getTime();  
+      var regexp = new RegExp("new_" + association, "g");  
+      $(link).parent().before(content.replace(regexp, new_id));  
+  }  
 
   function listSort(e) {
     $("#sortable").sortable({

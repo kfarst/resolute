@@ -464,10 +464,12 @@ div.field {
 #profile-picture {
   float: left;
   margin-left: 5px;
+  width: 30%;
 }
 
 #member-content {
   float: right;
+  width: 70%;
 }
 
 ul.staff-stats {

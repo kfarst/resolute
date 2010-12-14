@@ -1,14 +1,14 @@
 class StaffMember < ActiveRecord::Base
   if Rails.env.production?
     has_attached_file :profile_picture, 
-                      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                      :styles => { :medium => "300x300>" },
                       :storage => :s3,
                       :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                       :path => ":attachment/:id/:style.:extension",
                       :bucket => 'staff_member_pics'
   else
     has_attached_file :profile_picture, 
-                      :styles => { :medium => "300x300>", :thumb => "100x100>" }
+                      :styles => { :medium => "300x300>" }
   end
 
   # has_many :stats, :dependent => :destroy

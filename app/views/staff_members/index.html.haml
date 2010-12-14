@@ -3,7 +3,7 @@
 - @staff_members.each do |member|
   #staff-member.clear
     #profile-picture
-      = link_to (image_tag member.profile_picture.url(:thumb)), member.profile_picture.url(:medium), :rel => "vidbox"
+      = link_to (image_tag member.profile_picture.url(:medium)), member.profile_picture.url(:medium), :rel => "vidbox"
     #member-content
       #staff-member-name= member.name
       %br/

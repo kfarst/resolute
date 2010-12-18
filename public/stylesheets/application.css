@@ -127,6 +127,8 @@ ul.second_level li.first_level {
   -webkit-box-shadow: 5px 5px 10px #000000;
 }
 
+/*------------------------ Welcome Page ----------------------------*/
+
 #panel {
   width: 30%;
   float: right;
@@ -180,6 +182,29 @@ ul.second_level li.first_level {
   text-shadow: #000000 2px 2px 5px;
 }
 
+#sponsors {
+  width: 100%;
+}
+
+#mwl-sponsor {
+  float: left;
+  position: relative;
+}
+
+#ltn-sponsor {
+  float: left;
+  position: relative;
+  margin: 40px 0 0 110px;
+}
+
+#stx-sponsor {
+  float: right;
+  position: relative;
+  margin: 40px 0 0 0;
+}
+
+/*------------------------- Video Page --------------------------*/
+
 #video {
   padding: 10px;
   float: left;
@@ -228,6 +253,14 @@ ul.second_level li.first_level {
   clear: both;
 }
 
+#video_link {
+  padding-bottom:15px;
+  font-size:16px;
+}
+
+
+/*------------------ Flash Messages ----------------*/
+
 span.notice {
   background-color: #00FF66;
   color: #006600;
@@ -265,36 +298,7 @@ div#flash {
   width: 90%;
 }
 
-#contest {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 0;
-  width: 0;
-  border-width: 0 0 250px 250px;
-  border-style: solid;
-  border-color: transparent transparent #97BFDE transparent;
-  color: white;
-}
-
-#contest-text {
-  bottom: 0;
-  right: 10px;
-  position: fixed;
-  width: 90px;
-  margin: 0 0 10px 10px;
-  text-align: right;
-}
-
-#contest-text a {
-  color: white;
-  text-shadow: #000000 2px 2px 5px;
-  font-size: 20px;
-}
-
-#contest-text a:hover {
-  cursor: pointer;
-}
+/*---------------------- Sorting ------------------*/
 
 div.sort-item {
   display: inline;
@@ -329,11 +333,6 @@ div#actions {
 
 div.field {
   margin: 5px;
-}
-
-#video_link {
-  padding-bottom:15px;
-  font-size:16px;
 }
 
 #new_camp_registration {

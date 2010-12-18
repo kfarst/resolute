@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def category_name_or_link(category)
+    (only_whitespace?(category.body) && !Category::CATEGORY_AS_LINK.include?(category.title)) ? category.title : (link_to category.title, pretty_url_path(category))
+  end
 
   def only_whitespace?(string) 
     string.to_s.strip.empty?
@@ -20,13 +23,16 @@ module ApplicationHelper
     </script>")
   end
 
-  def link_to_add_fields(name, f, association)
-    new_object = f.object.class.reflect_on_association(association).klass.new  
-    fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|  
-      render(association.to_s.singularize + "_fields", :f => builder)  
-    end  
-    link_to_function(name, h("add_fields(this, '#{association}', '#{escape_javascript(fields)}')"))  
-  end  
+   def link_to_add_fields(name, f, association)
+     new_object = f.object.class.reflect_on_association(association).klass.new
+     fields = ''
+     f.fields_for(association, [new_object], :child_index => "new_#{association}") do |builder|
+        fields = render(association.to_s.singularize + "_fields", :f => builder)
+     end
+     link_to_function(name, "add_fields(this, '#{association}', '#{escape_javascript(fields)}')")
+   end
+
+
 
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")

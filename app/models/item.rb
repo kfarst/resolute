@@ -18,11 +18,15 @@ class Item < ActiveRecord::Base
   end
 
   def update_by_type(params)
-    if self.type == "Page"
-      update_attributes(params[:page])
+    if is_page?
+      return update_attributes(params[:page])
     else
-      update_attributes(params[:category])
+      return update_attributes(params[:category])
     end
+  end
+
+  def is_page?
+    self.type == "Page"
   end
 
   private 

@@ -14,9 +14,10 @@
   .field
     = f.label :stats
     %br/
-    = f.text_field :stats
+    = f.fields_for :stats do |builder|
+      = render 'stat_fields', :f => builder
+    %p= link_to_add_fields "Add Stat", f, :stats
     %br/
-    %span.subtext Enter job title at Resolute Lacrosse above.
   .field
     = f.label :bio
     %br/

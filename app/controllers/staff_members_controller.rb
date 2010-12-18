@@ -12,6 +12,7 @@ class StaffMembersController < ApplicationController
 
   def new
     @staff_member = StaffMember.new
+    @staff_member.stats.build
     respond_with @staff_member
   end
 

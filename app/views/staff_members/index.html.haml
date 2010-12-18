@@ -8,7 +8,8 @@
       #staff-member-name= member.name
       %br/
       %ul.staff-stats
-        %li= member.stats
-      %br/
+        = member.stats.each do |stat|
+          %li= stat.stat
+          %br/
       = raw member.bio
 %br/

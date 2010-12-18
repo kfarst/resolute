@@ -7,17 +7,6 @@ jQuery(function($) {
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
 
-  function remove_fields(link) {  
-      $(link).prev("input[type=hidden]").val("1");  
-      $(link).closest(".field").hide();  
-  }  
-    
-  function add_fields(link, association, content) {  
-      var new_id = new Date().getTime();  
-      var regexp = new RegExp("new_" + association, "g");  
-      $(link).parent().before(content.replace(regexp, new_id));  
-  }  
-
   function listSort(e) {
     $("#sortable").sortable({
       update: function() {
@@ -50,3 +39,14 @@ jQuery(function($) {
     $(this).children('ul.second_level').slideUp('fast');
   }
 });
+
+  function remove_fields(link) {  
+      jQuery(link).prev("input[type=hidden]").val("1");  
+      jQuery(link).closest(".field").hide();  
+  }  
+    
+  function add_fields(link, association, content) {  
+      var new_id = new Date().getTime();  
+      var regexp = new RegExp("new_" + association, "g");  
+      jQuery(link).parent().before(content.replace(regexp, new_id));  
+  }  

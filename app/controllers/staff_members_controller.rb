@@ -36,9 +36,11 @@ class StaffMembersController < ApplicationController
 
     if @staff_member.update_attributes(params[:staff_member])
       flash[:notice] = 'Staff member was successfully updated.'
+      redirect_to :action => :index
+    else
+      render 'edit'
     end
 
-    respond_with @staff_member
   end
 
   def destroy

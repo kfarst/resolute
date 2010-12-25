@@ -33,7 +33,7 @@ module NavigationHelpers
       "/store"
 
     when /the staff member admin page/
-      "/staff_members"
+      "/staff_members/admin"
 
 
     # Add more mappings here.

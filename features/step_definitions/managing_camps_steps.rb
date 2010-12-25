@@ -17,6 +17,7 @@ Given /^I have a camp with all fields required$/ do
     check "Grade"
     check "Years of Experience"
     check "Finding resolute"
+    Camp.destroy_all
     click_button "Create Camp"
   end
 end

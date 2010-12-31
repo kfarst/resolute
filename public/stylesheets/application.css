@@ -28,7 +28,7 @@ p {
 
 #header {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 #logo {
@@ -44,7 +44,7 @@ img.main_logo {
 
 span.tagline {
   font-style: italic;
-  color: white;
+  color: #97BFDE;
 }
 
 #title {
@@ -61,6 +61,7 @@ span.tagline {
 
 #nav {
   float: right;
+  margin-top: 15px;
 }
 
 #nav a {

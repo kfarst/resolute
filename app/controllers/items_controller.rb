@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @tournament_entry = TournamentEntry.new
     respond_with @item
   end
 

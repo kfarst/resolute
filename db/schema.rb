@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217014711) do
+ActiveRecord::Schema.define(:version => 20101230021630) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20101217014711) do
     t.datetime "updated_at"
     t.integer  "position"
     t.string   "slug"
-    t.boolean  "include_camp_registration_form", :default => false
-    t.boolean  "visible",                        :default => true
+    t.boolean  "include_tournament_entry_form", :default => false
+    t.boolean  "visible",                       :default => true
   end
 
   create_table "products", :force => true do |t|
@@ -159,6 +159,21 @@ ActiveRecord::Schema.define(:version => 20101217014711) do
   create_table "stats", :force => true do |t|
     t.string   "stat"
     t.integer  "staff_member_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tournament_entries", :force => true do |t|
+    t.string   "team_name"
+    t.string   "coach_name"
+    t.string   "coach_phone"
+    t.string   "coach_email"
+    t.string   "director_name"
+    t.string   "division"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

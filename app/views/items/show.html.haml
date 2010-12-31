@@ -3,11 +3,9 @@
 
 = raw(@item.body)
 
-- if @item.include_camp_registration_form?
-  = render :partial => "camp_registration/form", :objects => @camp_registration 
-- elsif @item.slug == "nov-8th-coaches-clinic"
-  %br/
-  %br/
-  = render :partial => "coach_clinic_registrations/form", :objects => @coach_clinic_registration 
+- if @item.include_tournament_entry_form?
+  #new_camp_registration{:style => "width: 50%;"}
+    #title Register Now!
+    = render :partial => "tournament_entries/form", :objects => @tournament_entry
 
 = render :partial => "admin/admin_links"

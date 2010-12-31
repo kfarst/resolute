@@ -19,7 +19,6 @@
     = f.cktext_area :body, :width => "80%", :height => "600px"
   .field
     = f.label :visible
-    %br
     = f.check_box :visible
 
   - if is_page?(get_type_from_position(1).capitalize.singularize)
@@ -27,6 +26,10 @@
       = f.label :category_id
       %br
       = f.collection_select :category_id, Category.all, :id, :title, :prompt => true 
+
+  .field
+    = f.label :include_tournament_entry_form
+    = f.check_box :include_tournament_entry_form
 
   .actions
     = f.submit

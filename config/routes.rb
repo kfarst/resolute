@@ -1,4 +1,6 @@
 Resolute::Application.routes.draw do 
+  resources :tournament_entries, :except => [:update]
+
   resources :stats
 
   resources :staff_members, :except => [:show] do

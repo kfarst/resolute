@@ -1,0 +1,30 @@
+#title
+  Listing Tournament Entries
+%table{:width => "100%", :border => "1", :style => "text-align: center;"}
+  %tr
+    %th Team Name
+    %th Coach Name
+    %th Coach Phone
+    %th Coach Email
+    %th Director Name
+    %th Division
+    %th Street Address
+    %th City
+    %th State
+    %th Zip
+    %th
+  - @tournament_entries.each do |tournament_entry|
+    %tr
+      %td= tournament_entry.team_name
+      %td= tournament_entry.coach_name
+      %td= tournament_entry.coach_phone
+      %td= tournament_entry.coach_email
+      %td= tournament_entry.director_name
+      %td= tournament_entry.division
+      %td= tournament_entry.street_address
+      %td= tournament_entry.city
+      %td= tournament_entry.state
+      %td= tournament_entry.zip
+      %td= link_to 'Destroy', "/tournament_entries/#{tournament_entry.id}", :method => :delete, :confirm => "Are you sure?"
+%br
+= link_to 'Admin Home', admin_path

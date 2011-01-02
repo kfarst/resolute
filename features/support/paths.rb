@@ -35,6 +35,9 @@ module NavigationHelpers
     when /the staff member admin page/
       "/staff_members/admin"
 
+    when /the tournament entry admin page/
+      "/tournament_entries"
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

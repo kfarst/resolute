@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Resolute Lacrosse</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults, "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js", "#{Rails.root}/public/javascripts/video.js", :ckeditor %>
+  </head>
+  <body>
+    <div id="container">
+      <div id ="header">
+        <span class="logo"><%= image_tag "logo.png" %></span>
+        <br />
+        <span class="tagline">Never Stop. Never Quit. Be Resolute.</span>
+      </div>
+      <div id="content">
+        <div id="title">Thank you for registering your team for the tournament!</div>
+        <%= @tournament_entry.coach_name %>,
+        <br />
+        <br />
+        Thank you for registering <b><%= @tournament_entry.team_name %>.</b><br /><br />
+        We look forward to working with you and your team!
+        <br />
+        <br />
+        Sincerely,<br />
+        The Resolute Lacrosse Team
+      </div>
+    </div>
+  </body>
+</html>

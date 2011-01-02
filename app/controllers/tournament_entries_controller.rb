@@ -9,7 +9,8 @@ class TournamentEntriesController < ApplicationController
     @tournament_entry = TournamentEntry.new(params[:tournament_entry])
 
     if @tournament_entry.save
-      redirect_to :back, :flash => {:info => "Thank you for signing your team up for the tournament!"}
+      TournamentMailer.response_email(@tournament_entry).deliver
+      redirect_to "http://www.paypal.com"
     else
       render :action => :new
     end

@@ -15,9 +15,9 @@ class Camp < ActiveRecord::Base
 
   accepts_nested_attributes_for :registration_form
 
-  scope :high_school_camps, where(:group => "High School").order("start_at ASC")
-  scope :junior_high_camps, where(:group => "Junior High").order("start_at ASC")
-  scope :other_camps, where((:group ^ "High School") & (:group ^ "Junior High")).order("start_at ASC")
+  scope :high_school_camps, where(({:group => "High School"}) & (:end_at > Time.now)).order("start_at ASC")
+  scope :junior_high_camps, where(({:group => "Junior High"}) & (:end_at > Time.now)).order("start_at ASC")
+  scope :other_camps, where((:group ^ "High School") & (:group ^ "Junior High") & (:end_at > Time.now)).order("start_at ASC")
 
   def get_address
     Geocoding::get(location)

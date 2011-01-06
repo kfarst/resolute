@@ -30,14 +30,20 @@
     .field
       = f.label :position
       %br/
-      = label_tag "Attack"
+      %br/
       = check_box_tag "camp_registration[position][attack]", "Attack"
-      = label_tag "Middle"
+      = label_tag "Attack"
+      %br/
       = check_box_tag "camp_registration[position][middle]", "Middle"
-      = label_tag "Defense"
+      = label_tag "Middle"
+      %br/
       = check_box_tag "camp_registration[position][defense]", "Defense"
-      = label_tag "Goalie"
+      = label_tag "Defense"
+      %br/
       = check_box_tag "camp_registration[position][goalie]", "Goalie"
+      = label_tag "Goalie"
+      %br/
+      %br/
   - if @camp.registration_form.school?
     .field
       = f.label :school

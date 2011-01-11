@@ -24,12 +24,12 @@ class CampsController < ApplicationController
   end
 
   def show
-    @camp = Camp.find_by_name(params[:id].titleize)
+    @camp = Camp.find_by_slug(params[:id])
     @camp_registration = CampRegistration.new
   end
 
   def edit
-    @camp = Camp.find_by_name(params[:id].titleize)
+    @camp = Camp.find_by_slug(params[:id])
   end
 
   def create
@@ -45,7 +45,7 @@ class CampsController < ApplicationController
   end
 
   def update
-    @camp = Camp.find_by_name(params[:id].titleize)
+    @camp = Camp.find_by_slug(params[:id])
 
     respond_to do |format|
       if @camp.update_attributes(params[:camp])
@@ -57,9 +57,9 @@ class CampsController < ApplicationController
   end
 
   def destroy
-    @camp = Camp.find(params[:id])
+    @camp = Camp.find_by_slug(params[:id])
     @camp.destroy
 
-    redirect_to(camps_url)
+    redirect_to(admin_camps_url)
   end
 end

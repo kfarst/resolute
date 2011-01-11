@@ -1,8 +1,6 @@
 class Item < ActiveRecord::Base
   validates_uniqueness_of :title
   validates_presence_of :title
-
-  before_validation :sanitize_title
   after_validation :update_slug
 
   scope :list_order, order("position ASC")
@@ -30,10 +28,6 @@ class Item < ActiveRecord::Base
   end
 
   private 
-
-  def sanitize_title
-    title.to_s.titleize
-  end
 
   def update_slug
     self.slug = self.title.to_s.parameterize

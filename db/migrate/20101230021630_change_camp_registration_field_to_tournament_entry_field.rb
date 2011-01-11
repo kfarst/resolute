@@ -1,6 +1,6 @@
 class ChangeCampRegistrationFieldToTournamentEntryField < ActiveRecord::Migration
   def self.up
-    rename_column :items, :include_camp_registration_form, :include_tournament_entry_form, :default => false
+    rename_column :items, :include_camp_registration_form, :include_tournament_entry_form
   end
 
   def self.down

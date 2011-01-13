@@ -15,6 +15,7 @@ class Panel < ActiveRecord::Base
   validates_presence_of :title, :if => :has_any_attributes?
   validates_presence_of :url, :if => :has_any_attributes?
   validates_presence_of :picture, :if => :has_any_attributes?
+  validates_format_of :url, :with => /^([a-z0-9]+)+(-[a-z0-9]+)*$/i, :if => :has_any_attributes?
 
   def has_any_attributes?
     self.attributes.values.any?(&:present?)

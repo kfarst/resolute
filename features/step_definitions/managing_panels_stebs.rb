@@ -1,32 +1,62 @@
 When /^I add three new panels$/ do
-  with_scope("") do
+  within_fielset("Left") do
+    fill_in "Title", :with => "Panel 1"
+    fill_in "Url", :with => "panel-1"
+    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/winter-clinics.png"
   end
 
-  with_scope("") do
+  within_fieldset("Right Top") do
+    fill_in "Title", :with => "Panel 2"
+    fill_in "Url", :with => "panel-2"
+    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/Panel2.png"
   end
 
-  with_scope("") do
+  within_fieldset("Right Bottom") do
+    fill_in "Title", :with => "Panel 3"
+    fill_in "Url", :with => "panel-3"
+    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/turkey-shootout-champs.png"
   end
 end
 
 Then /^they will show up on the homepage$/ do
-  pending # express the regexp above with the code you wish you had
+  visit "/"
+  page.should have_content("Panel 1")
+  page.should have_content("Panel 2")
+  page.should have_content("Panel 3")
+end
+
+Then /^they will be saved$/ do
+  page.should have_content("Panels sucessfully updated.")
+end
+
+Then /^it will be saved$/ do
+  page.should have_content("Panels sucessfully updated.")
 end
 
 When /^I add one new panel$/ do
-  pending # express the regexp above with the code you wish you had
+  within_fielset("Left") do
+    fill_in "Title", :with => "Panel 4"
+    fill_in "Url", :with => "panel-4"
+    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/winter-clinics.png"
+  end
 end
 
 Then /^it will show up on the homepage$/ do
-  pending # express the regexp above with the code you wish you had
+  visit "/"
+  page.should have_content("Panel 4")
 end
 
 Then /^the existing panels will still be in place$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content("Panel 2")
+  page.should have_content("Panel 3")
 end
 
 When /^I add one new panel with missing information$/ do
-  pending # express the regexp above with the code you wish you had
+  within_fieldset("Left") do
+    fill_in "Title", :with => ""
+    fill_in "Url", :with => ""
+    attach_file "Picture", ""
+  end
 end
 
 Then /^I will receive errors$/ do
@@ -34,5 +64,21 @@ Then /^I will receive errors$/ do
 end
 
 When /^I add new panels with missing information$/ do
-  pending # express the regexp above with the code you wish you had
+  within_fieldset("Left") do
+    fill_in "Title", :with => ""
+    fill_in "Url", :with => ""
+    attach_file "Picture", ""
+  end
+
+  within_fieldset("Right Top") do
+    fill_in "Title", :with => ""
+    fill_in "Url", :with => ""
+    attach_file "Picture", ""
+  end
+
+  within_fieldset("Right Bottom") do
+    fill_in "Title", :with => ""
+    fill_in "Url", :with => ""
+    attach_file "Picture", ""
+  end
 end

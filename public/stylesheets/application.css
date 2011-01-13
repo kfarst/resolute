@@ -139,18 +139,19 @@ ul.second_level li.first_level {
   z-index: 0;
 }
 
-#panel small bottom {
+#panel.small-bottom {
   background-repeat: no-repeat; 
   clear: right;
   margin-top: 10px;
+  background-size: 100%;
 }
 
-#panel small top {
+#panel.small-top {
   background-repeat: no-repeat; 
   background-size: 100%;
 }
 
-#panel left {
+#panel.large {
   width: 65%;
   height: 420px;
   float: left;

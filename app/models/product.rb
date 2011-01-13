@@ -8,7 +8,8 @@ class Product < ActiveRecord::Base
                       :bucket => 'product_pics'
   else
     has_attached_file :picture, 
-                      :styles => { :medium => "300x400", :thumb => "150x250" }
+                      :styles => { :medium => "300x400", :thumb => "150x250" },
+                      :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   end
 
   validates_presence_of :name, :price

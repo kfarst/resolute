@@ -26,7 +26,7 @@ class PanelsController < ApplicationController
     
       if @panels.all?(&:valid?)
         Panel.overwrite_existing(@panels)
-        redirect_to :action => 'admin'
+        redirect_to :action => 'admin', :flash => {:info => "Panels sucessfully updated."}
       else
         @panels.each(&:valid?)
         render :action => 'admin'

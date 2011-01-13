@@ -1,0 +1,30 @@
+= form_tag :action => "updating" do
+  - @panels.each_with_index do |panel, index|
+    = fields_for "panels[#{index}]", panel, :html => { :multipart => true } do |f|
+      %fieldset
+        %legend
+          %b= panel.position
+        - if panel.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(panel.errors.count, "error")
+              prohibited this panel from being saved:
+            %ul
+              - panel.errors.full_messages.each do |msg|
+                %li= msg
+        .field
+          = f.hidden_field :position
+        .field
+          = f.label :title
+          %br/
+          = f.text_field :title
+        .field
+          = f.label :url
+          %br/
+          = f.text_field :url
+        .field
+          = f.label :picture
+          %br/
+          = f.file_field :picture
+    .actions
+      = submit_tag "Update"

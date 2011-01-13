@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230021630) do
+ActiveRecord::Schema.define(:version => 20110113030437) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20101230021630) do
     t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -105,6 +106,18 @@ ActiveRecord::Schema.define(:version => 20101230021630) do
     t.boolean  "visible",                       :default => true
   end
 
+  create_table "panels", :force => true do |t|
+    t.string   "title"
+    t.string   "position"
+    t.string   "url"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.string   "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.float    "price"
@@ -154,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20101230021630) do
     t.datetime "profile_picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "stats", :force => true do |t|

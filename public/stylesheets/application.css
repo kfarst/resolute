@@ -139,28 +139,23 @@ ul.second_level li.first_level {
   z-index: 0;
 }
 
-#panel.turkey-shootout-champs {
-  background-image: url('../images/turkey-shootout-small.png'); 
+#panel.small-bottom {
   background-repeat: no-repeat; 
-  background-position: 39% 45%;
   clear: right;
   margin-top: 10px;
-}
-
-#panel.club-teams {
-  background-image: url('../images/panel2.jpg'); 
-  background-repeat: no-repeat; 
-  background-position: center 0%;
   background-size: 100%;
 }
 
-#panel.camps-clinics {
+#panel.small-top {
+  background-repeat: no-repeat; 
+  background-size: 100%;
+}
+
+#panel.large {
   width: 65%;
   height: 420px;
   float: left;
-  background-image: url('../images/winter-camps.png');
   background-repeat: no-repeat; 
-  background-position: 0 top;
 }
 
 #panel:hover {

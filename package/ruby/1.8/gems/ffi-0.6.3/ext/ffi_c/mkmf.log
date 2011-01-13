@@ -34,7 +34,7 @@ checked program was:
 "gcc -o conftest -I. -I/Users/kfarst/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/i686-darwin10.4.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -g -O2  -pipe -fno-common   conftest.c  -L. -L/Users/kfarst/.rvm/rubies/ree-1.8.7-2010.02/lib -L.      -lruby-static  -ldl -lobjc  "
 Undefined symbols:
   "_rb_thread_blocking_region", referenced from:
-      _t in ccuqyfDD.o
+      _t in ccRTtepu.o
 ld: symbol(s) not found
 collect2: ld returned 1 exit status
 checked program was:

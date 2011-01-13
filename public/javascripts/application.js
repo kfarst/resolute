@@ -36,7 +36,7 @@ jQuery(function($) {
   }
 
   function panelAsLink(e) {
-    var path = $(this).attr('class');
+    var path = $(this).attr('data-url');
     var url = $(location)[0];
     $(location).attr('href', url + path);
   }

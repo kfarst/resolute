@@ -1,0 +1,13 @@
+%div{:id => "panel large", :class => @large_panel.url, :style => "background:url(#{@large_panel.picture(:large_panel)});"}
+  #panel-text<
+    = @large_panel.title
+%div{:id => "panel small top", :class => @small_panel_top.url, :style => "background:url(#{@small_panel_top.picture(:small_panel)});"}
+  #panel-text<
+    = @small_panel_top.title
+%div{:id => "panel small bottom", :class => @small_panel_bottom.url, :style => "background:url(#{@small_panel_bottom.picture(:small_panel)});"}
+  #panel-text<
+    = @small_panel_bottom.title
+#sponsors
+  = link_to (image_tag "midwestlacrosse.png"), "http://www.midwestlacrosse.com", :target => "_blank", :id => "mwl-sponsor"
+  = link_to (image_tag "ltn.png"), "http://www.lacrossethenations.org", :target => "_blank", :id => "ltn-sponsor"
+  = link_to (image_tag "stx.png"), "http://www.stx.com", :target => "_blank", :id => "stx-sponsor"

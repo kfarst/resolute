@@ -1,6 +1,6 @@
 #title Staff Members
 
-- @staff_members.each do |member|
+- StaffMember.list_order.each do |member|
   #staff-member.clear
     #profile-picture
       = link_to (image_tag member.profile_picture.url(:medium)), member.profile_picture.url(:medium), :rel => "vidbox"

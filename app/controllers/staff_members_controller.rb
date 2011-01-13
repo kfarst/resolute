@@ -49,4 +49,12 @@ class StaffMembersController < ApplicationController
 
     redirect_to :action => :admin
   end
+
+  def sort
+    params[:staff_member].each_with_index do |staff_member_id, i|
+      StaffMember.find(staff_member_id).update_attribute(:position, i)
+    end
+    render :text => params[:staff_member]
+  end
+
 end

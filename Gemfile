@@ -15,7 +15,6 @@ gem 'will_paginate'
 gem 'eycap'
 gem 'meta_where'
 gem 'ym4r'
-gem "exception_notification", :git => "git://github.com/sickill/exception_notification"
 gem 'event-calendar', :require => 'event_calendar'
 gem 'aws-s3'
 

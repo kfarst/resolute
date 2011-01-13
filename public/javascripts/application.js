@@ -6,6 +6,16 @@ jQuery(function($) {
   $('li.first_level')                               .live('hover', menuSlideDown);
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
+  $(document)                                       .ready(listSortStaff);
+
+  function listSortStaff(e) {
+    $("#sortable-staff").sortable({
+      update: function() {
+        $.post("/staff_members/sort", $(this).sortable('serialize'));
+      }
+    });
+		$("#sortable-staff").disableSelection();
+  }
 
   function listSort(e) {
     $("#sortable").sortable({

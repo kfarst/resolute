@@ -15,4 +15,5 @@ class StaffMember < ActiveRecord::Base
   accepts_nested_attributes_for :stats, :reject_if => lambda { |a| a[:content].blank? }
 
   validates_presence_of :name, :bio
+  scope :list_order, order("position ASC")
 end

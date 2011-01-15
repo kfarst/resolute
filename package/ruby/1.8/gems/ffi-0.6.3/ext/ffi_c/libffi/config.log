@@ -30,8 +30,8 @@ Kernel configured for up to 2 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1
 Primary memory available: 4.00 gigabytes
-Default processor set: 95 tasks, 350 threads, 2 processors
-Load average: 1.17, Mach factor: 1.15
+Default processor set: 99 tasks, 406 threads, 2 processors
+Load average: 1.20, Mach factor: 0.91
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -47,8 +47,6 @@ PATH: /sbin
 PATH: /usr/local/bin
 PATH: /usr/local/git/bin
 PATH: /usr/X11/bin
-PATH: /usr/local/bin
-PATH: /usr/local/git/bin
 PATH: /usr/local/sbin
 PATH: /opt/local/lib/mysql5/bin
 PATH: /opt/local/lib/postgresql83/bin
@@ -465,8 +463,8 @@ configure: failed program was:
 configure:14257: result: no
 configure:14283: checking assembler .cfi pseudo-op support
 configure:14311: gcc -c   conftest.c >&5
-/var/folders/pP/pPSMbP36GOux9t32guUpUU+++TI/-Tmp-//cc0IpSiH.s:1:Unknown pseudo-op: .cfi_startproc
-/var/folders/pP/pPSMbP36GOux9t32guUpUU+++TI/-Tmp-//cc0IpSiH.s:2:Unknown pseudo-op: .cfi_endproc
+/var/folders/pP/pPSMbP36GOux9t32guUpUU+++TI/-Tmp-//ccP2I66R.s:1:Unknown pseudo-op: .cfi_startproc
+/var/folders/pP/pPSMbP36GOux9t32guUpUU+++TI/-Tmp-//ccP2I66R.s:2:Unknown pseudo-op: .cfi_endproc
 configure:14318: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */

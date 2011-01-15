@@ -9,7 +9,6 @@ Given /^I am logged in$/ do
   visit "/users/sign_in"
   fill_in "Email", :with => "test@example.com"
   fill_in "Password", :with => "password"
-  save_and_open_page
   click_button "Sign in"
   visit "/admin"
 end

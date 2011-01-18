@@ -34,8 +34,7 @@ module Resolute
     config.generators do |g|
       g.orm                 :active_record
       g.template_engine     :haml
-      g.test_framework      :rspec, :fixtues => true
-      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.test_framework      :rspec, :fixtue_replacement => :factory_girl
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.

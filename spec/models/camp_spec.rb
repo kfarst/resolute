@@ -59,6 +59,16 @@ describe Camp do
     @camp.save.should_not be_true, "camp saved with non-numeric cost"
   end
 
+  it "should not save with a malformed payment url" do
+    @camp.payment_url = "aasdadsfsafdkjf"
+    @camp.save.should_not be_true, "camp saved with malformed payment url"
+  end
+
+  it "should not save with a malformed address" do
+    @camp.location = "aasdadsfsafdkjf"
+    @camp.save.should_not be_true, "camp saved with malformed address"
+  end
+
   describe "#get_address" do
     it "calls a get request on the Geocoding class" do
       Geocoding.should_receive(:get).with(@camp.location)

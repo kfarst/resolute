@@ -1,4 +1,12 @@
 Resolute::Application.routes.draw do 
+  resources :club_teams do
+    collection do
+      get :admin, :as => :admin
+    end
+  end
+
+  devise_for :players
+
   resources :panels, :only => [:index] do
     collection do
       get :admin, :as => :admin
@@ -51,6 +59,7 @@ Resolute::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  match '/club-teams' => 'club_teams#index', :as => :club_teams
   match '/admin' => 'admin#index', :as => :admin
   match '/home', :to => redirect("/")
   match '/videos' => 'items#videos', :as => :videos

@@ -1,0 +1,15 @@
+#title Club Teams
+
+%table{:width => "100%"}
+  %thead
+    %th Name
+    %th
+    %th
+    %th
+  %tbody
+    - @club_teams.each do |club_team|
+      %tr
+        %td= club_team.name
+        %td= link_to 'Show', club_team
+        %td= link_to 'Edit', edit_club_team_path(club_team)
+        %td= link_to 'Destroy', club_team, :confirm => 'Are you sure?', :method => :delete

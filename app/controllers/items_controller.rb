@@ -47,7 +47,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    respond_with @item.destroy, :method => :put
+    @item.destroy
+    redirect_to '/admin', :notice => 'Item was successfully deleted.'
   end
 
   def videos

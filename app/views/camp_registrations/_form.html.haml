@@ -76,6 +76,7 @@
       = f.label :grade
       %br/
       = f.text_field :grade, :size => 2
+      %span.subtext Please use numbers only.
   - if @camp.registration_form.yrs_of_exp?
     .field
       = f.label :yrs_of_exp, "Years of Experience"

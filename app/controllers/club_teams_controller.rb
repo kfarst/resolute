@@ -56,7 +56,7 @@ class ClubTeamsController < ApplicationController
 
     respond_to do |format|
       if @club_team.save
-        format.html { redirect_to(@club_team, :notice => 'Club team was successfully created.') }
+        format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully created.') }
         format.xml  { render :xml => @club_team, :status => :created, :location => @club_team }
       else
         format.html { render :action => "new" }
@@ -72,7 +72,7 @@ class ClubTeamsController < ApplicationController
 
     respond_to do |format|
       if @club_team.update_attributes(params[:club_team])
-        format.html { redirect_to(@club_team, :notice => 'Club team was successfully updated.') }
+        format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -88,7 +88,7 @@ class ClubTeamsController < ApplicationController
     @club_team.destroy
 
     respond_to do |format|
-      format.html { redirect_to(club_teams_url) }
+      format.html { redirect_to(admin_club_teams_url) }
       format.xml  { head :ok }
     end
   end

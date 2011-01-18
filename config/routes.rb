@@ -59,7 +59,7 @@ Resolute::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  match '/club-teams' => 'club_teams#index', :as => :club_teams
+  match '/club-teams' => 'club_teams#index'
   match '/admin' => 'admin#index', :as => :admin
   match '/home', :to => redirect("/")
   match '/videos' => 'items#videos', :as => :videos

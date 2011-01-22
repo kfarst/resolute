@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def only_whitespace?(string) 
-    string.to_s.strip.empty?
+    string.to_s.strip.blank?
   end
 
   def google_analytics_js

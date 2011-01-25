@@ -9,13 +9,9 @@ class PanelsController < ApplicationController
 
   # GET /panels/1/edit
   def admin
-    if Panel.count == 3
-      @panels = Panel.all
-    else
-      @panels = []
-      ["Left", "Right Top", "Right Bottom"].each do |position|
-        @panels << Panel.new(:position => position)
-      end
+    @panels = []
+    ["Left", "Right Top", "Right Bottom"].each do |position|
+      @panels << Panel.find_or_initialize_by_position(:position => position)
     end
   end
 
@@ -23,10 +19,10 @@ class PanelsController < ApplicationController
   # POST /panels.xml
   def updating
     @panels = params[:panels].values.collect { |panel| Panel.new(panel) }
-    
       if @panels.all?(&:valid?)
         Panel.overwrite_existing(@panels)
-        redirect_to :action => 'admin', :notice => "Panels sucessfully updated."
+        flash[:notice] = "Panels sucessfully updated."
+        redirect_to :action => 'admin'
       else
         @panels.each(&:valid?)
         render :action => 'admin'

@@ -15,9 +15,7 @@ class Panel < ActiveRecord::Base
   validates_presence_of :title, :if => :has_any_attributes?
   validates_presence_of :url, :if => :has_any_attributes?
   validates_presence_of :panel, :if => :has_any_attributes?
-  validates_format_of :url, :with => /^([a-z0-9]+)+(-[a-z0-9]+)*$/i, :if => :has_any_attributes?
-
-  attr_accessible :panel_file_name, :panel_content_type, :panel_file_size, :panel_updated_at
+  validates_format_of :url, :with => /^([a-z0-9]+)+(-[a-z0-9]+)*$/i, :message => "must be in the format of 'sample-page'", :if => :has_any_attributes?
 
   def has_any_attributes?
     self.attributes.values.any?(&:present?)
@@ -25,9 +23,11 @@ class Panel < ActiveRecord::Base
 
   def self.overwrite_existing(panels)
     panels.each do |panel|
-      p = Panel.find_by_position(panel.position)
-      p.destroy if (p.present? && panel.has_any_attributes?)
-      panel.save! if panel.valid?
+      if p = Panel.find_by_position(panel.position)
+        p.update_attributes(panel.attributes)
+      else
+        panel.save!
+      end
     end
   end
 

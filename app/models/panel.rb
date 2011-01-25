@@ -1,21 +1,23 @@
 class Panel < ActiveRecord::Base
   if Rails.env.production?
-    has_attached_file :picture,
-                      :styles => { :small_panel => "620x528>", :large_panel => "306x212>" },
+    has_attached_file :panel,
+                      :styles => { :small => "620x528>", :large => "306x212>" },
                       :storage => :s3,
                       :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                       :path => ":attachment/:id/:style.:extension",
                       :bucket => 'panel_pics'
   else
-    has_attached_file :picture,
-                      :styles => { :small_panel => "620x528>", :large_panel => "306x212>" },
+    has_attached_file :panel,
+                      :styles => { :small => "620x528>", :large => "306x212>" },
                       :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   end
 
   validates_presence_of :title, :if => :has_any_attributes?
   validates_presence_of :url, :if => :has_any_attributes?
-  validates_presence_of :picture, :if => :has_any_attributes?
+  validates_presence_of :panel, :if => :has_any_attributes?
   validates_format_of :url, :with => /^([a-z0-9]+)+(-[a-z0-9]+)*$/i, :if => :has_any_attributes?
+
+  attr_accessible :panel_file_name, :panel_content_type, :panel_file_size, :panel_updated_at
 
   def has_any_attributes?
     self.attributes.values.any?(&:present?)
@@ -28,4 +30,11 @@ class Panel < ActiveRecord::Base
       panel.save! if panel.valid?
     end
   end
+
+  private
+
+  def attachment_saved_in_database?
+    errors.add_to_base("There was an error uploading the panel image. Please try again.") and return false if panel.nil?
+  end
+
 end

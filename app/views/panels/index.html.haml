@@ -1,10 +1,10 @@
-%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background:url(#{@large_panel.picture(:large_panel)});"}
+%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background:url(#{@large_panel.panel.url(:large)});"}
   #panel-text<
     = @large_panel.title
-%div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background:url(#{@small_panel_top.picture(:small_panel)});"}
+%div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background:url(#{@small_panel_top.panel.url(:small)});"}
   #panel-text<
     = @small_panel_top.title
-%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background:url(#{@small_panel_bottom.picture(:small_panel)});"}
+%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background:url(#{@small_panel_bottom.panel.url(:small)});"}
   #panel-text<
     = @small_panel_bottom.title
 #sponsors

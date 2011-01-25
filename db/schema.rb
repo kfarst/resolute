@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117065508) do
+ActiveRecord::Schema.define(:version => 20110121063302) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -118,10 +118,10 @@ ActiveRecord::Schema.define(:version => 20110117065508) do
     t.string   "title"
     t.string   "position"
     t.string   "url"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.string   "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.string   "panel_file_name"
+    t.string   "panel_content_type"
+    t.string   "panel_file_size"
+    t.datetime "panel_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

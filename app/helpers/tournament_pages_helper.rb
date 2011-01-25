@@ -1,0 +1,2 @@
+module TournamentPagesHelper
+end

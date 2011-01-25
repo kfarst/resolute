@@ -1,0 +1,14 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), tournament_pages_path
+  = link_to t('edit'), edit_tournament_page_path(@tournament_page)
+
+%dl
+  %dt= TournamentPage.human_attribute_name :title
+  %dd= @tournament_page.title
+  %dt= TournamentPage.human_attribute_name :body
+  %dd= @tournament_page.body
+  %dt= TournamentPage.human_attribute_name :slug
+  %dd= @tournament_page.slug
+  %dt= TournamentPage.human_attribute_name :position
+  %dd= @tournament_page.position

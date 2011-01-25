@@ -1,4 +1,6 @@
 Resolute::Application.routes.draw do 
+  resources :tournament_pages
+
   resources :club_teams do
     collection do
       get :admin, :as => :admin

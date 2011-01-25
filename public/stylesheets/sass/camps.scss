@@ -1,0 +1,55 @@
+/*----------------- Camps -------------------*/
+
+#camp-container {
+  width: 100%;
+  clear: both;
+  height: auto;
+}
+
+#camp-list {
+  top: 0;
+  width: 305px;
+  padding: 5px;
+  height: auto;
+  margin: 5px 5px 50px 5px;
+  text-align: center;
+}
+
+.blue {
+  background-color: #97BFDE;
+}
+
+.blue a {
+  color: gray;
+}
+
+.gray {
+  background-color: Gray;
+}
+
+.light-gray {
+  background-color: #D3D3D3;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+#camp-list-name {
+  font-weight: bold;
+  padding: 0 0 5px 0;
+}
+
+#calendar {
+  clear: both;
+}
+
+#map {
+  float: right; 
+  width: 50%;
+  height: 50%;
+}

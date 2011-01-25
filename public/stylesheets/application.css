@@ -1,51 +1,311 @@
+/*----------------- Staff -------------------*/
+#staff-member {
+  width: auto;
+  background-color: black;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  color: white;
+  overflow: auto;
+  padding: 10px; }
+
+#profile-picture {
+  float: left;
+  margin-left: 5px;
+  width: 30%; }
+
+#member-content {
+  float: right;
+  width: 65%; }
+
+ul.staff-stats {
+  list-style: square inside;
+  color: #97BFDE; }
+
+#staff-member-name {
+  font-size: 30px; }
+
+/*----------------- Camps -------------------*/
+#camp-container {
+  width: 100%;
+  clear: both;
+  height: auto; }
+
+#camp-list {
+  top: 0;
+  width: 305px;
+  padding: 5px;
+  height: auto;
+  margin: 5px 5px 50px 5px;
+  text-align: center; }
+
+.blue {
+  background-color: #97BFDE; }
+
+.blue a {
+  color: gray; }
+
+.gray {
+  background-color: Gray; }
+
+.light-gray {
+  background-color: #D3D3D3; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+#camp-list-name {
+  font-weight: bold;
+  padding: 0 0 5px 0; }
+
+#calendar {
+  clear: both; }
+
+#map {
+  float: right;
+  width: 50%;
+  height: 50%; }
+
+/*----------------- Club Teams -------------------*/
+table#club-teams {
+  width: 100%; }
+
+tr#club-name-box {
+  margin: 5px 0; }
+
+tr#club-name-box td {
+  width: 400px;
+  height: 100px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center; }
+
+tr#club-name-box td a {
+  color: white; }
+
+tr#club-name-box td.one, tr#club-name-box td.three {
+  background: url("../images/club-team-box-bg1.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+tr#club-name-box td.two, tr#club-name-box td.four {
+  background: url("../images/club-team-box-bg2.png");
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/*----------------- Store -------------------*/
+#store-products {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+#product-box {
+  width: 300px;
+  padding: 5px;
+  margin: 10px;
+  background-color: #C0C0C0;
+  text-align: center; }
+
+/*---------------------- Sorting ------------------*/
+div.sort-item {
+  display: inline;
+  width: 100%; }
+
+div.sort-item:first-child:after {
+  content: ''; }
+
+div.sort-item:last-child:after {
+  content: ''; }
+
+div.sort-item:after {
+  content: ' | '; }
+
+ul#sortable {
+  width: 100%; }
+
+ul#sortable li {
+  background-color: gray;
+  margin-bottom: 5px;
+  padding: 10px; }
+
+/*------------------ Flash Messages ----------------*/
+span.notice {
+  background-color: #00FF66;
+  color: #006600;
+  border: 1px solid #006600;
+  padding: 5px;
+  width: 100%; }
+
+span.alert {
+  background-color: #FF0000;
+  color: #990000;
+  border: 1px solid #990000;
+  padding: 5px; }
+
+span.message {
+  background-color: #FF0000;
+  color: #990000;
+  border: 1px solid #990000;
+  padding: px;
+  margin: 5px 0 5px 0; }
+
+div#error_explanation {
+  background-color: #FF0000;
+  color: #990000;
+  border: 1px solid #990000;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  width: 90%; }
+
+div#flash {
+  margin: 10px 0 10px 0;
+  width: 90%; }
+
+/*------------------------- Video Page --------------------------*/
+#video {
+  padding: 10px;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px; }
+
+.even {
+  background-color: #E8E8E8; }
+
+.odd {
+  background-color: white; }
+
+#thumbnail {
+  float: left;
+  width: 20%;
+  cursor: pointer; }
+
+#video_info {
+  float: right;
+  width: 80%; }
+
+#video_title {
+  clear: right;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px 20px 10px;
+  top: 0;
+  width: 100%; }
+
+#video_description {
+  float: left;
+  font-size: 12px;
+  bottom: 0;
+  margin: 0 10px 0 10px; }
+
+.clear {
+  clear: both; }
+
+#video_link {
+  padding-bottom: 15px;
+  font-size: 16px; }
+
+/*------------------------ Welcome Page ----------------------------*/
+#panel {
+  width: 30%;
+  float: right;
+  margin: 0 5px;
+  height: 200px;
+  border: 5px solid white;
+  z-index: 0; }
+
+#panel.small-bottom {
+  background-repeat: no-repeat;
+  clear: right;
+  margin-top: 10px;
+  background-size: 100%; }
+
+#panel.small-top {
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+#panel.large {
+  width: 65%;
+  height: 420px;
+  float: left;
+  background-repeat: no-repeat; }
+
+#panel:hover {
+  cursor: pointer; }
+
+#panel:hover > #panel-text {
+  background-color: #C0C0C0; }
+
+#panel-text {
+  width: 100%;
+  background-color: #97BFDE;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 24px;
+  text-shadow: #000000 2px 2px 5px; }
+
+#sponsors {
+  width: 100%; }
+
+#mwl-sponsor {
+  float: left;
+  position: relative; }
+
+#ltn-sponsor {
+  float: left;
+  position: relative;
+  margin: 40px 0 0 110px; }
+
+#stx-sponsor {
+  float: right;
+  position: relative;
+  margin: 40px 0 0 0; }
+
 html {
-  height: 100%;
-}
+  height: 100%; }
 
 body {
-  background-image:url(../images/wallpaper.jpg);
-  background-repeat:no-repeat;
+  background-image: url(../images/wallpaper.jpg);
+  background-repeat: no-repeat;
   background-position: center top;
   background-color: #16202c;
   font-family: "arial", sans-serif;
-  height: 100%;
-}
+  height: 100%; }
 
 a {
   text-decoration: none;
-  color: #97BFDE;
-}
+  color: #97BFDE; }
 
 p {
-  margin-bottom: 5px;
-}
+  margin-bottom: 5px; }
 
 #container {
   margin-left: auto;
   margin-right: auto;
-  width: 1000px;
-}
+  width: 1000px; }
 
 #header {
   width: 100%;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
 #logo {
   font-size: 50px;
   color: #97BFDE;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 img.main_logo {
   width: 300px;
-  height: 129px;
-}
+  height: 129px; }
 
 span.tagline {
   font-style: italic;
-  color: #97BFDE;
-}
+  color: #97BFDE; }
 
 #title {
   color: white;
@@ -56,17 +316,14 @@ span.tagline {
   font-size: 24px;
   margin: 0 0 20px 0;
   -moz-box-shadow: 5px 5px 10px #C0C0C0;
-  -webkit-box-shadow: 5px 5px 10px #C0C0C0;
-}
+  -webkit-box-shadow: 5px 5px 10px #C0C0C0; }
 
 #nav {
   float: right;
-  margin-top: 15px;
-}
+  margin-top: 15px; }
 
 #nav a {
-  color: white;
-}
+  color: white; }
 
 #nav ul.nav_links ul.second_level a {
   font: bold 11px/16px arial, helvetica, sans-serif;
@@ -80,277 +337,71 @@ span.tagline {
   background: #efefef;
   text-decoration: none;
   width: 15em;
-  z-index: 1;
-}
+  z-index: 1; }
 
 ul.nav_links li.first_level {
   display: inline;
-  float:left;
+  float: left;
   margin-right: 20px;
   position: relative;
   color: white;
-  z-index: 1;
-}
+  z-index: 1; }
 
 ul.nav_links li:hover a {
   background-color: #97BFDE;
-  z-index: 1;
-}
+  z-index: 1; }
 
 ul.nav_links li.first_level ul.second_level {
   display: none;
   position: absolute;
-  z-index: 1;
-}
+  z-index: 1; }
 
 ul.nav_links li.first_level:hover ul.second_level {
   display: block;
   position: absolute;
-  z-index: 1;
-}
+  z-index: 1; }
 
 ul.second_level li.first_level {
-  clear:both;
+  clear: both;
   float: left;
-  z-index: 1;
-}
+  z-index: 1; }
 
 #content {
-  background-image:url("../images/camp-background.png");
+  background-image: url("../images/camp-background.png");
   background-position: bottom center;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   font-size: 14px;
   font-weight: none;
   background-color: white;
   padding: 10px;
   height: 100%;
   -moz-box-shadow: 5px 5px 10px #000000;
-  -webkit-box-shadow: 5px 5px 10px #000000;
-}
-
-/*------------------------ Welcome Page ----------------------------*/
-
-#panel {
-  width: 30%;
-  float: right;
-  margin: 0 5px;
-  height: 200px;
-  border: 5px solid white;
-  z-index: 0;
-}
-
-#panel.small-bottom {
-  background-repeat: no-repeat; 
-  clear: right;
-  margin-top: 10px;
-  background-size: 100%;
-}
-
-#panel.small-top {
-  background-repeat: no-repeat; 
-  background-size: 100%;
-}
-
-#panel.large {
-  width: 65%;
-  height: 420px;
-  float: left;
-  background-repeat: no-repeat; 
-}
-
-#panel:hover {
-  cursor: pointer;
-}
-
-#panel:hover > #panel-text {
-  background-color: #C0C0C0;
-}
-
-#panel-text {
-  width: 100%;
-  background-color: #97BFDE;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 10px 0 10px 0;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
-  font-size: 24px;
-  text-shadow: #000000 2px 2px 5px;
-}
-
-#sponsors {
-  width: 100%;
-}
-
-#mwl-sponsor {
-  float: left;
-  position: relative;
-}
-
-#ltn-sponsor {
-  float: left;
-  position: relative;
-  margin: 40px 0 0 110px;
-}
-
-#stx-sponsor {
-  float: right;
-  position: relative;
-  margin: 40px 0 0 0;
-}
-
-/*------------------------- Video Page --------------------------*/
-
-#video {
-  padding: 10px;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-}
-
-.even {
-  background-color:#E8E8E8;
-}
-
-.odd {
-  background-color:white;
-}
-
-#thumbnail {
-  float: left;
-  width: 20%;
-  cursor: pointer;
-}
-
-#video_info {
-  float: right;
-  width: 80%;
-}
-
-#video_title {
-  clear:right;
-  float:left;
-  font-size:16px;
-  font-weight:bold;
-  margin:0 10px 20px 10px;
-  top:0;
-  width:100%;
-}
-
-#video_description {
-  float: left;
-  font-size: 12px;
-  bottom: 0;
-  margin: 0 10px 0 10px;
-}
-
-.clear {
-  clear: both;
-}
-
-#video_link {
-  padding-bottom:15px;
-  font-size:16px;
-}
-
-
-/*------------------ Flash Messages ----------------*/
-
-span.notice {
-  background-color: #00FF66;
-  color: #006600;
-  border: 1px solid #006600;
-  padding: 5px;
-  width: 100%;
-}
-
-span.alert {
-  background-color: #FF0000;
-  color: #990000;
-  border: 1px solid #990000;
-  padding: 5px;
-}
-
-span.message {
-  background-color: #FF0000;
-  color: #990000;
-  border: 1px solid #990000;
-  padding: px;
-  margin: 5px 0 5px 0;
-}
-
-div#error_explanation {
-  background-color: #FF0000;
-  color: #990000;
-  border: 1px solid #990000;
-  padding: 5px;
-  margin: 5px 0 5px 0;
-  width: 90%;
-}
-
-div#flash {
-  margin: 10px 0 10px 0;
-  width: 90%;
-}
-
-/*---------------------- Sorting ------------------*/
-
-div.sort-item {
-  display: inline;
-  width: 100%;
-}
-
-div.sort-item:first-child:after {
-  content: '';
-}
-
-div.sort-item:last-child:after {
-  content: '';
-}
-
-div.sort-item:after {
-  content: ' | ';
-}
-
-ul#sortable {
-  width: 100%;
-}
-
-ul#sortable li {
-  background-color: gray;
-  margin-bottom: 5px;
-  padding: 10px;
-}
+  -webkit-box-shadow: 5px 5px 10px #000000; }
 
 div#actions {
-  float: right;
-}
+  float: right; }
 
 div.field {
-  margin: 5px;
-}
+  margin: 5px; }
 
 #new_camp_registration {
   margin: 15px 0 0 0;
   float: left;
   background-color: #C0C0C0;
-  padding: 5px;
-}
+  padding: 5px; }
 
 #admin_links {
   padding: 10px 0 0 0;
-  clear:both;
-}
+  clear: both; }
 
 #social-network-links {
   position: absolute;
-  background-color:#2A2B1C;
-  margin-left:auto;
-  margin-right:auto;
-  padding:10px;
-  top:20px;
-  right:0;
+  background-color: #2A2B1C;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  top: 20px;
+  right: 0;
   -moz-box-shadow: 5px 5px 10px #000000;
   -webkit-box-shadow: 5px 5px 10px #000000;
   -moz-border-radius: 10px;
@@ -358,154 +409,12 @@ div.field {
   opacity: 0.8;
   filter: alpha(opacity=80);
   color: white;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 #social-network-links span {
-  margin-right: 5px;
-}
+  margin-right: 5px; }
 
 .subtext {
   font-size: 12px;
   clear: left;
-  margin-bottom: 5px;
-}
-
-/*----------------- Store -------------------*/
-
-#store-products {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-#product-box {
-  width: 300px;
-  padding: 5px;
-  margin: 10px;
-  background-color: #C0C0C0;
-  text-align: center;
-}
-
-/*----------------- Camps -------------------*/
-
-#camp-container {
-  width: 100%;
-  clear: both;
-  height: auto;
-}
-
-#camp-list {
-  top: 0;
-  width: 305px;
-  padding: 5px;
-  height: auto;
-  margin: 5px 5px 50px 5px;
-  text-align: center;
-}
-
-.blue {
-  background-color: #97BFDE;
-}
-
-.blue a {
-  color: gray;
-}
-
-.gray {
-  background-color: Gray;
-}
-
-.light-gray {
-  background-color: #D3D3D3;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-#camp-list-name {
-  font-weight: bold;
-  padding: 0 0 5px 0;
-}
-
-#calendar {
-  clear: both;
-}
-
-#map {
-  float: right; 
-  width: 50%;
-  height: 50%;
-}
-
-
-/*----------------- Staff -------------------*/
-
-#staff-member {
-  width: auto;
-  background-color: black;
-  padding: 5px;
-  margin: 5px 0 5px 0;
-  color: white;
-  overflow: auto;
-  padding: 10px;
-}
-
-#profile-picture {
-  float: left;
-  margin-left: 5px;
-  width: 30%;
-}
-
-#member-content {
-  float: right;
-  width: 65%;
-}
-
-ul.staff-stats {
-  list-style: square inside;
-  color: #97BFDE;
-}
-
-#staff-member-name {
-  font-size: 30px;
-}
-
-/*----------------- Staff -------------------*/
-
-table#club-teams {
-  width: 100%;
-}
-
-tr#club-name-box {
-  margin: 5px 0;
-}
-
-tr#club-name-box td {
-  width: 400px;
-  height: 100px;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
-}
-
-tr#club-name-box td a {
-  color: white;
-}
-
-tr#club-name-box td.one, tr#club-name-box td.three {
-  background: url('../images/club-team-box-bg1.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-tr#club-name-box td.two, tr#club-name-box td.four {
-  background: url('../images/club-team-box-bg2.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+  margin-bottom: 5px; }

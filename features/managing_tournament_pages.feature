@@ -5,9 +5,9 @@ Feature: Managing Tournament Pages
     And I am logged in
 
   Scenario: Adding a Tournament Page
-    Given I am on the url /admin
-    When I click on "Manage Tournament Pages"
-    And I click "New Tournament Page"
+    Given I am on the admin page
+    When I follow "Manage Tournament Pages"
+    And I follow "New Tournament Page"
     And I fill in "Title" with "Tourney Page 1"
     And I fill in "Body" with "This is a test tournament page."
     And I press "Save"

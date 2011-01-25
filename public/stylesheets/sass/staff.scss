@@ -1,0 +1,31 @@
+/*----------------- Staff -------------------*/
+
+#staff-member {
+  width: auto;
+  background-color: black;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  color: white;
+  overflow: auto;
+  padding: 10px;
+}
+
+#profile-picture {
+  float: left;
+  margin-left: 5px;
+  width: 30%;
+}
+
+#member-content {
+  float: right;
+  width: 65%;
+}
+
+ul.staff-stats {
+  list-style: square inside;
+  color: #97BFDE;
+}
+
+#staff-member-name {
+  font-size: 30px;
+}

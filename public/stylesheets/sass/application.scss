@@ -1,0 +1,186 @@
+@import "staff";
+@import "camps";
+@import "club_teams";
+@import "store";
+@import "sorting";
+@import "flash_messages";
+@import "video";
+@import "welcome";
+
+html {
+  height: 100%;
+}
+
+body {
+  background-image:url(../images/wallpaper.jpg);
+  background-repeat:no-repeat;
+  background-position: center top;
+  background-color: #16202c;
+  font-family: "arial", sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #97BFDE;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+
+#header {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#logo {
+  font-size: 50px;
+  color: #97BFDE;
+  font-weight: bold;
+}
+
+img.main_logo {
+  width: 300px;
+  height: 129px;
+}
+
+span.tagline {
+  font-style: italic;
+  color: #97BFDE;
+}
+
+#title {
+  color: white;
+  background-color: #97BFDE;
+  padding: 5px 0 5px 5px;
+  font-weight: bold;
+  text-shadow: #000000 2px 2px 5px;
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  -moz-box-shadow: 5px 5px 10px #C0C0C0;
+  -webkit-box-shadow: 5px 5px 10px #C0C0C0;
+}
+
+#nav {
+  float: right;
+  margin-top: 15px;
+}
+
+#nav a {
+  color: white;
+}
+
+#nav ul.nav_links ul.second_level a {
+  font: bold 11px/16px arial, helvetica, sans-serif;
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #888 #555 #bbb;
+  margin: 0;
+  padding: 2px 3px;
+  color: #000;
+  background: #efefef;
+  text-decoration: none;
+  width: 15em;
+  z-index: 1;
+}
+
+ul.nav_links li.first_level {
+  display: inline;
+  float:left;
+  margin-right: 20px;
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+ul.nav_links li:hover a {
+  background-color: #97BFDE;
+  z-index: 1;
+}
+
+ul.nav_links li.first_level ul.second_level {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+ul.nav_links li.first_level:hover ul.second_level {
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+ul.second_level li.first_level {
+  clear:both;
+  float: left;
+  z-index: 1;
+}
+
+#content {
+  background-image:url("../images/camp-background.png");
+  background-position: bottom center;
+  background-repeat:no-repeat;
+  font-size: 14px;
+  font-weight: none;
+  background-color: white;
+  padding: 10px;
+  height: 100%;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+}
+
+div#actions {
+  float: right;
+}
+
+div.field {
+  margin: 5px;
+}
+
+#new_camp_registration {
+  margin: 15px 0 0 0;
+  float: left;
+  background-color: #C0C0C0;
+  padding: 5px;
+}
+
+#admin_links {
+  padding: 10px 0 0 0;
+  clear:both;
+}
+
+#social-network-links {
+  position: absolute;
+  background-color:#2A2B1C;
+  margin-left:auto;
+  margin-right:auto;
+  padding:10px;
+  top:20px;
+  right:0;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  color: white;
+  font-size: 12px;
+}
+
+#social-network-links span {
+  margin-right: 5px;
+}
+
+.subtext {
+  font-size: 12px;
+  clear: left;
+  margin-bottom: 5px;
+}

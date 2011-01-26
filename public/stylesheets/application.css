@@ -267,6 +267,34 @@ div#flash {
   position: relative;
   margin: 40px 0 0 0; }
 
+#tournament-page.sidebar {
+  background-color: #666666;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 30%;
+  font-weight: bold;
+  font-size: 16px;
+  float: left;
+  padding: 5px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  list-style-type: none;
+  list-style-position: outside; }
+
+#tournament-page.sidebar ul {
+  list-style-type: none;
+  list-style-position: outside; }
+
+#tournament-page.sidebar a {
+  color: white; }
+
+#tournament-page.sidebar a:hover {
+  color: #C0C0C0; }
+
+#tournament-page.content {
+  float: right;
+  width: 66%; }
+
 html {
   height: 100%; }
 

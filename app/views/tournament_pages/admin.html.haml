@@ -1,0 +1,12 @@
+#title Listing Tournament Pages
+%ul#sortable-tournament-pages{:width => "100%"}
+  - @tournament_pages.each do |tournament_page|
+    %li{:id => "tournament_page_#{tournament_page.id}", :style => "background-color: gray; margin: 5px 0 5px 0; padding: 10px;"}
+      %div.sort-item= tournament_page.title
+      %div.sort-item= link_to 'Show', tournament_page
+      %div.sort-item= link_to 'Edit', edit_tournament_page_path(tournament_page)
+      %div.sort-item= link_to 'Destroy', tournament_page, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Tournament Page', new_tournament_page_path
+|
+= link_to 'Admin Home', admin_path

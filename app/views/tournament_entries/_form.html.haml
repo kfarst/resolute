@@ -1,53 +1,57 @@
-= form_for @tournament_entry do |f|
-  - if @tournament_entry.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@tournament_entry.errors.count, "error")
-        prohibited this tournament entry from being submitted:
-      %ul
-        - @tournament_entry.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :team_name
-    %br
-    = f.text_field :team_name
-  .field
-    = f.label :coach_name, "Coach's Name"
-    %br
-    = f.text_field :coach_name
-  .field
-    = f.label :coach_phone, "Coach's Phone Number"
-    %br
-    = f.text_field :coach_phone
-  .field
-    = f.label :coach_email, "Coach's Email Address"
-    %br
-    = f.text_field :coach_email
-  .field
-    = f.label :director_name, "Program Director's Name"
-    %br
-    = f.text_field :director_name
-  .field
-    = f.label :division
-    %br
-    = f.select :division, divisions, {:include_blank => true}
-  .field
-    = f.label :street_address
-    %br
-    = f.text_field :street_address
-  .field
-    = f.label :city
-    %br
-    = f.text_field :city
-  .field
-    = f.label :state
-    %br
-    = f.select :state, state_abbreviations, {:include_blank => true}
-  .field
-    = f.label :zip, "Zip Code"
-    %br
-    = f.text_field :zip, :size => 5
+#new_camp_registration{:style=> "width: 90%;"}
+  #title Register Now!
+  = form_for @tournament_entry do |f|
+    - if @tournament_entry.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@tournament_entry.errors.count, "error")
+          prohibited this tournament entry from being submitted:
+        %ul
+          - @tournament_entry.errors.full_messages.each do |msg|
+            %li= msg
+    %div{:style => "float: left;"}
+      .field
+        = f.label :team_name
+        %br
+        = f.text_field :team_name
+      .field
+        = f.label :coach_name, "Coach's Name"
+        %br
+        = f.text_field :coach_name
+      .field
+        = f.label :coach_phone, "Coach's Phone Number"
+        %br
+        = f.text_field :coach_phone
+      .field
+        = f.label :coach_email, "Coach's Email Address"
+        %br
+        = f.text_field :coach_email
+      .field
+        = f.label :director_name, "Program Director's Name"
+        %br
+        = f.text_field :director_name
+      .field
+        = f.label :division
+        %br
+        = f.select :division, divisions, {:include_blank => true}
+    %div{:style => "float: right;"}
+      .field
+        = f.label :street_address
+        %br
+        = f.text_field :street_address
+      .field
+        = f.label :city
+        %br
+        = f.text_field :city
+      .field
+        = f.label :state
+        %br
+        = f.select :state, state_abbreviations, {:include_blank => true}
+      .field
+        = f.label :zip, "Zip Code"
+        %br
+        = f.text_field :zip, :size => 5
 
 
-  .actions
-    = f.submit "Sign My Team Up"
+    .actions.clear
+      = f.submit "Sign My Team Up"

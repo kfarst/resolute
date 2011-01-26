@@ -1,7 +1,7 @@
 = form_for(@tournament_page) do |f|
   - if @tournament_page.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@tournament_page.errors.count, 'error')} prohibited this user from being saved:"
+      %h2= "#{pluralize(@tournament_page.errors.count, 'error')} prohibited this tournament page from being saved:"
       %ul
       - @tournament_page.errors.full_messages.each do |msg|
         %li= msg
@@ -13,15 +13,7 @@
   .field
     = f.label :body
     %br
-    = f.text_area :body
-  .field
-    = f.label :slug
-    %br
-    = f.text_field :slug
-  .field
-    = f.label :position
-    %br
-    = f.text_field :position
+    = f.cktext_area :body, :width => "80%", :height => "600px"
 
   .actions
     = f.submit

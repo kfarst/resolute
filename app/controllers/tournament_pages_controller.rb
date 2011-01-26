@@ -1,19 +1,23 @@
 class TournamentPagesController < ApplicationController
-  # GET /tournament_pages
-  # GET /tournament_pages.xml
-  def index
-    @tournament_pages = TournamentPage.all
+  before_filter :authenticate_user!, :except => [:show, :index, :registration]
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tournament_pages }
+  def index
+    if TournamentPage.count.zero?
+      redirect_to registration_tournament_pages_path
+    else
+      @tournament_page = TournamentPage.list_order.first
+      render :show
     end
+  end
+
+  def admin
+    @tournament_pages = TournamentPage.all
   end
 
   # GET /tournament_pages/1
   # GET /tournament_pages/1.xml
   def show
-    @tournament_page = TournamentPage.find(params[:id])
+    @tournament_page = TournamentPage.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +38,7 @@ class TournamentPagesController < ApplicationController
 
   # GET /tournament_pages/1/edit
   def edit
-    @tournament_page = TournamentPage.find(params[:id])
+    @tournament_page = TournamentPage.find_by_slug(params[:id])
   end
 
   # POST /tournament_pages
@@ -44,7 +48,7 @@ class TournamentPagesController < ApplicationController
 
     respond_to do |format|
       if @tournament_page.save
-        format.html { redirect_to(@tournament_page, :notice => 'Tournament page was successfully created.') }
+        format.html { redirect_to(admin_tournament_pages_path, :notice => 'Tournament page was successfully created.') }
         format.xml  { render :xml => @tournament_page, :status => :created, :location => @tournament_page }
       else
         format.html { render :action => "new" }
@@ -56,7 +60,7 @@ class TournamentPagesController < ApplicationController
   # PUT /tournament_pages/1
   # PUT /tournament_pages/1.xml
   def update
-    @tournament_page = TournamentPage.find(params[:id])
+    @tournament_page = TournamentPage.find_by_slug(params[:id])
 
     respond_to do |format|
       if @tournament_page.update_attributes(params[:tournament_page])
@@ -72,12 +76,23 @@ class TournamentPagesController < ApplicationController
   # DELETE /tournament_pages/1
   # DELETE /tournament_pages/1.xml
   def destroy
-    @tournament_page = TournamentPage.find(params[:id])
+    @tournament_page = TournamentPage.find_by_slug(params[:id])
     @tournament_page.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tournament_pages_url) }
+      format.html { redirect_to(admin_tournament_pages_url, :notice => 'Tournament page was deleted.') }
       format.xml  { head :ok }
     end
+  end
+
+  def registration
+    @tournament_entry = TournamentEntry.new
+  end
+
+  def sort
+    params[:tournament_page].each_with_index do |tournament_page_id, i|
+      TournamentPage.find_by_id(tournament_page_id).update_attribute(:position, i)
+    end
+    render :text => params[:tournament_page]
   end
 end

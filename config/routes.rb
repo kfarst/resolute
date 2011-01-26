@@ -2,6 +2,8 @@ Resolute::Application.routes.draw do
   resources :tournament_pages do
     collection do
       get :admin, :as => :admin
+      post :sort
+      get :registration, :as => :registration
     end
   end
 
@@ -65,6 +67,7 @@ Resolute::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  match '/midwest-classic-youth-tournament' => 'tournament_pages#index'
   match '/club-teams' => 'club_teams#index'
   match '/admin' => 'admin#index', :as => :admin
   match '/home', :to => redirect("/")

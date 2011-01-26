@@ -7,6 +7,16 @@ jQuery(function($) {
   $('li.first_level')                               .live('mouseleave', menuSlideUp);
   $(document)                                       .ready(listSort);
   $(document)                                       .ready(listSortStaff);
+  $(document)                                       .ready(listSortTournament);
+
+  function listSortTournament(e) {
+    $("#sortable-tournament-pages").sortable({
+      update: function() {
+        $.post("/tournament_pages/sort", $(this).sortable('serialize'));
+      }
+    });
+		$("#sortable-tournament-page").disableSelection();
+  }
 
   function listSortStaff(e) {
     $("#sortable-staff").sortable({

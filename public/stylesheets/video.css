@@ -1,0 +1,44 @@
+/*------------------------- Video Page --------------------------*/
+#video {
+  padding: 10px;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px; }
+
+.even {
+  background-color: #E8E8E8; }
+
+.odd {
+  background-color: white; }
+
+#thumbnail {
+  float: left;
+  width: 20%;
+  cursor: pointer; }
+
+#video_info {
+  float: right;
+  width: 80%; }
+
+#video_title {
+  clear: right;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px 20px 10px;
+  top: 0;
+  width: 100%; }
+
+#video_description {
+  float: left;
+  font-size: 12px;
+  bottom: 0;
+  margin: 0 10px 0 10px; }
+
+.clear {
+  clear: both; }
+
+#video_link {
+  padding-bottom: 15px;
+  font-size: 16px; }

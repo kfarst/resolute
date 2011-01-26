@@ -21,8 +21,8 @@ gem 'aws-s3'
 group :development, :test do
   gem 'cucumber' 
   gem 'cucumber-rails'
-  gem 'rspec', '2.0.1'
-  gem "rspec-rails", "2.0.1"
+  gem 'rspec', '>=2.0.0'
+  gem "rspec-rails", ">=2.0.0"
   gem 'ruby-debug'
   gem 'factory_girl_rails'
   gem 'database_cleaner'

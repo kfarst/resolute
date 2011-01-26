@@ -1,0 +1,22 @@
+%h1= t('.title')
+%p= link_to t('.new_tournament_page'), new_tournament_page_path
+
+%table
+  %thead
+    %tr
+      %th= TournamentPage.human_attribute_name :title
+      %th= TournamentPage.human_attribute_name :body
+      %th= TournamentPage.human_attribute_name :slug
+      %th= TournamentPage.human_attribute_name :position
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for tournament_page in @tournament_pages
+      %tr{ :class => cycle(:odd, :even) }
+        %td= tournament_page.title
+        %td= tournament_page.body
+        %td= tournament_page.slug
+        %td= tournament_page.position
+        %td.action= link_to t('show'), tournament_page
+        %td.action= link_to t('edit'), edit_tournament_page_path(tournament_page)
+        %td.action= link_to t('destroy'), tournament_page, :confirm => t('are_you_sure'), :method => :delete

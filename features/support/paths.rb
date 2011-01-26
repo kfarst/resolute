@@ -41,6 +41,9 @@ module NavigationHelpers
     when /the panels admin page/
       "/panels/admin"
 
+    when /the admin page/
+      "/admin"
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

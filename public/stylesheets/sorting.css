@@ -1,0 +1,21 @@
+/*---------------------- Sorting ------------------*/
+div.sort-item {
+  display: inline;
+  width: 100%; }
+
+div.sort-item:first-child:after {
+  content: ''; }
+
+div.sort-item:last-child:after {
+  content: ''; }
+
+div.sort-item:after {
+  content: ' | '; }
+
+ul#sortable {
+  width: 100%; }
+
+ul#sortable li {
+  background-color: gray;
+  margin-bottom: 5px;
+  padding: 10px; }

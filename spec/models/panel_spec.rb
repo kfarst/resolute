@@ -18,7 +18,7 @@ describe Panel do
   end
   
   context "with two fields" do
-    let(:panel) { Panel.new(:title => "Test Panel", :picture => "test-panel.png") }
+    let(:panel) { Panel.new(:title => "Test Panel", :panel => "test-panel.png") }
   
     it "does not save the record" do
       panel.save.should be_false
@@ -51,7 +51,7 @@ describe Panel do
     end
   
     context "with two fields" do
-      let(:panel) { Panel.new(:title => "Test Panel", :picture => "test-panel.png") }
+      let(:panel) { Panel.new(:title => "Test Panel", :panel => "test-panel.png") }
   
       it "returns true" do
        panel.has_any_attributes?.should be_true

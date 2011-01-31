@@ -3,7 +3,7 @@ class Camp < ActiveRecord::Base
   validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url
   validates_numericality_of :cost
   validates_uniqueness_of :name
-  validates_format_of :payment_url, :with => /^(http:\/\/www\.paypal\.com\/)(.+)$/, :message => "must start with 'http://www.paypal.com'"
+  validates_format_of :payment_url, :with => /^(http:\/\/www.paypal.com\/)([a-z]+)(-{1}[a-z]+)*$/, :message => "must start with 'http://www.paypal.com/'"
   
   before_save :update_slug
   before_validation :get_map

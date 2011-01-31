@@ -1,20 +1,20 @@
 When /^I add three new panels$/ do
-  within_fielset("Left") do
+  within_fieldset("Left") do
     fill_in "Title", :with => "Panel 1"
     fill_in "Url", :with => "panel-1"
-    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/winter-clinics.png"
+    attach_file "Panel", "#{Rails.root}/spec/fixtures/winter-clinics.png"
   end
 
   within_fieldset("Right Top") do
     fill_in "Title", :with => "Panel 2"
     fill_in "Url", :with => "panel-2"
-    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/Panel2.png"
+    attach_file "Panel", "#{Rails.root}/spec/fixtures/Panel2.png"
   end
 
   within_fieldset("Right Bottom") do
     fill_in "Title", :with => "Panel 3"
     fill_in "Url", :with => "panel-3"
-    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/turkey-shootout-champs.png"
+    attach_file "Panel", "#{Rails.root}/spec/fixtures/turkey-shootout-champs.png"
   end
 end
 
@@ -34,10 +34,10 @@ Then /^it will be saved$/ do
 end
 
 When /^I add one new panel$/ do
-  within_fielset("Left") do
+  within_fieldset("Left") do
     fill_in "Title", :with => "Panel 4"
     fill_in "Url", :with => "panel-4"
-    attach_file "Picture", "#{RAILS_ROOT}/spec/fixtures/winter-clinics.png"
+    attach_file "Panel", "#{Rails.root}/spec/fixtures/winter-clinics.png"
   end
 end
 
@@ -55,7 +55,7 @@ When /^I add one new panel with missing information$/ do
   within_fieldset("Left") do
     fill_in "Title", :with => ""
     fill_in "Url", :with => ""
-    attach_file "Picture", ""
+    attach_file "Panel", ""
   end
 end
 
@@ -67,18 +67,18 @@ When /^I add new panels with missing information$/ do
   within_fieldset("Left") do
     fill_in "Title", :with => ""
     fill_in "Url", :with => ""
-    attach_file "Picture", ""
+    attach_file "Panel", ""
   end
 
   within_fieldset("Right Top") do
     fill_in "Title", :with => ""
     fill_in "Url", :with => ""
-    attach_file "Picture", ""
+    attach_file "Panel", ""
   end
 
   within_fieldset("Right Bottom") do
     fill_in "Title", :with => ""
     fill_in "Url", :with => ""
-    attach_file "Picture", ""
+    attach_file "Panel", ""
   end
 end

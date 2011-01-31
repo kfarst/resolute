@@ -26,5 +26,4 @@ class TournamentEntriesController < ApplicationController
 
    render :action => :index
   end
-
 end

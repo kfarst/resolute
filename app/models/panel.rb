@@ -1,14 +1,15 @@
 class Panel < ActiveRecord::Base
   if Rails.env.production?
     has_attached_file :panel,
-                      :styles => { :small => "620x528>", :large => "306x212>" },
+                      :styles => { :small => "620x528#", :large => "306x212#" },
                       :storage => :s3,
-                      :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                      :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => ":attachment/:id/:style.:extension",
                       :bucket => 'panel_pics'
   else
     has_attached_file :panel,
-                      :styles => { :small => "620x528>", :large => "306x212>" },
+                      :styles => { :small => "620x528#", :large => "306x212#" },
+                      :url => "/panels/:id/:style/:basename.:extension",
                       :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   end
 

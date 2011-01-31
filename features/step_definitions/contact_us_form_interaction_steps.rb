@@ -7,7 +7,7 @@ When /^I fill out the contact us form$/ do
   fill_in "Last name", :with => "Smith"
   fill_in "Email", :with => "smith@example.com"
   fill_in "Message", :with => "English are a fun subjekt in skewl!"
-  click "Send Message"
+  click_button "Send Message"
 end
 
 When /^I fill out the contact us form with bad data$/ do
@@ -22,7 +22,7 @@ When /^I fill out the contact us form with bad data$/ do
                               English are a fun subjekt in skewl! English are a fun subjekt in skewl! English are a fun subjekt in skewl!
                               English are a fun subjekt in skewl! English are a fun subjekt in skewl! English are a fun subjekt in skewl!
                               English are a fun subjekt in skewl! English are a fun subjekt in skewl! English are a fun subjekt in skewl!"
-  click "Send Message"
+  click_button "Send Message"
 end
 
 When /^I fill out the contact us form with missing data$/ do
@@ -30,7 +30,7 @@ When /^I fill out the contact us form with missing data$/ do
   fill_in "Last name", :with => ""
   fill_in "Email", :with => ""
   fill_in "Message", :with => ""
-  click "Send Message"
+  click_button "Send Message"
 end
 
 Then /^it sends a message to the website$/ do

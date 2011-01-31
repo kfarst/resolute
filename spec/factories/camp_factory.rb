@@ -6,5 +6,5 @@ Factory.define :camp   do |c|
   c.location    "6000 Cooper Road Columbus, OH 43210"
   c.group       "High School"
   c.cost        100.00
-  c.payment_url "http://www.paypal.com"
+  c.payment_url "http://www.paypal.com/test"
 end

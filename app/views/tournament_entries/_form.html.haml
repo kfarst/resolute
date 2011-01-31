@@ -51,7 +51,12 @@
         = f.label :zip, "Zip Code"
         %br
         = f.text_field :zip, :size => 5
-
-
+      .field
+        %br
+        = label_tag "Agreement"
+        %br
+        %br
+        = f.check_box :agreement
+        I have read and accept the terms of the #{link_to "Release and Waiver of Liability", "/tournament_pages/waiver-and-release-form", :target => "_blank", :style => "color: #4D4DFF;"}, Assumption of Risk, Indemnity and Parental Consent, and Use of Photographs and Images Agreement.
     .actions.clear
       = f.submit "Sign My Team Up"

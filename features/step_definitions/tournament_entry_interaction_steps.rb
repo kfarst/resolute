@@ -46,7 +46,7 @@ When /^I sign up for the tournament with correct data$/ do
 end
 
 Then /^I should be redirected to PayPal$/ do
-  response.should redirect_to "http://www.paypal.com"
+  page.should redirect_to "http://www.paypal.com"
 end
 
 Given /^I have a tournament entry$/ do

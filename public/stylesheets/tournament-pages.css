@@ -11,17 +11,13 @@
   text-align: center;
   list-style-type: none;
   list-style-position: outside; }
-
-#tournament-page.sidebar ul {
-  list-style-type: none;
-  list-style-position: outside; }
-
-#tournament-page.sidebar a {
-  color: white; }
-
-#tournament-page.sidebar a:hover {
-  color: #C0C0C0; }
-
+  #tournament-page.sidebar ul {
+    list-style-type: none;
+    list-style-position: outside; }
+  #tournament-page.sidebar a {
+    color: white; }
+    #tournament-page.sidebar a:hover {
+      color: #C0C0C0; }
 #tournament-page.content {
   float: right;
   width: 66%; }

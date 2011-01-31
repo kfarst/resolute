@@ -280,17 +280,13 @@ div#flash {
   text-align: center;
   list-style-type: none;
   list-style-position: outside; }
-
-#tournament-page.sidebar ul {
-  list-style-type: none;
-  list-style-position: outside; }
-
-#tournament-page.sidebar a {
-  color: white; }
-
-#tournament-page.sidebar a:hover {
-  color: #C0C0C0; }
-
+  #tournament-page.sidebar ul {
+    list-style-type: none;
+    list-style-position: outside; }
+  #tournament-page.sidebar a {
+    color: white; }
+    #tournament-page.sidebar a:hover {
+      color: #C0C0C0; }
 #tournament-page.content {
   float: right;
   width: 66%; }
@@ -395,9 +391,6 @@ ul.second_level li.first_level {
   z-index: 1; }
 
 #content {
-  background-image: url("../images/camp-background.png");
-  background-position: bottom center;
-  background-repeat: no-repeat;
   font-size: 14px;
   font-weight: none;
   background-color: white;

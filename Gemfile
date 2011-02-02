@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.0.1"
+gem "rails", "3.0.3"
 
 gem 'haml'
 gem 'mongrel'
 gem 'devise'
 gem 'youtube-g'
-gem 'ckeditor'
+gem 'ckeditor', :git => "git://github.com/galetahub/rails-ckeditor.git", :branch => "rails3"
 gem 'paperclip'
 gem 'mysql'
 gem 'capistrano'

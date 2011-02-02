@@ -1,0 +1,7 @@
+--- 
+two: 
+  adapter: sqlite3
+  database: /Users/bmabey/Programming/ruby/database_cleaner/examples/features/support/../../db/activerecord_two.db
+one: 
+  adapter: sqlite3
+  database: /Users/bmabey/Programming/ruby/database_cleaner/examples/features/support/../../db/activerecord_one.db

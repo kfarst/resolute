@@ -1,4 +1,28 @@
 /*----------------- Club Teams -------------------*/
+#club-team.sidebar {
+  background-color: #666666;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 30%;
+  font-weight: bold;
+  font-size: 16px;
+  float: left;
+  padding: 5px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  list-style-type: none;
+  list-style-position: outside; }
+  #club-team.sidebar ul {
+    list-style-type: none;
+    list-style-position: outside; }
+  #club-team.sidebar a {
+    color: white; }
+    #club-team.sidebar a:hover {
+      color: #C0C0C0; }
+#club-team.content {
+  float: right;
+  width: 66%; }
+
 table#club-teams {
   width: 100%; }
 

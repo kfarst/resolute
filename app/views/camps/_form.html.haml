@@ -43,6 +43,10 @@
     = f.label :group
     %br/
     = f.select :group, options_for_select(["Junior High","High School","Other"]), {:include_blank => true}
+  .field
+    = f.label :show_registration_form
+    %br/
+    = f.check_box :show_registration_form
 
   %h2 Registration Form
   = f.fields_for :registration_form do |reg|

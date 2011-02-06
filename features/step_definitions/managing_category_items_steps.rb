@@ -1,8 +1,8 @@
 When /^I create a category titled "([^"]*)"$/ do |title|
-  click "Manage Categories"
-  click "New Item"
+  click_link "Manage Categories"
+  click_link "New Item"
   fill_in "Title", :with => title 
-  click "Create Item"
+  click_button "Create Item"
 end
 
 When /^I have a category titled "([^"]*)"$/ do |title|
@@ -10,10 +10,10 @@ When /^I have a category titled "([^"]*)"$/ do |title|
 end
 
 When /^I change the category title to "([^"]*)"$/ do |new_title|
-  click "Manage Categories"
+  click_link "Manage Categories"
 
   within("#item_#{@category.id}") do
-    click "Edit"
+    click_link "Edit"
   end
 
   fill_in 'Title', :with => new_title
@@ -25,13 +25,13 @@ Then /^The category title should be "([^"]*)"$/ do |category_name|
 end
 
 When /^I delete the category$/ do
-  click "Manage Categories"
+  click_link "Manage Categories"
 
   page.evaluate_script("window.alert = function(msg) { return true; }")
   page.evaluate_script("window.confirm = function(msg) { return true; }")
 
   within("#item_#{@category.id}") do
-    click "Destroy"
+    click_link "Destroy"
   end
 end
 

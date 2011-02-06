@@ -15,7 +15,6 @@ Feature: Managing Panels
     Scenario: Adding One New Panel
       When I add one new panel
       Then it will be saved
-      And they will show up on the homepage
       And it will show up on the homepage
       And the existing panels will still be in place
 

@@ -29,4 +29,6 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'nifty-generators'
+  gem 'cucumber_scaffold'
+  gem 'pickle'
 end

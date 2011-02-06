@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125055557) do
+ActiveRecord::Schema.define(:version => 20110205160838) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(:version => 20110125055557) do
     t.text     "description"
     t.string   "location"
     t.string   "group"
-    t.decimal  "cost",        :precision => 10, :scale => 0
+    t.decimal  "cost",                   :precision => 10, :scale => 0
     t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.boolean  "show_registration_form",                                :default => true
   end
 
   create_table "ckeditor_assets", :force => true do |t|

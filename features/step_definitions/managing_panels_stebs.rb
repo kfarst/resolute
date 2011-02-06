@@ -16,6 +16,8 @@ When /^I add three new panels$/ do
     fill_in "Url", :with => "panel-3"
     attach_file "Panel", "#{Rails.root}/spec/fixtures/turkey-shootout-champs.png"
   end
+
+  click_button "Update"
 end
 
 Then /^they will show up on the homepage$/ do
@@ -39,6 +41,8 @@ When /^I add one new panel$/ do
     fill_in "Url", :with => "panel-4"
     attach_file "Panel", "#{Rails.root}/spec/fixtures/winter-clinics.png"
   end
+
+  click_button "Update"
 end
 
 Then /^it will show up on the homepage$/ do
@@ -57,6 +61,8 @@ When /^I add one new panel with missing information$/ do
     fill_in "Url", :with => ""
     attach_file "Panel", ""
   end
+
+  click_button "Update"
 end
 
 Then /^I will receive errors$/ do
@@ -81,4 +87,6 @@ When /^I add new panels with missing information$/ do
     fill_in "Url", :with => ""
     attach_file "Panel", ""
   end
+
+  click_button "Update"
 end

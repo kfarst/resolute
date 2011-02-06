@@ -6,6 +6,13 @@ Given /^I am a site administrator$/ do
 end
 
 Given /^I am logged in$/ do
+  ["Left", "Right Top", "Right Bottom"].each_with_index do |position, index|
+    Panel.create!(:title => "Panel #{index}", 
+                  :url =>"panel-#{index}",
+                  :panel => "panel#{index}.png",  
+                  :position => position)
+  end
+
   visit "/users/sign_in"
   fill_in "Email", :with => "test@example.com"
   fill_in "Password", :with => "password"
@@ -14,14 +21,14 @@ Given /^I am logged in$/ do
 end
 
 When /^I create a page titled "([^"]*)"$/ do |title|
-  click "Manage Pages"
-  click "New Item"
+  click_link "Manage Pages"
+  click_link "New Item"
   fill_in "Title", :with => title
 end
 
 When /^I assign it to the category "([^"]*)"$/ do |category|
   select "#{category}", :from => "Category"
-  click "Create Item"
+  click_button "Create Item"
 end
 
 When /^I have a page titled "([^"]*)"$/ do |page|
@@ -29,10 +36,10 @@ When /^I have a page titled "([^"]*)"$/ do |page|
 end
 
 When /^I change the page title to "([^"]*)"$/ do |new_title|
-  click "Manage Pages"
+  click_link "Manage Pages"
 
   within("#item_#{@page.id}") do
-    click "Edit"
+    click_link "Edit"
   end
 
   fill_in 'Title', :with => new_title
@@ -40,13 +47,13 @@ When /^I change the page title to "([^"]*)"$/ do |new_title|
 end
 
 When /^I delete the page$/ do
-  click "Manage Pages"
+  click_link "Manage Pages"
 
   page.evaluate_script("window.alert = function(msg) { return true; }")
   page.evaluate_script("window.confirm = function(msg) { return true; }")
 
   within("#item_#{@page.id}") do
-    click "Destroy"
+    click_link "Destroy"
   end
 
 end

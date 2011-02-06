@@ -18,7 +18,6 @@ class PanelsController < ApplicationController
   # POST /panels
   # POST /panels.xml
   def updating
-    debugger
     @panels = params[:panels].values.collect { |panel| Panel.new(panel) }
       if @panels.all?(&:valid?)
         Panel.overwrite_existing(@panels)

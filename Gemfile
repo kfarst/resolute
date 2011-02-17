@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.0.3"
+gem "rails", "3.0.4"
 
 gem 'haml'
 gem 'mongrel'#, '1.2.0.pre2'
@@ -19,6 +19,7 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'aws-s3'
 # gem 'ruby_core_source'
 # gem 'rubygems-update'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'cucumber' 
@@ -37,4 +38,5 @@ group :development, :test do
   gem 'pickle'
   gem 'simplecov'
   gem 'metrical'
+  gem 'rails_best_practices'
 end

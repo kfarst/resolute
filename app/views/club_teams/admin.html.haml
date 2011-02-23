@@ -7,12 +7,18 @@
     %th
     %th
   %tbody
-    - @club_teams.each do |club_team|
-      %tr
-        %td= club_team.name
+    - ClubTeam.main_pages.each do |club_team|
+      %tr{:style => "margin: 10px 0 10px 0;"}
+        %td= raw "<b>#{club_team.name}</b>"
         %td= link_to 'Show', club_team
         %td= link_to 'Edit', edit_club_team_path(club_team)
         %td= link_to 'Destroy', club_team, :confirm => 'Are you sure?', :method => :delete
-%br/
+      - club_team.children.each do |child|
+        %tr
+          %td= child.name
+          %td= link_to 'Show', club_team
+          %td= link_to 'Edit', edit_club_team_path(child)
+          %td= link_to 'Destroy', club_team, :confirm => 'Are you sure?', :method => :delete
+  %br/
 %br/
 = link_to 'New Club Team', new_club_team_path

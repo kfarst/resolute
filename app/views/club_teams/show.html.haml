@@ -1,6 +1,6 @@
 #title= @club_team.name
 
-= render :partial => "nav"
+= render :partial => "nav", :object => @club_team
 
 #club-team.content
   = raw(@club_team.information)

@@ -17,6 +17,7 @@ class Panel < ActiveRecord::Base
   validates_presence_of :url, :if => :has_any_attributes?
   validates_presence_of :panel, :if => :has_any_attributes?
   validates_format_of :url, :with => /^([a-z0-9]+)+(-[a-z0-9]+)*$/i, :message => "must be in the format of 'sample-page'", :if => :has_any_attributes?
+  validates_attachment_presence :panel, :if => lambda { self.panel? }
 
   def has_any_attributes?
     self.attributes.values.any?(&:present?)

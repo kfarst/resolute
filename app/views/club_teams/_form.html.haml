@@ -14,6 +14,10 @@
     = f.label :information
     %br
     = f.cktext_area :information, :width => "80%", :height => "600px"
+  .field
+    = f.label :parent
+    %br
+    = f.select :parent_id, all_club_teams, { :include_blank => true }
 
   .actions
     = f.submit

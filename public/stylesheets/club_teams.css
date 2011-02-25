@@ -34,7 +34,8 @@ tr#club-name-box td {
   height: 100px;
   padding: 10px;
   font-size: 30px;
-  text-align: center; }
+  text-align: center;
+  margin: 10px; }
 
 tr#club-name-box td a {
   color: white; }

@@ -14,7 +14,7 @@ class ClubTeamsController < ApplicationController
   # GET /club_teams
   # GET /club_teams.xml
   def index
-    @club_teams = ClubTeam.all
+    @club_teams = ClubTeam.main_pages
 
     respond_to do |format|
       format.html # index.html.erb

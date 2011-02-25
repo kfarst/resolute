@@ -18,9 +18,9 @@ describe StaffMember do
 
   context "with stats" do
     before(:each) do
+      @member.stats << Factory(:stat)
+      @member.stats << Factory(:stat)
       @member.save
-      @member.stats << Factory(:stat)
-      @member.stats << Factory(:stat)
     end
 
     it "has stats" do

@@ -3,7 +3,7 @@ class ClubTeamsController < ApplicationController
   before_filter :authenticate_player!, :only => [:show, :index]
 
   def admin
-    @club_teams = ClubTeam.all
+    @club_teams = ClubTeam.main_pages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,11 @@ class ClubTeamsController < ApplicationController
   # GET /club_teams/1
   # GET /club_teams/1.xml
   def show
-    @club_team = ClubTeam.find_by_slug(params[:id])
+    @club_team = parent = ClubTeam.find_by_slug(params[:parent_slug])
+
+    unless params[:child_slug].nil?
+      @club_team = ClubTeam.find_by_slug_and_parent_id(params[:child_slug], parent.id)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,7 +50,7 @@ class ClubTeamsController < ApplicationController
 
   # GET /club_teams/1/edit
   def edit
-    @club_team = ClubTeam.find_by_slug(params[:id])
+    @club_team = ClubTeam.find_by_id(params[:id])
   end
 
   # POST /club_teams
@@ -68,7 +72,7 @@ class ClubTeamsController < ApplicationController
   # PUT /club_teams/1
   # PUT /club_teams/1.xml
   def update
-    @club_team = ClubTeam.find_by_slug(params[:id])
+    @club_team = ClubTeam.find_by_id(params[:id])
 
     respond_to do |format|
       if @club_team.update_attributes(params[:club_team])
@@ -84,7 +88,7 @@ class ClubTeamsController < ApplicationController
   # DELETE /club_teams/1
   # DELETE /club_teams/1.xml
   def destroy
-    @club_team = ClubTeam.find_by_slug(params[:id])
+    @club_team = ClubTeam.find_by_id(params[:id])
     @club_team.destroy
 
     respond_to do |format|

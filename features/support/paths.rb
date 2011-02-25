@@ -10,6 +10,21 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+      when /edit page for that club team/
+        raise 'no club team' unless @club_team
+        edit_club_team_path(@club_team)
+      when /page for that club team/
+        raise 'no club team' unless @club_team
+        club_team_path(@club_team)
+      when /edit page for the (\d+)(?:st|nd|rd|th) club team/
+        raise 'no club teams' unless @club_teams
+        nth_club_team = @club_teams[$1.to_i - 1]
+        edit_club_team_path(nth_club_team)
+      when /page for the (\d+)(?:st|nd|rd|th) club team/
+        raise 'no club teams' unless @club_teams
+        nth_club_team = @club_teams[$1.to_i - 1]
+        club_team_path(nth_club_team)
+
 
     when /the Test Category page/
       "/items/test-category"

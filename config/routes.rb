@@ -7,11 +7,12 @@ Resolute::Application.routes.draw do
     end
   end
 
-  resources :club_teams do
+  resources :club_teams, :except => [:show] do
     collection do
       get :admin, :as => :admin
     end
   end
+  match "/club_teams/(/:parent_slug(/:child_slug))" => "club_teams#show"
 
   devise_for :players
 

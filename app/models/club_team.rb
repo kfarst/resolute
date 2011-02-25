@@ -1,13 +1,15 @@
 class ClubTeam < ActiveRecord::Base
-  before_save :update_slug
+  before_validation :update_slug
   scope :main_pages, where(:parent_id => nil).order("created_at DESC")
 
+  validates_uniqueness_of :name, :scope => :parent_id
+
   def children
-    ClubTeam.where(:parent_id => self.id).order("created_at DESC")
+    ClubTeam.where(:parent_id => id).order("created_at DESC")
   end
 
-  def to_param
-    self.name.parameterize
+  def parent
+    ClubTeam.where(:id => parent_id).first
   end
 
   private 

@@ -7,19 +7,19 @@ module ClubTeamsHelper
     truncate(word_wrap(team_name, :line_width => 21), :length => 82)
   end
 
-  def club_team_links(parent_page)
+  def club_team_links(page)
     output = ""
     output << "<ul>"
-    if parent_page.children.empty?
-      ClubTeam.find_by_id(parent_page.parent_id).children.each do |club_team|
-        output << "<li><a href='#{club_team_path(club_team)}'>#{club_team.name}</a></li>"
+    if page.parent_id.nil?
+      page.children.each do |club_team|
+        output << "<li><a href=\"/club_teams/#{club_team.parent.slug}/#{club_team.slug}\">#{club_team.name}</a></li>"
         output << "<hr width = '100%' style = 'height: 1px; color: black;' />"
-      end
+      end unless page.children.empty?
     else
-      parent_page.children.each do |club_team|
-        output << "<li><a href='#{club_team_path(club_team)}'>#{club_team.name}</a></li>"
+      page.parent.children.each do |club_team|
+        output << "<li><a href=\"/club_teams/#{club_team.parent.slug}/#{club_team.slug}\">#{club_team.name}</a></li>"
         output << "<hr width = '100%' style = 'height: 1px; color: black;' />"
-      end
+      end unless page.parent.nil? || page.parent.children.nil?
     end
     output << "</ul>"
     raw(output)
@@ -27,6 +27,11 @@ module ClubTeamsHelper
 
   def all_club_teams
     ClubTeam.main_pages.collect { |team| [team.name, team.id] }
+  end
+
+  def club_team_title
+    return @club_team.parent.name unless @club_team.parent.nil?
+    @club_team.name
   end
 end
 

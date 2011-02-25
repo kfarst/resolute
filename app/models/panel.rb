@@ -28,7 +28,7 @@ class Panel < ActiveRecord::Base
       if p = Panel.find_by_position(panel.position)
         p.update_attributes(panel.attributes)
       else
-        panel.save!
+        panel.save
       end
     end
   end

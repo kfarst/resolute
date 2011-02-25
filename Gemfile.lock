@@ -144,6 +144,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    rcov (0.9.9)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -169,9 +170,6 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
-    simplecov (0.4.0)
-      simplecov-html (~> 0.4.0)
-    simplecov-html (0.4.3)
     term-ansicolor (1.0.5)
     thor (0.14.6)
     treetop (1.4.9)
@@ -211,11 +209,11 @@ DEPENDENCIES
   paperclip
   pickle
   rails (= 3.0.4)
+  rcov
   rspec (>= 2.0.0)
   rspec-rails (>= 2.0.0)
   ruby-debug
   rubygems-update
-  simplecov
   will_paginate
   ym4r
   youtube-g

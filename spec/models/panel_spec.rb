@@ -87,7 +87,7 @@ describe Panel do
           Factory(:panel, :title => "Panel #{index}", :position => position)
         end
 
-        panels = [Factory(:panel, :title => "Panel 3", :position => "Left")]
+        panels = [Factory.build(:panel, :title => "Panel 3", :position => "Left")]
         Panel.overwrite_existing(panels)
       end
   

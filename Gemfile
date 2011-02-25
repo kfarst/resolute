@@ -30,5 +30,5 @@ group :development, :test do
   gem 'nifty-generators'
   gem 'cucumber_scaffold'
   gem 'pickle'
-  gem 'simplecov'
+  gem 'rcov'
 end

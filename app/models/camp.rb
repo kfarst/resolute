@@ -34,7 +34,7 @@ class Camp < ActiveRecord::Base
                     :zip => result[0].postal_code,
                     :image_type => "png").url
     rescue
-      errors.add_to_base("There was a problem retreiving the address. Please check the address and try again.") and return false
+      errors.add(:base, "There was a problem retreiving the address. Please check the address and try again.") and return false
     end
   end
 

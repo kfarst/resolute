@@ -5,4 +5,4 @@
     - @club_teams.in_groups_of(2, false) do |row|
       %tr#club-name-box
         - row.each do |club_team|
-          %td{ :class => cycle(:one, :two) }= link_to confine_to_background(club_team.name), club_team_path(club_team)
+          %td{ :class => cycle(:one, :two) }= link_to confine_to_background(club_team.name), "/club_teams/#{club_team.slug}"

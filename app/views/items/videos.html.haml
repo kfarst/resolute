@@ -6,13 +6,15 @@
   = link_to "http://www.youtube.com/resolutelacrosse", "http://www.youtube.com/resolutelacrosse", :target => "_blank"
 
 
-- @channel.videos.each do |video|
-  #video{:class => cycle("even","odd")}
-    %img{:id => "thumbnail", :src => video.thumbnails.first.url}
-    #video_info
-      =link_to video.title, video.embed_url, :rel => "vidbox", :id => "video_title"
-      %br
-      %br
-      %span{:id => "video_description"}= video.description 
+- @channel.videos.in_groups_of(3, false) do |group|
+  - group.each do |video|
+    #video_container{:class => cycle("even","odd")}
+      #video
+        %img{:id => "thumbnail", :src => video.thumbnails.first.url}
+        #video_info
+          =link_to video.title, video.embed_url, :rel => "vidbox", :id => "video_title"
+          %br
+          %br
+          %span{:id => "video_description"}= video.description 
 
 %div.clear

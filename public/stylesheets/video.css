@@ -1,10 +1,17 @@
 /*------------------------- Video Page --------------------------*/
+#video_container {
+  padding: 10px;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px; }
+
 #video {
   padding: 10px;
   float: left;
   margin-left: auto;
   margin-right: auto;
-  width: 960px; }
+  width: 300px; }
 
 .even {
   background-color: #E8E8E8; }
@@ -13,13 +20,18 @@
   background-color: white; }
 
 #thumbnail {
-  float: left;
-  width: 20%;
-  cursor: pointer; }
+  width: 75%;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto; }
 
 #video_info {
-  float: right;
-  width: 80%; }
+  float: left;
+  width: 80%;
+  clear: both;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 #video_title {
   clear: right;
@@ -28,13 +40,18 @@
   font-weight: bold;
   margin: 0 10px 20px 10px;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
 
 #video_description {
   float: left;
   font-size: 12px;
   bottom: 0;
-  margin: 0 10px 0 10px; }
+  margin: 0 10px 0 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 .clear {
   clear: both; }

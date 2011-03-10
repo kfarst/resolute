@@ -18,7 +18,7 @@ module ClubTeamsHelper
         output << "<li><a href=\"/club_teams/#{club_team.parent.slug}/#{club_team.slug}\">#{club_team.name}</a></li>"
       end unless page.children.empty?
     else
-      output << "<li><a href=\"/club_teams/#{page.parent.slug}\">#{page.name}</a></li>"
+      output << "<li><a href=\"/club_teams/#{page.parent.slug}\">#{page.parent.name}</a></li>"
 
       page.parent.children.each do |club_team|
         output << "<hr width = '100%' style = 'height: 1px; color: black;' />"

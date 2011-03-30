@@ -45,8 +45,8 @@ When /^I sign up for the tournament with correct data$/ do
   click_button "Sign My Team Up"
 end
 
-Then /^I should be redirected to PayPal$/ do
-  current_url.should =~ "http://www.example.com/tournament_entries"
+Then /^I should be entered into the tournament$/ do
+  TournamentEntry.all.size.should == 1
 end
 
 Given /^I have a tournament entry$/ do

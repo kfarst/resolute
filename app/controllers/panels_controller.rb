@@ -11,7 +11,7 @@ class PanelsController < ApplicationController
   def admin
     @panels = []
     ["Left", "Right Top", "Right Bottom"].each do |position|
-      @panels << Panel.find_or_initialize_by_position(:position => position)
+      @panels << Panel.find_or_initialize_by_position(position)
     end
   end
 

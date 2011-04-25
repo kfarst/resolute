@@ -1,6 +1,6 @@
-= form_tag :action => "updating" do
+= form_tag :action => "updating", :html => { :multipart => true } do
   - @panels.each_with_index do |panel, index|
-    = fields_for "panels[#{index}]", panel, :html => { :multipart => true } do |f|
+    = fields_for "panels[#{index}]", panel do |f|
       %fieldset
         %legend
           %b= panel.position

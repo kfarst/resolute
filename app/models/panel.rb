@@ -25,10 +25,11 @@ class Panel < ActiveRecord::Base
 
   def self.overwrite_existing(panels)
     panels.each do |panel|
-      if p = Panel.find_by_position(panel.position)
+      p = Panel.find_by_position(panel.position)
+      if p.present?
         p.update_attributes(panel.attributes)
       else
-        panel.save
+        panel.save!
       end
     end
   end

@@ -1,12 +1,13 @@
-%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background:url('/images/youth-classic.jpg');background-position: 7% -800%;"}
+%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background:url(#{@large_panel.panel.url(:large)});"}  
   #panel-text<
     = @large_panel.title
 %div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background:url(#{@small_panel_top.panel.url(:small)});"}
   #panel-text<
     = @small_panel_top.title
-%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background:url('/images/panel1.jpg');background-position: top center;"}
+%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background:url(#{@small_panel_bottom.panel.url(:small)});"}
   #panel-text<
     = @small_panel_bottom.title
+
 #sponsors
   = link_to (image_tag "midwestlacrosse.png"), "http://www.midwestlacrosse.com", :target => "_blank", :id => "mwl-sponsor"
   = link_to (image_tag "ltn.png"), "http://www.lacrossethenations.org", :target => "_blank", :id => "ltn-sponsor"

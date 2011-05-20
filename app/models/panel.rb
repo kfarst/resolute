@@ -8,9 +8,7 @@ class Panel < ActiveRecord::Base
                       :bucket => 'panel_pics'
   else
     has_attached_file :panel,
-                      :styles => { :small => "620x528#", :large => "306x212#" },
-                      :url => "/panels/:id/:style/:basename.:extension",
-                      :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
+                      :styles => { :small => "620x528#", :large => "306x212#" }
   end
 
   validates_presence_of :title, :if => :has_any_attributes?

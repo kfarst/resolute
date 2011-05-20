@@ -16,7 +16,7 @@ Resolute::Application.routes.draw do
 
   devise_for :players
 
-  resources :panels, :only => [:index] do
+  resources :panels do
     collection do
       get :admin, :as => :admin
       post :updating, :as => :updating

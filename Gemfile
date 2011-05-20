@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.0.4"
+gem "rails"
 
 gem 'rubygems-update'
 gem 'haml'
@@ -16,6 +16,8 @@ gem 'meta_where'
 gem 'ym4r'
 gem 'event-calendar', :require => 'event_calendar'
 gem 'aws-s3'
+gem 'rmagick'
+gem 'sass'
 
 group :development, :test do
   gem 'cucumber' 

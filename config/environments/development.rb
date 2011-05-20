@@ -19,4 +19,6 @@ Resolute::Application.configure do
   config.action_mailer.perform_deliveries = false 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

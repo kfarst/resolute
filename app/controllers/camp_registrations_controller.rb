@@ -3,39 +3,29 @@ class CampRegistrationsController < ApplicationController
   # GET /camp_registration.xml
   before_filter :authenticate_user!, :except => [:new, :create]
   before_filter :find_registration, :only => [:show, :edit, :update, :destroy]
+  respond_with :html
 
   def index
     @camp_registrations = CampRegistration.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @camp_registration }
-    end
+    respond_with @camp_registrations
   end
 
   # GET /camp_registration/1
   # GET /camp_registration/1.xml
   def show
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @camp_registration }
-    end
+    respond_with @camp_registration
   end
 
   # GET /camp_registration/new
   # GET /camp_registration/new.xml
   def new
     @camp_registration = CampRegistration.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @camp_registration }
-    end
+    respond_with @camp_registration
   end
 
   # GET /camp_registration/1/edit
   def edit
+    respond_with @camp_registration
   end
 
   # POST /camp_registration
@@ -72,11 +62,7 @@ class CampRegistrationsController < ApplicationController
   # DELETE /camp_registration/1.xml
   def destroy
     @camp_registration.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(camp_registration_url) }
-      format.xml  { head :ok }
-    end
+    respond_with @camp_registration
   end
 
   private

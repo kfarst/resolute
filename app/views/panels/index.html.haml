@@ -1,10 +1,10 @@
-%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background:url(#{@large_panel.panel.url(:large)});"}  
+%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background-position:center;background-image:url(/panels/large/summer_camp.png);"}  
   #panel-text<
     = @large_panel.title
-%div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background:url(#{@small_panel_top.panel.url(:small)});"}
+%div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background-position:top;background-image:url(/panels/small/missing.png);"}
   #panel-text<
     = @small_panel_top.title
-%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background:url(#{@small_panel_bottom.panel.url(:small)});"}
+%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background-position:bottom;background-image:url(/panels/large/missing.png);"}
   #panel-text<
     = @small_panel_bottom.title
 

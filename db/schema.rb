@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524224146) do
+ActiveRecord::Schema.define(:version => 20110117035546) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -39,12 +39,11 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
     t.text     "description"
     t.string   "location"
     t.string   "group"
-    t.decimal  "cost",                   :precision => 10, :scale => 0
+    t.decimal  "cost",        :precision => 10, :scale => 0
     t.string   "payment_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-    t.boolean  "show_registration_form",                                :default => true
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -64,16 +63,6 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
-
-  create_table "club_teams", :force => true do |t|
-    t.string   "name"
-    t.text     "information"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "parent_id"
-    t.integer  "position"
-  end
 
   create_table "coach_clinic_registrations", :force => true do |t|
     t.string   "name"
@@ -121,10 +110,10 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
     t.string   "title"
     t.string   "position"
     t.string   "url"
-    t.string   "panel_file_name"
-    t.string   "panel_content_type"
-    t.string   "panel_file_size"
-    t.datetime "panel_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.string   "picture_file_size"
+    t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -132,7 +121,6 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
   create_table "players", :force => true do |t|
     t.string   "email",                                              :null => false
     t.string   "encrypted_password",   :limit => 128,                :null => false
-    t.string   "password_salt",                                      :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -143,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_salt"
   end
 
   add_index "players", ["email"], :name => "index_players_on_email", :unique => true
@@ -222,24 +211,15 @@ ActiveRecord::Schema.define(:version => 20110524224146) do
     t.datetime "updated_at"
   end
 
-  create_table "tournament_pages", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "slug"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                               :null => false
+    t.string   "encrypted_password",   :limit => 128, :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_salt"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -43,50 +43,16 @@ class CampRegistration < ActiveRecord::Base
     end
     object.merge({:position => pos_string})
   end
-
+  
   private
 
-  def name_in_form?
-    registration_form.name?
+  def method_missing(symbol, &block)
+    if symbol.to_s =~ /(.+)_in_form\?/
+      method_bool = $1 + "?"
+      registration_form.send(method_bool, &block)
+    else
+      super
+    end
   end
 
-  def email_in_form?
-    registration_form.email?
-  end
-
-  def phone_in_form?
-    registration_form.phone?
-  end
-
-  def age_in_form?
-    registration_form.age?
-  end
-  
-  def position_in_form?
-    registration_form.position?
-  end
-
-  def school_in_form?
-    registration_form.school?
-  end
-
-  def phone_in_form?
-    registration_form.phone?
-  end
-
-  def address_in_form?
-    registration_form.address?
-  end
-
-  def grade_in_form?
-    registration_form.grade?
-  end
-
-  def yrs_of_exp_in_form?
-    registration_form.yrs_of_exp?
-  end
-
-  def finding_resolute_in_form?
-    registration_form.finding_resolute?
-  end
 end

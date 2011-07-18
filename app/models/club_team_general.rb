@@ -1,0 +1,3 @@
+class ClubTeamGeneral < ClubTeam
+  
+end

@@ -1,8 +1,6 @@
 Given /^I am a site administrator$/ do
-  user = User.new(:email => "test@example.com")
-  user.password, user.password_confirmation = "password"
-  user.save!
-  Category.create!(:title => "About Us")
+  @user = Factory(:user)
+  Factory(:category)
 end
 
 Given /^I am logged in$/ do
@@ -14,8 +12,8 @@ Given /^I am logged in$/ do
   end
 
   visit "/users/sign_in"
-  fill_in "Email", :with => "test@example.com"
-  fill_in "Password", :with => "password"
+  fill_in "Email", :with => @user.email
+  fill_in "Password", :with => @user.password
   click_button "Sign in"
   visit "/admin"
 end

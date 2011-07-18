@@ -1,0 +1,3 @@
+class ClubTeamIndividual < ClubTeam
+
+end

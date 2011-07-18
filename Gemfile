@@ -20,6 +20,10 @@ gem 'aws-s3'
 gem 'rmagick'
 gem 'sass'
 
+group :development do
+  gem 'redgreen'
+end
+
 group :development, :test do
   gem 'cucumber' 
   gem 'cucumber-rails'
@@ -29,9 +33,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'launchy'
+  gem 'launchy', '0.3.5'
   gem 'nifty-generators'
-  gem 'cucumber_scaffold'
-  gem 'pickle'
   gem 'rcov'
+  gem 'linecache', '=0.43'
 end

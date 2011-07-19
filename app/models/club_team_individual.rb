@@ -1,3 +1,0 @@
-class ClubTeamIndividual < ClubTeam
-
-end

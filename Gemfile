@@ -25,6 +25,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'heroku'
   gem 'cucumber' 
   gem 'cucumber-rails'
   gem 'rspec', '>=2.0.0'

@@ -50,19 +50,19 @@ div#club-teams {
       text-align: center;
       margin: 10px;
 
+      .one, .three {
+        background: url('../images/club-team-box-bg1.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .two, .four {
+        background: url('../images/club-team-box-bg2.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
       a { color: white; }
-    }
-
-    .one, .three {
-      background: url('../images/club-team-box-bg1.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-
-    .two, .four {
-      background: url('../images/club-team-box-bg2.png');
-      background-repeat: no-repeat;
-      background-position: center center;
     }
   }
 }

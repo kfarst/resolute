@@ -104,16 +104,16 @@ div#club-teams {
       font-size: 30px;
       text-align: center;
       margin: 10px; }
+      div#club-teams div#club-name-box div .one, div#club-teams div#club-name-box div .three {
+        background: url("../images/club-team-box-bg1.png");
+        background-repeat: no-repeat;
+        background-position: center center; }
+      div#club-teams div#club-name-box div .two, div#club-teams div#club-name-box div .four {
+        background: url("../images/club-team-box-bg2.png");
+        background-repeat: no-repeat;
+        background-position: center center; }
       div#club-teams div#club-name-box div a {
         color: white; }
-    div#club-teams div#club-name-box .one, div#club-teams div#club-name-box .three {
-      background: url("../images/club-team-box-bg1.png");
-      background-repeat: no-repeat;
-      background-position: center center; }
-    div#club-teams div#club-name-box .two, div#club-teams div#club-name-box .four {
-      background: url("../images/club-team-box-bg2.png");
-      background-repeat: no-repeat;
-      background-position: center center; }
 
 /*----------------- Store -------------------*/
 #store-products {

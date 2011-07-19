@@ -1,8 +1,8 @@
 #title Club Teams
 
-%table#club-teams
-  %tbody
-    - @club_teams.in_groups_of(2, false) do |row|
-      %tr#club-name-box
-        - row.each do |club_team|
-          %td{ :class => cycle(:one, :two, :three, :four) }= link_to confine_to_background(club_team.name), "/club_teams/#{club_team.slug}"
+= render :partial => "nav", :object => @general_pages
+
+%div#club-teams
+  - @list.each do |club_team|
+    %div#club-team-box
+      %div{ :class => cycle(:one, :two, :three, :four) }= link_to confine_to_background(club_team.name), "/club_teams/#{club_team.slug}"

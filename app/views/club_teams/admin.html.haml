@@ -21,4 +21,8 @@
           %td= link_to 'Destroy', club_team, :confirm => 'Are you sure?', :method => :delete
   %br/
 %br/
-= link_to 'New Club Team', new_club_team_path
+
+- if params[:general_pages]
+  = link_to 'New Club Team', new_club_team_path(:general_page => true)
+- else
+  = link_to 'New Club Team', new_club_team_path

@@ -7,6 +7,12 @@
         %li= msg
   
   .field
+    - if is_a_general_page?
+      = hidden_field_tag :general_page, true
+    - else
+      = hidden_field_tag :general_page, false
+
+  .field
     = f.label :name
     %br
     = f.text_field :name
@@ -14,10 +20,12 @@
     = f.label :information
     %br
     = f.cktext_area :information, :width => "80%", :height => "600px"
-  .field
-    = f.label :parent
-    %br
-    = f.select :parent_id, all_club_teams, { :include_blank => true }
+
+    - unless is_a_general_page?
+      .field
+        = f.label :parent
+        %br
+        = f.select :parent_id, all_club_teams, { :include_blank => true }
 
   .actions
     = f.submit

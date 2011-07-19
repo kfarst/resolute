@@ -3,7 +3,11 @@ class ClubTeamsController < ApplicationController
   before_filter :authenticate_player!, :only => [:show, :index]
 
   def admin
-    @club_teams = ClubTeam.main_pages
+    if params[:general_pages]
+      @club_teams = ClubTeam.general_pages
+    else
+      @club_teams = ClubTeam.main_pages
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +18,8 @@ class ClubTeamsController < ApplicationController
   # GET /club_teams
   # GET /club_teams.xml
   def index
-    @club_teams = ClubTeam.main_pages
+    @general_pages = ClubTeam.general_pages
+    @list = ClubTeam.main_pages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -58,13 +63,21 @@ class ClubTeamsController < ApplicationController
   def create
     @club_team = ClubTeam.new(params[:club_team])
 
+    if params[:general_page]
+      @club_team.general_page = true
+    else
+      @club_team.general_page = false
+    end
+
     respond_to do |format|
       if @club_team.save
-        format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully created.') }
-        format.xml  { render :xml => @club_team, :status => :created, :location => @club_team }
+        if @club_team.general_page?
+          format.html { redirect_to(admin_club_teams_path(:general_pages => true), :notice => 'Club team was successfully created.') }
+        else
+          format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully created.') }
+        end
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @club_team.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -76,8 +89,11 @@ class ClubTeamsController < ApplicationController
 
     respond_to do |format|
       if @club_team.update_attributes(params[:club_team])
-        format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully updated.') }
-        format.xml  { head :ok }
+        if @club_team.general_page?
+          format.html { redirect_to(admin_club_teams_path(:general_pages => true), :notice => 'Club team was successfully updated.') }
+        else
+          format.html { redirect_to(admin_club_teams_path, :notice => 'Club team was successfully updated.') }
+        end
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @club_team.errors, :status => :unprocessable_entity }
@@ -89,11 +105,15 @@ class ClubTeamsController < ApplicationController
   # DELETE /club_teams/1.xml
   def destroy
     @club_team = ClubTeam.find_by_id(params[:id])
+    general_page = @club_team.general_page?
     @club_team.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_club_teams_url) }
-      format.xml  { head :ok }
+      if general_page
+        format.html { redirect_to(admin_club_teams_url(:general_pages => true)) }
+      else
+        format.html { redirect_to(admin_club_teams_url) }
+      end
     end
   end
 end

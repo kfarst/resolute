@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110715052802) do
+ActiveRecord::Schema.define(:version => 20110718214114) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110715052802) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "type_inheritance"
+    t.boolean  "general_page"
   end
 
   create_table "coach_clinic_registrations", :force => true do |t|
@@ -131,8 +132,8 @@ ActiveRecord::Schema.define(:version => 20110715052802) do
   end
 
   create_table "players", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                                              :null => false
+    t.string   "encrypted_password",   :limit => 128,                :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -141,7 +142,6 @@ ActiveRecord::Schema.define(:version => 20110715052802) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -233,12 +233,11 @@ ActiveRecord::Schema.define(:version => 20110715052802) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                               :null => false
+    t.string   "encrypted_password",   :limit => 128, :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

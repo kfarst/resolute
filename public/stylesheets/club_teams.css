@@ -23,29 +23,24 @@
   float: right;
   width: 66%; }
 
-table#club-teams {
-  width: 100%; }
-
-tr#club-name-box {
-  margin: 5px 0; }
-
-tr#club-name-box td {
-  width: 400px;
-  height: 100px;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
-  margin: 10px; }
-
-tr#club-name-box td a {
-  color: white; }
-
-tr#club-name-box td.one, tr#club-name-box td.three {
-  background: url("../images/club-team-box-bg1.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
-
-tr#club-name-box td.two, tr#club-name-box td.four {
-  background: url("../images/club-team-box-bg2.png");
-  background-repeat: no-repeat;
-  background-position: center center; }
+div#club-teams {
+  float: right; }
+  div#club-teams div#club-name-box {
+    margin: 5px 0; }
+    div#club-teams div#club-name-box div {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      font-size: 30px;
+      text-align: center;
+      margin: 10px; }
+      div#club-teams div#club-name-box div a {
+        color: white; }
+    div#club-teams div#club-name-box .one, div#club-teams div#club-name-box .three {
+      background: url("../images/club-team-box-bg1.png");
+      background-repeat: no-repeat;
+      background-position: center center; }
+    div#club-teams div#club-name-box .two, div#club-teams div#club-name-box .four {
+      background: url("../images/club-team-box-bg2.png");
+      background-repeat: no-repeat;
+      background-position: center center; }

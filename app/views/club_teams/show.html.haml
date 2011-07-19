@@ -1,6 +1,9 @@
 #title= club_team_title
 
-= render :partial => "nav", :object => @club_team
+- if is_a_general_page?
+  = render :partial => "nav", :object => ClubTeam.general_pages
+- else
+  = render :partial => "nav", :object => @club_team
 
 #club-team.content
   = raw(@club_team.information)

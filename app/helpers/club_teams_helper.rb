@@ -15,7 +15,7 @@ module ClubTeamsHelper
 
         page.each do |club_team|
           output << "<hr width = '100%' style = 'height: 1px; color: black;' />"
-          output << "<li><a href=\"/club_teams/#{club_team.slug}/#{club_team.slug}\">#{club_team.name}</a></li>"
+          output << "<li><a href=\"/club_teams/#{club_team.slug}\">#{club_team.name}</a></li>"
         end
     else
       if page.parent_id.nil?

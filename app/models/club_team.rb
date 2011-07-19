@@ -1,6 +1,6 @@
 class ClubTeam < ActiveRecord::Base
   before_validation :update_slug
-  scope :main_pages, where(:general_page => false).where(:parent_id => nil).order("created_at DESC")
+  scope :main_pages, where(:general_page != true).where(:parent_id => nil).order("created_at DESC")
   scope :general_pages, where(:general_page => true).order("created_at DESC")
 
   validates_uniqueness_of :name, :scope => :parent_id

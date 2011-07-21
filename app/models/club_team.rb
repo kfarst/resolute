@@ -13,6 +13,10 @@ class ClubTeam < ActiveRecord::Base
     ClubTeam.where(:id => parent_id).first
   end
 
+  def general_page?
+    general_page == true
+  end
+
   private 
 
   def update_slug

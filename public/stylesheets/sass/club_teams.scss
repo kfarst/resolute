@@ -37,32 +37,28 @@
 }
 
 div#club-teams {
-  float: right;
 
-  div#club-name-box  {
-    margin: 5px 0;
+  div#club-team-box  {
+    margin: 5px auto;
+    width: 400px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 
-    div {
-      width: 400px;
-      height: 100px;
-      padding: 10px;
-      font-size: 30px;
-      text-align: center;
-      margin: 10px;
-
-      .one, .three {
-        background: url('../images/club-team-box-bg1.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-
-      .two, .four {
-        background: url('../images/club-team-box-bg2.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-
-      a { color: white; }
+    .one {
+      background: url('../images/club-team-box-bg1.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      padding: 20px 0px;
     }
+
+    .two {
+      background: url('../images/club-team-box-bg2.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      padding: 20px 0px;
+    }
+
+    a { color: white; }
   }
 }

@@ -13,6 +13,9 @@ module NavigationHelpers
     when /^the Contact Us page$/
       '/contact-us'
 
+    when /^the tournament entry admin page$/
+      '/tournament_entries/admin'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

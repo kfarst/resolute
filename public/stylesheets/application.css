@@ -93,27 +93,24 @@ ul.staff-stats {
   float: right;
   width: 66%; }
 
-div#club-teams {
-  float: right; }
-  div#club-teams div#club-name-box {
-    margin: 5px 0; }
-    div#club-teams div#club-name-box div {
-      width: 400px;
-      height: 100px;
-      padding: 10px;
-      font-size: 30px;
-      text-align: center;
-      margin: 10px; }
-      div#club-teams div#club-name-box div .one, div#club-teams div#club-name-box div .three {
-        background: url("../images/club-team-box-bg1.png");
-        background-repeat: no-repeat;
-        background-position: center center; }
-      div#club-teams div#club-name-box div .two, div#club-teams div#club-name-box div .four {
-        background: url("../images/club-team-box-bg2.png");
-        background-repeat: no-repeat;
-        background-position: center center; }
-      div#club-teams div#club-name-box div a {
-        color: white; }
+div#club-teams div#club-team-box {
+  margin: 5px auto;
+  width: 400px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center; }
+  div#club-teams div#club-team-box .one {
+    background: url("../images/club-team-box-bg1.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 0px; }
+  div#club-teams div#club-team-box .two {
+    background: url("../images/club-team-box-bg2.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 0px; }
+  div#club-teams div#club-team-box a {
+    color: white; }
 
 /*----------------- Store -------------------*/
 #store-products {

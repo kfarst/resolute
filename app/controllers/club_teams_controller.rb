@@ -31,8 +31,6 @@ class ClubTeamsController < ApplicationController
   def show
     @club_team = parent = ClubTeam.find_by_slug(params[:parent_slug])
     
-    authenticate_player! unless @club_team.general_page?
-
     unless params[:child_slug].nil?
       @club_team = ClubTeam.find_by_slug_and_parent_id(params[:child_slug], parent.id)
     end

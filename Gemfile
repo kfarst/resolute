@@ -19,6 +19,7 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'aws-s3'
 gem 'rmagick'
 gem 'sass'
+gem 'radiant'
 
 group :development do
   gem 'redgreen'

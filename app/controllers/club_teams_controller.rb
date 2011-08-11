@@ -17,13 +17,8 @@ class ClubTeamsController < ApplicationController
   # GET /club_teams
   # GET /club_teams.xml
   def index
-    @general_pages = ClubTeam.general_pages
-    @list = ClubTeam.main_pages
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @club_teams }
-    end
+    @club_team = ClubTeam.general_pages.first
+    render :show
   end
 
   # GET /club_teams/1

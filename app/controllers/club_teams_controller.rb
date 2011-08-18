@@ -25,6 +25,7 @@ class ClubTeamsController < ApplicationController
   # GET /club_teams/1.xml
   def show
     @club_team = parent = ClubTeam.find_by_slug(params[:parent_slug])
+    @registration = ClubTeamRegistration.new
     
     unless params[:child_slug].nil?
       @club_team = ClubTeam.find_by_slug_and_parent_id(params[:child_slug], parent.id)
@@ -107,6 +108,18 @@ class ClubTeamsController < ApplicationController
         format.html { redirect_to(admin_club_teams_url(:general_pages => true)) }
       else
         format.html { redirect_to(admin_club_teams_url) }
+      end
+    end
+  end
+
+  def sign_up
+    @registration = ClubTeamRegistration.new(params[:club_team_registration])
+
+    respond_to do |format|
+      if @registration.save
+        format.html { redirect_to(:back, :notice => 'Thank you for registering for the club teams! We will be in contact with you shortly.') }
+      else
+        format.html { redirect_to(:back, :error => "Failed to register. Please try again!") }
       end
     end
   end

@@ -7,3 +7,9 @@
 
 #club-team.content
   = raw(@club_team.information)
+
+#club-team.content{:style => "float: right;"}
+  - if @club_team.show_registration_form?
+    #new_camp_registration
+      #title Register For Open Tryouts
+      = render :partial => "registration", :object => @registration

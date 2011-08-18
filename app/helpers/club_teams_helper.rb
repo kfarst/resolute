@@ -11,12 +11,10 @@ module ClubTeamsHelper
     output = ""
     output << "<ul>"
     if page.is_a?(ActiveRecord::Relation)
-        output << "<li><a href=\"/club_teams\">Club Teams Home</a></li>"
-
-        page.each do |club_team|
-          output << "<hr width = '100%' style = 'height: 1px; color: black;' />"
-          output << "<li><a href=\"/club_teams/#{club_team.slug}\">#{club_team.name}</a></li>"
-        end
+      page.each do |club_team|
+        output << "<hr width = '100%' style = 'height: 1px; color: black;' />"
+        output << "<li><a href=\"/club_teams/#{club_team.slug}\">#{club_team.name}</a></li>"
+      end
     else
       if page.parent_id.nil?
         output << "<li><a href=\"/club_teams/#{page.slug}\">#{page.name}</a></li>"
@@ -50,6 +48,14 @@ module ClubTeamsHelper
 
   def is_a_general_page?
     params[:general_page] || @club_team.general_page
+  end
+
+  def positions
+    ["Attack", "Middle", "Defense", "Goalie"]
+  end
+
+  def grad_year
+    [2013, 2014, 2015, 2016, 2017]
   end
 end
 

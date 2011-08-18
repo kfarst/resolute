@@ -1,0 +1,63 @@
+= form_for @registration, :url => sign_up_club_teams_path(@registration) do |f|
+
+  - if @registration.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@registration.errors.count, "error")
+        prohibited this registration from being saved:
+      %ul
+        - @registration.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+
+  .field
+    = f.label :primary_email
+    %br/
+    = f.text_field :primary_email
+
+  .field
+    = f.label :secondary_email
+    %br/
+    = f.text_field :secondary_email
+
+  .field
+    = f.label :age
+    %br/
+    = f.text_field :age, :size => 2
+
+  .field
+    = f.label :position
+    %br/
+    = f.select :position, positions, {:include_blank => true}
+
+  .field
+    = f.label :school
+    %br/
+    = f.text_field :school
+
+  .field
+    = f.label :graduation_year
+    %br/
+    = f.select :graduation_year, grad_year, {:include_blank => true}
+
+  .field
+    = f.label :primary_phone
+    %br/
+    = f.text_field :primary_phone, :size => 14
+
+  .field
+    = f.label :secondary_phone
+    %br/
+    = f.text_field :secondary_phone, :size => 14
+
+  .actions
+    = f.submit "Sign Up"

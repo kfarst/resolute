@@ -27,5 +27,11 @@
         %br
         = f.select :parent_id, all_club_teams, { :include_blank => true }
 
+  - if is_a_general_page?
+    .field
+      = f.label :show_registration_form
+      %br
+      = f.check_box :show_registration_form
+
   .actions
     = f.submit

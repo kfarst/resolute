@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110718214114) do
+ActiveRecord::Schema.define(:version => 20110818162320) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -65,6 +65,19 @@ ActiveRecord::Schema.define(:version => 20110718214114) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
 
+  create_table "club_team_registrations", :force => true do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "school"
+    t.string  "position"
+    t.string  "primary_email"
+    t.string  "secondary_email"
+    t.string  "primary_phone"
+    t.string  "secondary_phone"
+    t.integer "graduation_year"
+    t.integer "age"
+  end
+
   create_table "club_teams", :force => true do |t|
     t.string   "name"
     t.text     "information"
@@ -74,7 +87,8 @@ ActiveRecord::Schema.define(:version => 20110718214114) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "type_inheritance"
-    t.boolean  "general_page",     :default => false
+    t.boolean  "general_page",           :default => false
+    t.boolean  "show_registration_form"
   end
 
   create_table "coach_clinic_registrations", :force => true do |t|
@@ -177,6 +191,26 @@ ActiveRecord::Schema.define(:version => 20110718214114) do
     t.integer  "camp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "position"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "school"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.integer  "grade"
+    t.integer  "yrs_of_exp"
+    t.string   "finding_resolute"
+    t.integer  "registration_form_id"
   end
 
   create_table "resolute_team_sign_ups", :force => true do |t|

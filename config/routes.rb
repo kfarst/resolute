@@ -10,6 +10,7 @@ Resolute::Application.routes.draw do
   resources :club_teams, :except => [:show] do
     collection do
       get :admin, :as => :admin
+      post :sign_up, :as => :sign_up
     end
   end
   match "/club_teams/(/:parent_slug(/:child_slug))" => "club_teams#show"

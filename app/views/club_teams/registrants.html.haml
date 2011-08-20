@@ -1,0 +1,10 @@
+%table{:cellpadding => "10"}
+  %tr
+  -# - @registrants.first.attributes.keys.each do |k|
+  -#   %td
+  -#     %b
+  -#       = k.humanize
+
+  - @registrants.each do |r|
+    %td
+      = r.attributes.values.join(" ")

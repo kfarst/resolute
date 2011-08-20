@@ -1,13 +1,13 @@
 = form_for @registration, :url => sign_up_club_teams_path(@registration) do |f|
 
-  - if @registration.errors.any?
+  - unless session[:registration_errors] == nil
     #error_explanation
       %h2
-        = pluralize(@registration.errors.count, "error")
+        = pluralize(session[:registration_errors].values.flatten.count, "error")
         prohibited this registration from being saved:
       %ul
-        - @registration.errors.full_messages.each do |msg|
-          %li= msg
+        - session[:registration_errors].each do |msg|
+          %li= msg.first.to_s.humanize + " " + msg.second
 
   .field
     = f.label :first_name
@@ -28,6 +28,23 @@
     = f.label :secondary_email
     %br/
     = f.text_field :secondary_email
+
+  .field
+    = f.label :street_address
+    %br/
+    = f.text_field :street_address
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :state
+    %br/
+    = f.select :state, state_abbreviations, {:include_blank => true}
+  .field
+    = f.label :zip
+    %br/
+    = f.text_field :zip, :size => 5
 
   .field
     = f.label :age

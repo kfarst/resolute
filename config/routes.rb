@@ -11,6 +11,7 @@ Resolute::Application.routes.draw do
     collection do
       get :admin, :as => :admin
       post :sign_up, :as => :sign_up
+      get :registrants, :as => :registrants
     end
   end
   match "/club_teams/(/:parent_slug(/:child_slug))" => "club_teams#show"

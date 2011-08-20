@@ -1,5 +1,5 @@
 class ClubTeamsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :sign_up]
 
   def admin
     if params[:general_pages]
@@ -112,6 +112,10 @@ class ClubTeamsController < ApplicationController
     end
   end
 
+  def registrants
+    @registrants = ClubTeamRegistration.all
+  end
+
   def sign_up
     @registration = ClubTeamRegistration.new(params[:club_team_registration])
 
@@ -119,6 +123,7 @@ class ClubTeamsController < ApplicationController
       if @registration.save
         format.html { redirect_to(:back, :notice => 'Thank you for registering for the club teams! We will be in contact with you shortly.') }
       else
+        session[:registration_errors] = @registration.errors
         format.html { redirect_to(:back, :error => "Failed to register. Please try again!") }
       end
     end

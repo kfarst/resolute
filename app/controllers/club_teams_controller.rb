@@ -121,6 +121,7 @@ class ClubTeamsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
+        session[:registration_errors] = nil
         format.html { redirect_to(:back, :notice => 'Thank you for registering for the club teams! We will be in contact with you shortly.') }
       else
         session[:registration_errors] = @registration.errors

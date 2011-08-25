@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   respond_to :html
 
-  before_filter :authenticate_user!, :except => [:show, :welcome, :videos, :contact]
+  before_filter :authenticate_user!, :except => [:show, :welcome, :videos, :contact, :mailchimp]
   before_filter :find_item, :only => [:show, :edit, :update, :destroy]
 
   def pages

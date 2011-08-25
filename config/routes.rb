@@ -51,6 +51,7 @@ Resolute::Application.routes.draw do
     collection do
       get :pages, :as => :pages
       get :categories, :as => :categories
+      get :mailchimp, :as => :mailchimp
     end
   end
 

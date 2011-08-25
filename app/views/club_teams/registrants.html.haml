@@ -1,10 +1,38 @@
-%table{:cellpadding => "10"}
-  %tr
-  -# - @registrants.first.attributes.keys.each do |k|
-  -#   %td
-  -#     %b
-  -#       = k.humanize
+%table{:cellspacing => "10"}
+  %tr{:style => "background-color: #97BFDE;"}
+    %th First Name
+    %th Last Name
+    %th Age
+    %th Position
+    %th Primary Email
+    %th Secondary Email
+    %th Primary Phone
+    %th Secondary Phone
+    %th School
+    %th Street Address
+    %th City
+    %th State
+    %th Zip
+    %th Graduation Year
 
-  - @registrants.each do |r|
-    %td
-      = r.attributes.values.join(" ")
+    - @registrants.each do |reg|
+      %tr{:style => "background-color: gray;"}
+        %td= reg.first_name
+        %td= reg.last_name
+        %td= reg.age
+        %td= reg.position
+        %td= reg.primary_email
+        %td= reg.secondary_email
+        %td= reg.primary_phone
+        %td= reg.secondary_phone
+        %td= reg.school
+        %td= reg.street_address
+        %td= reg.city
+        %td= reg.state
+        %td= reg.zip
+        %td= reg.graduation_year
+  %br
+  %br
+  %br
+%br
+= link_to :back

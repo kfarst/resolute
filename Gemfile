@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem "rails", '>=3.0.0'
-gem "rake", "0.8.7"
+gem "rails", '>=3.1.0'
+gem "rake", "1.3.2"
 
+gem 'radiant'
 gem 'rubygems-update'
 gem 'haml'
 gem 'mongrel'
@@ -19,7 +20,6 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'aws-s3'
 gem 'rmagick'
 gem 'sass'
-gem 'radiant'
 
 group :development do
   gem 'redgreen'

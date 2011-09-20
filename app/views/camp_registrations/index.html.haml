@@ -35,6 +35,10 @@
         %th Years of Experience
       - if camp.registration_form.finding_resolute?
         %th How did you find Resolute?
+      - if camp.registration_form.shirt_size?
+        %th Shirt Size
+      - if camp.registration_form.gender?
+        %th Gender
     - unless camp.registration_form.camp_registrations.nil?
       - camp.registration_form.camp_registrations.each do |camp_registration|
         %tr
@@ -66,6 +70,10 @@
             %td= camp_registration.yrs_of_exp
           - if camp.registration_form.finding_resolute?
             %td= camp_registration.finding_resolute
+          - if camp.registration_form.shirt_size?
+            %td= camp_registration.shirt_size
+          - if camp.registration_form.gender?
+            %td= camp_registration.gender
           %td= link_to 'Destroy', "/camp_registration/#{camp_registration.id}", :method => :delete, :confirm => "Are your sure?"
   %br
   %br

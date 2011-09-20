@@ -1,6 +1,6 @@
 class Camp < ActiveRecord::Base
   has_event_calendar
-  validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url, :shirt_size, :gender
+  validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url
   validates_numericality_of :cost
   validates_uniqueness_of :name
   validates_format_of :payment_url, :with => /^(https:\/\/www.paypal.com\/)(.+)$/, :message => "must start with 'https://www.paypal.com/'"

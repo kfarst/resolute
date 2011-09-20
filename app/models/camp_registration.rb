@@ -13,6 +13,8 @@ class CampRegistration < ActiveRecord::Base
   validates_presence_of :yrs_of_exp, :if => :yrs_of_exp_in_form?
   validates_presence_of :finding_resolute, :if => :finding_resolute_in_form?
   validates_presence_of :registration_form_id
+  validates_presence_of :shirt_size, :if => :shirt_size_in_form?
+  validates_presence_of :gender, :if =>  :gender_in_form?
 
   validates_format_of :phone, :with => /^(\()?([0-9]{3})(\)|-|.\s)?([0-9]{3})(-)?([0-9]{4}|[0-9]{4})$/, :on => :create, :if => :phone_in_form?
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :if => :email_in_form?

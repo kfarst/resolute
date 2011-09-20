@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110820034937) do
+ActiveRecord::Schema.define(:version => 20110920012620) do
 
   create_table "camp_registrations", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20110820034937) do
     t.integer  "yrs_of_exp"
     t.string   "finding_resolute"
     t.integer  "registration_form_id"
+    t.string   "shirt_size"
+    t.string   "gender"
   end
 
   create_table "camps", :force => true do |t|
@@ -195,6 +197,8 @@ ActiveRecord::Schema.define(:version => 20110820034937) do
     t.integer  "camp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "shirt_size",       :default => false
+    t.boolean  "gender",           :default => false
   end
 
   create_table "registrations", :force => true do |t|

@@ -26,6 +26,16 @@
       = f.label :age
       %br/
       = f.text_field :age, :size => 2
+  - if @camp.registration_form.shirt_size?
+    .field
+      = f.label :shirt_size
+      %br/
+      = f.select :shirt_size, shirt_sizes, {:include_blank => true}
+  - if @camp.registration_form.gender?
+    .field
+      = f.label :gender
+      %br/
+      = f.select :gender, gender, {:include_blank => true}
   - if @camp.registration_form.position?
     .field
       = f.label :position

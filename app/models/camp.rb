@@ -1,6 +1,6 @@
 class Camp < ActiveRecord::Base
   has_event_calendar
-  validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url
+  validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url, :shirt_size, :gender
   validates_numericality_of :cost
   validates_uniqueness_of :name
   validates_format_of :payment_url, :with => /^(https:\/\/www.paypal.com\/)(.+)$/, :message => "must start with 'https://www.paypal.com/'"
@@ -9,7 +9,7 @@ class Camp < ActiveRecord::Base
   before_validation :get_map
 
   # validates_format_of :location,
-  #                     :with => /\\\\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\\\\d{5}(?:-\\\\d{4})?/,
+  #                     :with => /\\\\\\\\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\\\\\\\\d{5}(?:-\\\\\\\\d{4})?/,
   #                     :message => "must have a full address"
 
   has_one :registration_form

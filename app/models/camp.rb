@@ -6,10 +6,9 @@ class Camp < ActiveRecord::Base
   validates_format_of :payment_url, :with => /^(https:\/\/www.paypal.com\/)(.+)$/, :message => "must start with 'https://www.paypal.com/'"
   
   before_save :update_slug
-  before_validation :get_map
 
   # validates_format_of :location,
-  #                     :with => /\\\\\\\\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\\\\\\\\d{5}(?:-\\\\\\\\d{4})?/,
+  #                     :with => /\\\\\\\\\\\\\\\\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\\\\\\\\\\\\\\\\d{5}(?:-\\\\\\\\\\\\\\\\d{4})?/,
   #                     :message => "must have a full address"
 
   has_one :registration_form
@@ -23,19 +22,6 @@ class Camp < ActiveRecord::Base
 
   def get_address
     Geocoding::get(location)
-  end
-
-  def get_map
-    begin
-      result = get_address
-      MapImage::get(:street => result[0].thoroughfare,
-                    :city => result[0].locality,
-                    :state => result[0].administrative_area,
-                    :zip => result[0].postal_code,
-                    :image_type => "png").url
-    rescue
-      errors.add(:base, "There was a problem retreiving the address. Please check the address and try again.") and return false
-    end
   end
 
   def to_param

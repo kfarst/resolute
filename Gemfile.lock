@@ -208,7 +208,6 @@ DEPENDENCIES
   heroku
   jquery-rails
   launchy (= 0.3.5)
-  linecache (= 0.43)
   meta_where
   mongrel
   mysql

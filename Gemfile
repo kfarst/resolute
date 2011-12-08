@@ -37,5 +37,4 @@ group :development, :test do
   gem 'launchy', '0.3.5'
   gem 'nifty-generators'
   gem 'rcov'
-  gem 'linecache', '=0.43'
 end

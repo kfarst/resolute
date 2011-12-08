@@ -10,7 +10,7 @@ class TournamentEntriesController < ApplicationController
 
     if @tournament_entry.save
       TournamentMailer.response_email(@tournament_entry).deliver
-      redirect_to "/tournament_pages/registration", :notice => "Thank you for signing your team up! You will receive an email from us shortly."
+      redirect_to "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8U3CLMU3ERLEG&quantity=#{@tournament_entry.num_of_tix}"
     else
       render :action => :new
     end

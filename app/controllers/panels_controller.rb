@@ -2,17 +2,12 @@ class PanelsController < ApplicationController
   # GET /panels
   # GET /panels.xml
   def index
-    @large_panel = Panel.find_by_position("Left")
-    @small_panel_top = Panel.find_by_position("Right Top")
-    @small_panel_bottom = Panel.find_by_position("Right Bottom")
+    @panels = Panel.all
   end
 
   # GET /panels/1/edit
   def admin
-    @panels = []
-    ["Left", "Right Top", "Right Bottom"].each do |position|
-      @panels << Panel.find_or_initialize_by_position(position)
-    end
+    @panels = Panel.ordered_position
   end
 
   # POST /panels

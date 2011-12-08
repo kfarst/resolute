@@ -6,13 +6,13 @@ module CampsHelper
   end
 
   def city_and_state(camp)
-    result = camp.get_address
-    result[0].locality + ", " + result[0].administrative_area
+    result = camp.location
+    result.split(" ")[0]
   end
 
   def street_address(camp)
-    result = camp.get_address
-    raw(result[0].thoroughfare + "<br />" + city_and_state(camp) + " " + result[0].postal_code)
+    result = camp.location
+    result.split(" ")[1]
   end
 
 

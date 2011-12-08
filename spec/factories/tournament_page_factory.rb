@@ -1,4 +1,4 @@
-Factory.define :tournament_page do |t|
-  t.title "Test Tournament Page"
-  t.body "This is a test body for a tournament page."
+Factory.define :tournament_page do
+  title "Test Tournament Page"
+  body "This is a test body for a tournament page."
 end

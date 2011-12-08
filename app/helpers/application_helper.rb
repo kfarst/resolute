@@ -1,6 +1,10 @@
 module ApplicationHelper
   def category_name_or_link(category)
-    (only_whitespace?(category.body) && !Category::CATEGORY_AS_LINK.include?(category.title)) ? category.title : (link_to category.title, pretty_url_path(category))
+    if only_whitespace?(category.body) && !Category::CATEGORY_AS_LINK.include?(category.title)
+      return content_tag(:span, category.title)
+    else 
+      return link_to category.title, pretty_url_path(category)
+    end
   end
 
   def only_whitespace?(string) 

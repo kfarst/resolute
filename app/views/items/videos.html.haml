@@ -18,3 +18,7 @@
           %span{:id => "video_description"}= video.description 
 
 %div.clear
+
+= content_for :header do
+  = stylesheet_link_tag "video-js", "videobox"
+  = javascript_include_tag "videobox/mootools", "videobox/swfobject", "videobox/videobox"

@@ -1,7 +1,7 @@
-Factory.define :page do |p|
-  p.type 'Page'
-  p.title 'Test Page Title'
-  p.body  'Test Page Body'
-  p.association :category
+Factory.define :page do
+  type 'Page'
+  title 'Test Page Title'
+  body  'Test Page Body'
+  category
 end
 

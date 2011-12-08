@@ -1,5 +1,9 @@
 class Camp < ActiveRecord::Base
   has_event_calendar
+  acts_as_gmappable :check_process => :prevent_geocoding,
+                    :address => lambda{|a| a.location },
+                    :msg => "Sorry, not even Google could figure out where that is"
+
   validates_presence_of :name, :start_at, :end_at, :description, :location, :group, :cost, :payment_url
   validates_numericality_of :cost
   validates_uniqueness_of :name
@@ -7,21 +11,17 @@ class Camp < ActiveRecord::Base
   
   before_save :update_slug
 
-  # validates_format_of :location,
-  #                     :with => /\\\\\\\\\\\\\\\\d+.+(?=AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY)[A-Z]{2}[, ]+\\\\\\\\\\\\\\\\d{5}(?:-\\\\\\\\\\\\\\\\d{4})?/,
-  #                     :message => "must have a full address"
-
   has_one :registration_form
   has_many :camp_registrations, :through => :registration_form, :dependent => :destroy
 
   accepts_nested_attributes_for :registration_form
 
-  scope :high_school_camps, where(({:group => "High School"}) & (:end_at > Time.now)).order("start_at ASC")
-  scope :junior_high_camps, where(({:group => "Junior High"}) & (:end_at > Time.now)).order("start_at ASC")
-  scope :other_camps, where((:group ^ "High School") & (:group ^ "Junior High") & (:end_at > Time.now)).order("start_at ASC")
+  scope :high_school_camps, where{ (group == "High School") & (end_at > Time.now) }.order("start_at ASC")
+  scope :junior_high_camps, where{ (group == "Junior High") & (end_at > Time.now) }.order("start_at ASC")
+  scope :other_camps, where{ (group ^ "High School") & (group ^ "Junior High") & (end_at > Time.now) }.order("start_at ASC")
 
-  def get_address
-    Geocoding::get(location)
+  def prevent_geocoding
+    location.blank?
   end
 
   def to_param

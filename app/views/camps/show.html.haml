@@ -1,5 +1,7 @@
 #title= @camp.name
 
+= gmaps("markers" => {"data" => @camp.to_gmaps4rails}, "map_options" =>  { "provider" => "openlayers"}, :id => "map")
+
 %b Location:
 %br/
 = street_address(@camp)

@@ -1,5 +1,8 @@
-Factory.define :panel do |p|
-  p.sequence(:title) {|n| "Panel #{n}"}
-  p.position "Left"
-  p.url "panel"
+Factory.define :panel do
+  sequence :title do |n| 
+    "Panel #{n}"
+  end
+
+  position "Left"
+  url "panel"
 end

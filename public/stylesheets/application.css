@@ -325,6 +325,7 @@ div#flash {
   float: right;
   width: 66%; }
 
+@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis:400,300,200,500,600,700,800);
 html {
   height: 100%; }
 
@@ -333,7 +334,7 @@ body {
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #16202c;
-  font-family: "arial", sans-serif;
+  font-family: 'Terminal Dosis', sans-serif;
   height: 100%; }
 
 a {
@@ -377,52 +378,75 @@ span.tagline {
   -webkit-box-shadow: 5px 5px 10px #C0C0C0; }
 
 #nav {
-  float: right;
-  margin-top: 15px; }
+  margin-left: auto;
+  margin-right: auto; }
+  #nav ul.topnav {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 auto;
+    float: right;
+    width: 920px;
+    background: #222;
+    background: url(../images/topnav_bg.gif) repeat-x; }
+    #nav ul.topnav li {
+      float: left;
+      margin: 0;
+      padding: 0 15px 0 0;
+      position: relative;
+      /*--Declare X and Y axis base for sub navigation--*/
+      /*--Hover effect for trigger--*/ }
+      #nav ul.topnav li a {
+        padding: 10px 5px;
+        color: #fff;
+        display: block;
+        text-decoration: none;
+        float: left; }
+      #nav ul.topnav li a:hover {
+        background: url(../images/topnav_hover.gif) no-repeat center top; }
+      #nav ul.topnav li span {
+        /*--Drop down trigger styles--*/
+        width: 17px;
+        height: 35px;
+        float: left;
+        background: url(../images/subnav_btn.gif) no-repeat center top;
+        padding: 10px 5px;
+        color: #fff;
+        text-decoration: none; }
+      #nav ul.topnav li span.subhover {
+        background-position: center bottom;
+        cursor: pointer; }
+      #nav ul.topnav li ul.subnav {
+        z-index: 1;
+        list-style: none;
+        position: absolute;
+        /*--Important - Keeps subnav from affecting main navigation flow--*/
+        left: 0;
+        top: 35px;
+        background: #333;
+        margin: 0;
+        padding: 0;
+        display: none;
+        float: left;
+        width: 170px;
+        border: 1px sod #111; }
+        #nav ul.topnav li ul.subnav li {
+          margin: 0;
+          padding: 0;
+          border-top: 1px sod #252525;
+          /*--Create bevel effect--*/
+          border-bottom: 1px sod #444;
+          /*--Create bevel effect--*/
+          clear: both;
+          width: 170px; }
 
-#nav a {
-  color: white; }
-
-#nav ul.nav_links ul.second_level a {
-  font: bold 11px/16px arial, helvetica, sans-serif;
-  display: block;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ccc #888 #555 #bbb;
-  margin: 0;
-  padding: 2px 3px;
-  color: #000;
-  background: #efefef;
-  text-decoration: none;
-  width: 15em;
-  z-index: 1; }
-
-ul.nav_links li.first_level {
-  display: inline;
+html ul.topnav li ul.subnav li a {
   float: left;
-  margin-right: 20px;
-  position: relative;
-  color: white;
-  z-index: 1; }
-
-ul.nav_links li:hover a {
-  background-color: #97BFDE;
-  z-index: 1; }
-
-ul.nav_links li.first_level ul.second_level {
-  display: none;
-  position: absolute;
-  z-index: 1; }
-
-ul.nav_links li.first_level:hover ul.second_level {
-  display: block;
-  position: absolute;
-  z-index: 1; }
-
-ul.second_level li.first_level {
-  clear: both;
-  float: left;
-  z-index: 1; }
+  width: 145px;
+  background: #333333 url(../images/dropdown_linkbg.gif) no-repeat 10px center;
+  padding-left: 20px; }
+html ul.topnav li ul.subnav li a:hover {
+  /*--Hover effect for subnav links--*/
+  background: #222222 url(../images/dropdown_linkbg.gif) no-repeat 10px center; }
 
 #content {
   font-size: 14px;

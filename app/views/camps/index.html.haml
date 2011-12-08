@@ -47,3 +47,7 @@
 
 #calendar
   = raw(event_calendar)
+
+= content_for :header do
+  = stylesheet_link_tag "event_calendar"
+  = javascript_include_tag "event_calendar"

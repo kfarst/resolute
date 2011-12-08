@@ -1,21 +1,32 @@
 class Panel < ActiveRecord::Base
   if Rails.env.production?
     has_attached_file :panel,
-                      :styles => { :small => "620x528#", :large => "306x212#" },
-                      :storage => :s3,
-                      :s3_credentials => "#{Rails.root}/config/s3.yml",
+                      :styles => { :normal => ["947x355#", :png] },
+                      :storage => :s3_authenticated_url,
                       :path => ":attachment/:id/:style.:extension",
-                      :bucket => 'panel_pics'
+                      :bucket => 'panel_pics',
+                      :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
+                      :s3_permissions => 'private',
+                      :s3_protocol => 'https'
+
   else
     has_attached_file :panel,
-                      :styles => { :small => "620x528#", :large => "306x212#" }
+                      :styles => { :normal => ["947x355#", :png] },
+                      :storage => :filesystem
   end
 
   validates_presence_of :title, :if => :has_any_attributes?
   validates_presence_of :url, :if => :has_any_attributes?
   validates_presence_of :panel, :if => :has_any_attributes?
   validates_format_of :url, :with => /^[\w\/-]+$/i, :message => "was not in the proper format (must contain only letters, numbers, dashes, and forward slashes)", :if => :has_any_attributes?
-  validates_attachment_presence :panel, :if => lambda { self.panel? }
+
+  validates_attachment_presence :panel, :if => lambda {|a| a.panel? }
+
+  validates_numericality_of :position
+
+  scope :ordered_position, order("position ASC")
+
+  POSITION = ["First", "Second", "Third", "Fourth"]
 
   def has_any_attributes?
     self.attributes.values.any?(&:present?)

@@ -1,12 +1,12 @@
-Factory.define :tournament_entry do |t|
-  t.team_name "Test Team"
-  t.coach_name "John Smith"
-  t.coach_phone "(483) 483-2394"
-  t.coach_email "smith@example.com"
-  t.director_name "Andy Samberg"
-  t.division "5th/6th Grade A"
-  t.street_address "123 Fake Street"
-  t.city "Columbus"
-  t.state "OH"
-  t.zip 48304
+Factory.define :tournament_entry do
+  team_name "Test Team"
+  coach_name "John Smith"
+  coach_phone "(483) 483-2394"
+  coach_email "smith@example.com"
+  director_name "Andy Samberg"
+  division "5th/6th Grade A"
+  street_address "123 Fake Street"
+  city "Columbus"
+  state "OH"
+  zip 48304
 end

@@ -1,15 +1,15 @@
-%div{:id => "panel", "data-url" => @large_panel.url, :class => "large", :style => "background-position:center;background-image:url(/panels/large/elite-teams.png);"}  
-  #panel-text<
-    = @large_panel.title
-%div{:id => "panel", "data-url" => @small_panel_top.url, :class => "small-top", :style => "background-position:top;background-image:url(/panels/small/anthony.png);"}
-  #panel-text<
-    = @small_panel_top.title
-%div{:id => "panel", "data-url" => @small_panel_bottom.url, :class => "small-bottom", :style => "background-position:bottom;background-image:url(/panels/large/missing.png);"}
-  #panel-text<
-    = @small_panel_bottom.title
+%div{:class => "slider-wrapper theme-pascal"}
+  #slider.nivoSlider
+  - @panels.each do |panel|
+    %a{:href => panel.url}
+      %img{:src => panel.panel_file_name, :title => panel.summary}/
 
 #sponsors
   = link_to (image_tag "midwestlacrosse.png"), "http://www.midwestlacrosse.com", :target => "_blank", :id => "mwl-sponsor"
   = link_to (image_tag "ltn.png"), "http://www.lacrossethenations.org", :target => "_blank", :id => "ltn-sponsor"
   = link_to (image_tag "stx.png"), "http://www.stx.com", :target => "_blank", :id => "stx-sponsor"
+
+- content_for :header do
+  = stylesheet_link_tag "../javascripts/nivo/themes/pascal/pascal"
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "nivo/jquery.nivo.slider.pack", "panels"
 

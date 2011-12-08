@@ -1,4 +1,4 @@
-Factory.define :stat do |s|
-  s.stat "This is a stat"
-  s.association :staff_member
+Factory.define :stat do
+  stat "This is a stat"
+  staff_member
 end

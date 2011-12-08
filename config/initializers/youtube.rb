@@ -1,3 +1,4 @@
-require 'youtube_g'
+require 'youtube_it'
 
-$youtube = YouTubeG::Client.new
+$youtube = YouTubeIt::Client.new
+

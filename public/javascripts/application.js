@@ -57,6 +57,7 @@ jQuery(function($) {
   }
 
   function menuSlideUp(e) {
+    $(e).delay(800);
     $(this).children('ul.second_level').slideUp('fast');
   }
 });
